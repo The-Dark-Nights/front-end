@@ -1,0 +1,225 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+/* 전체 페이지 크기설정 */
+
+.mainContainer {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 300px;
+}
+
+/* Button */
+.purpleBtn {
+  border-radius: 10px;
+  color: white;
+  background-color: #a554f3;
+  border: none;
+}
+.greyBtn {
+  border-radius: 5px;
+  color: black;
+  background-color: #d9d9d9;
+  border: none;
+}
+.redBtn {
+  border-radius: 5px;
+  color: white;
+  background-color: #ff3326;
+  border: none;
+}
+
+/* 헤더바 시작 */
+.header {
+  width: 100%;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+  display: flex;
+}
+.logo > img {
+  width: 100px;
+  margin-top: 1rem;
+}
+.pageName {
+  font-weight: bold;
+  font-size: 20px;
+}
+.menuBox {
+  margin-top: 1rem;
+  margin-left: 5rem;
+}
+.menuBoxTitle {
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.menuBoxTitle > li {
+  margin-right: 5rem;
+  font-size: 13px;
+}
+.menuBoxTitle > li > img {
+  width: 10px;
+  margin-right: 10px;
+}
+.loginBox {
+  margin-top: 2rem;
+  margin-left: 45%;
+}
+.loginBox > img {
+  width: 30px;
+  margin-right: 4rem;
+}
+
+/* header */
+.signBtn {
+  width: 140px;
+  height: 40px;
+  position: relative;
+  top: -10px;
+}
+/* 메인컨테이너 */
+.contents {
+  margin-top: 5%;
+}
+/* 로드맵박스 */
+.roadMapListNav {
+  display: flex;
+  justify-content: space-between;
+}
+.roadMapListNav > div > p {
+  font-weight: bold;
+}
+.roadMapListNav > div > hr {
+  width: 150px;
+  border: 2px solid black;
+  margin-top: 10px;
+}
+.roadMapListNav > div > .seeAllHr {
+  width: 100px;
+}
+/* 로드맵슬라이드 */
+.roadMapSlide {
+  margin-top: 40px;
+  overflow: hidden;
+}
+.roadMapList {
+  width: 2000px;
+
+  overflow: hidden;
+  display: flex;
+}
+/* 로드맵카드 */
+.roadMapCard {
+  width: 400px;
+  height: 350px;
+  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
+  margin-bottom: 10px;
+  margin-right: 5%;
+  padding: 10px 20px;
+}
+.roadMapTitleBox > h3 {
+  margin-bottom: 5px;
+}
+.userInfo {
+  display: flex;
+  margin-bottom: 5px;
+}
+.userInfo > img {
+  width: 25px;
+  margin-right: 15px;
+}
+.roadMapComment {
+  display: flex;
+  margin-top: 15px;
+}
+.roadMapComment img {
+  width: 20px;
+  margin-right: 5px;
+}
+.roadMapComment > div {
+  display: flex;
+  margin-right: 10px;
+}
+/* 포스트리스트 */
+
+.postListNav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10%;
+}
+.postListNav > div > p {
+  font-weight: bold;
+}
+.postListNav > div > hr {
+  width: 150px;
+  border: 2px solid black;
+  margin-top: 10px;
+}
+.postListNav > div > .seeAllHr {
+  width: 100px;
+}
+/* 포스트슬라이드 */
+.postSlide {
+  margin-top: 40px;
+  overflow: hidden;
+}
+.postList {
+  width: 2000px;
+
+  overflow: hidden;
+  display: flex;
+}
+/* 로드맵카드 */
+.postCard {
+  width: 300px;
+  height: 400px;
+  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
+  margin-bottom: 10px;
+  margin-right: 5%;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.postImg > img {
+  width: 200px;
+}
+.postContents {
+  margin-top: 10px;
+}
+.postContents > h3 {
+  margin-bottom: 20px;
+}
+.postContents > p {
+  margin-bottom: 10px;
+}
+
+.postComment {
+  display: flex;
+  margin-top: 15px;
+}
+.postComment img {
+  width: 20px;
+  margin-right: 5px;
+}
+.postComment > div {
+  display: flex;
+  margin-right: 10px;
+}
+.postComment > .userName {
+  width: 100px;
+  overflow: hidden;
+}
+.postCommentBox > div {
+  display: flex;
+}
+.postCommentBox {
+  margin-left: 80px;
+}
