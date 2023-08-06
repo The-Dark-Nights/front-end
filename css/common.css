@@ -14,7 +14,7 @@ a {
 .mainContainer {
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 300px;
+  margin-bottom: 100px;
 }
 
 /* Button */
@@ -65,161 +65,119 @@ a {
 .menuBoxTitle > li {
   margin-right: 5rem;
   font-size: 13px;
+  color: #c6c7cc;
 }
 .menuBoxTitle > li > img {
   width: 10px;
   margin-right: 10px;
 }
-.loginBox {
+.signBox {
   margin-top: 2rem;
   margin-left: 45%;
+  display: none;
 }
-.loginBox > img {
+.signBox > img {
   width: 30px;
   margin-right: 4rem;
 }
 
 /* header */
+/* 로그인전 */
 .signBtn {
   width: 140px;
   height: 40px;
   position: relative;
   top: -10px;
 }
-/* 메인컨테이너 */
-.contents {
-  margin-top: 5%;
+/* 로그인후 */
+.loginAfter {
+  display: block;
+  margin-top: 2.5rem;
+  margin-left: 45%;
 }
-/* 로드맵박스 */
-.roadMapListNav {
+.loginBox {
   display: flex;
-  justify-content: space-between;
 }
-.roadMapListNav > div > p {
-  font-weight: bold;
+.loginBox > img {
+  width: 30px;
+  height: 30px;
 }
-.roadMapListNav > div > hr {
-  width: 150px;
-  border: 2px solid black;
-  margin-top: 10px;
-}
-.roadMapListNav > div > .seeAllHr {
+.alarmBellImg {
   width: 100px;
-}
-/* 로드맵슬라이드 */
-.roadMapSlide {
-  margin-top: 40px;
-  overflow: hidden;
-}
-.roadMapList {
-  width: 2000px;
-
-  overflow: hidden;
   display: flex;
+  margin-left: 50px;
 }
-/* 로드맵카드 */
-.roadMapCard {
+.alarmBellImg > img {
+  width: 30px;
+  height: 30px;
+}
+.alarmBellImg > p {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+  right: 11px;
+  top: -8px;
+}
+.alarmModal {
+  position: absolute;
+  right: 16%;
   width: 400px;
-  height: 350px;
-  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
-  margin-bottom: 10px;
-  margin-right: 5%;
-  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  z-index: 2;
 }
-.roadMapTitleBox > h3 {
-  margin-bottom: 5px;
-}
-.userInfo {
-  display: flex;
-  margin-bottom: 5px;
-}
-.userInfo > img {
-  width: 25px;
-  margin-right: 15px;
-}
-.roadMapComment {
-  display: flex;
-  margin-top: 15px;
-}
-.roadMapComment img {
-  width: 20px;
-  margin-right: 5px;
-}
-.roadMapComment > div {
-  display: flex;
-  margin-right: 10px;
-}
-/* 포스트리스트 */
-
-.postListNav {
+.alarmModal > .alarmModalTitle {
   display: flex;
   justify-content: space-between;
-  margin-top: 10%;
+  margin: 20px 0;
 }
-.postListNav > div > p {
-  font-weight: bold;
-}
-.postListNav > div > hr {
-  width: 150px;
-  border: 2px solid black;
-  margin-top: 10px;
-}
-.postListNav > div > .seeAllHr {
-  width: 100px;
-}
-/* 포스트슬라이드 */
-.postSlide {
-  margin-top: 40px;
-  overflow: hidden;
-}
-.postList {
-  width: 2000px;
-
-  overflow: hidden;
-  display: flex;
-}
-/* 로드맵카드 */
-.postCard {
-  width: 300px;
-  height: 400px;
-  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
-  margin-bottom: 10px;
-  margin-right: 5%;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-.postImg > img {
-  width: 200px;
-}
-.postContents {
-  margin-top: 10px;
-}
-.postContents > h3 {
-  margin-bottom: 20px;
-}
-.postContents > p {
-  margin-bottom: 10px;
-}
-
-.postComment {
-  display: flex;
-  margin-top: 15px;
-}
-.postComment img {
+.alarmModalTitle > img {
   width: 20px;
-  margin-right: 5px;
+  margin-right: 20px;
 }
-.postComment > div {
-  display: flex;
-  margin-right: 10px;
+.alarmModalTitle > p {
+  font-size: 20px;
+  margin-left: 20px;
 }
-.postComment > .userName {
-  width: 100px;
-  overflow: hidden;
+.alarmList {
+  margin: 20px;
+  line-height: 30px;
+  margin-bottom: 70px;
 }
-.postCommentBox > div {
-  display: flex;
+.alarmList > div > p {
+  font-size: 18px;
 }
-.postCommentBox {
-  margin-left: 80px;
+.alarmList > p {
+  font-size: 12px;
+  float: right;
+}
+.userImg {
+  position: relative;
+  top: -20px;
+}
+.userImg > .userProfileImg {
+  width: 70px;
+  border-radius: 50%;
+  background-color: grey;
+}
+.userImg > .downarrow {
+  width: 20px;
+}
+.userMiniMenu {
+  position: absolute;
+  right: 10%;
+  width: 200px;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  z-index: 2;
+}
+.userMiniMenu > ul > li {
+  margin: 10px;
 }
