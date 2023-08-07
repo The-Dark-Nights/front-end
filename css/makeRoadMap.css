@@ -1,0 +1,41 @@
+/* 페이지 보기위한 디스플레이 설정 */
+.signBox {
+    display: none;
+  }
+  .loginAfter {
+    display: block;
+  }
+  .alarmModal {
+    display: none;
+  }
+  .userMiniMenu {
+    display: none;
+  }
+
+
+  .purpleBorderBtn{
+    border-radius: 5px;
+    color: #a554f3;
+    background-color: white;
+    border-color: #a554f3;
+    border-width: 1px;
+  }
+
+  .sideMenu{
+    width: 500px;
+    height: 853px;
+    border: 1px solid #d9d9d9;
+    
+  }
+  .sideBtn{
+    width: 350px;
+    height: 40px;
+    margin: 5% auto; 
+    margin-left: 15%;
+  }
+  .sideBottomBtn{
+    width: 80px;
+    height: 40px;
+    margin-top: 40%;
+    margin-left: 12%;
+  }
