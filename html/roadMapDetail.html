@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/roadMapDetail.css" />
+  </head>
+  <body>
+    <div>
+      <div class="container">
+        <!-- 헤더시작 -->
+        <div class="header">
+          <!-- 로고 -->
+          <div class="logo"><img src="/img/logo.png" alt="" /></div>
+          <div class="menuBox">
+            <!-- 페이지이름 -->
+            <div class="pageName"><p>RoadMapDetail</p></div>
+            <!-- 메뉴박스 -->
+
+            <ul class="menuBoxTitle">
+              <li><img src="/img/search.png" alt="" />Posts</li>
+              <li><img src="/img/search.png" alt="" />RoadMap</li>
+            </ul>
+          </div>
+          <!-- 로그인전-> -->
+          <div class="signBox">
+            <img src="/img/search.png" alt="" />
+            <button class="purpleBtn signBtn">SignIn</button>
+          </div>
+          <!-- 로그인후 -->
+          <div class="loginAfter">
+            <div class="loginBox">
+              <img src="/img/search.png" alt="" />
+              <div class="alarmBell">
+                <div class="alarmBellImg">
+                  <img src="/img/bell.png" alt="" />
+                  <p>12</p>
+                </div>
+                <div class="alarmModal">
+                  <div class="alarmModalTitle">
+                    <p>Alarm</p>
+                    <img src="/img/setting.png" alt="" />
+                  </div>
+                  <hr />
+                  <div>
+                    <ul>
+                      <li class="alarmList">
+                        <div>
+                          <p>???가 html 카테고리에 글을 올렸습니다</p>
+                        </div>
+                        <p>1일전</p>
+                      </li>
+                      <li class="alarmList">
+                        <div>
+                          <p>???가 html 카테고리에 글을 올렸습니다</p>
+                        </div>
+                        <p>1일전</p>
+                      </li>
+                      <li class="alarmList">
+                        <div>
+                          <p>???가 html 카테고리에 글을 올렸습니다</p>
+                        </div>
+                        <p>1일전</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="userImg">
+                <img src="/img/user.png" alt="" class="userProfileImg" />
+                <img src="/img/downarrow.png" alt="" class="downarrow" />
+                <div class="userMiniMenu">
+                  <ul>
+                    <li>My Profile</li>
+                    <hr />
+                    <li>Drafts</li>
+                    <hr />
+                    <li>Liked</li>
+                    <hr />
+                    <li>Logout</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 헤더끝 -->
+        <!-- 로드맵컨테이너시작 -->
+        <div class="mainContainer contents">
+          <!-- 로드맵디테일타이틀 시작 -->
+          <div class="roadMapDetailTitle">
+            <h1>Custom RoadMap Name</h1>
+            <div class="userInfo">
+              <div class="imgBox">
+                <img src="/img/user.png" alt="" />
+                <div class="followBtnBox">
+                  <button class="whiteBtn followBtn">
+                    <div></div>
+                    <p>Follow</p>
+                  </button>
+                </div>
+              </div>
+              <div class="userInfoBox">
+                <div class="userName">Code Juggler</div>
+                <div class="userFollows">
+                  <img src="/img/users.png" alt="" />
+                  <span>4followers</span>
+                  <span>4followings</span>
+                </div>
+              </div>
+              <ul class="userDetailBox">
+                <li>1:1대화</li>
+                <hr />
+                <li>쪽지 보내기</li>
+                <hr />
+                <li>회원정보</li>
+              </ul>
+            </div>
+          </div>
+          <!-- 로드맵 사이드메뉴 -->
+          <div class="roadMapDetailSideMenu">
+            <div class="sideMenuTitle">
+              <div><button class="whiteBtn bigfollowBtn"><div></div><p>Follow</p></button></div>
+              <h2>HTML</h2>
+              <div class="filterBox">
+                <p>MyPost</p>
+                <p>Fowlling</p>
+                <p>popular</p> 
+                               
+              </div>
+            </div>
+            <ul class="miniPostList">
+              <li>
+                <div class="miniPostUser">
+                <h3>HTML이란...</h3>
+                <p>username</p>
+                </div>
+                
+                <div class="miniPostContent">An HTML element is defined by a start tag, some content, and an end tag:</div>
+                <div class="miniPostComment">
+                  <img src="/img/comment.png" alt=""><span>11</span><img src="/img/heart.png" alt="" class="heartIcon"><span>3</span>
+                </div>
+              </li>
+           
+            </ul>
+          </div>
+          <!-- 로드맵 컨텐츠 -->
+          <div class="roadMapDetailContents">
+            <img src="/img/logo.png" alt="" />
+            <form>
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Please write a comment..."
+              ></textarea>
+              <div>
+                <button class="purpleBtn textareaSubmit">Submit</button>
+              </div>
+            </form>
+            <hr />
+          </div>
+          <!-- 로드맵리뷰 -->
+          <div class="roadMapDetailCommnet">
+            <ul>
+              <li>
+                <img src="/img/user.png" alt="" />
+                <div>
+                  <div class="userReport">
+                    <h2>CodeJungle</h2>
+                    
+                    <img src="/img/heart.png" alt="" />
+                    <img src="/img/siren.png" alt="" />
+                  </div>
+                  <ul class="commentUserDetailBox">
+                    <li>1:1대화</li>
+                    <hr />
+                    <li>쪽지 보내기</li>
+                    <hr />
+                    <li>회원정보</li>
+                  </ul>
+                  <p class="commentDate">June 11,2023</p>
+                  <p class="commentContent">
+                    Satisfied conveying a dependent contented he gentleman
+                    agreeable do be. Warrant private blushes removed an in
+                    equally totally if. Delivered dejection necessary objection
+                    do Mr prevailed. Mr feeling does chiefly cordial in do.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <img src="/img/user.png" alt="" />
+                <div>
+                  <div class="userReport">
+                    <h2>CodeJungle</h2>
+                    
+                    <img src="/img/heart.png" alt="" />
+                    <img src="/img/siren.png" alt="" />
+                  </div>
+                  <ul class="commentUserDetailBox">
+                    <li>1:1대화</li>
+                    <hr />
+                    <li>쪽지 보내기</li>
+                    <hr />
+                    <li>회원정보</li>
+                  </ul>
+                  <p class="commentDate">June 11,2023</p>
+                  <p class="commentContent">
+                    Satisfied conveying a dependent contented he gentleman
+                    agreeable do be. Warrant private blushes removed an in
+                    equally totally if. Delivered dejection necessary objection
+                    do Mr prevailed. Mr feeling does chiefly cordial in do.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <img src="/img/user.png" alt="" />
+                <div>
+                  <div class="userReport">
+                    <h2>CodeJungle</h2>
+                    
+                    <img src="/img/heart.png" alt="" />
+                    <img src="/img/siren.png" alt="" />
+                  </div>
+                  <ul class="commentUserDetailBox">
+                    <li>1:1대화</li>
+                    <hr />
+                    <li>쪽지 보내기</li>
+                    <hr />
+                    <li>회원정보</li>
+                  </ul>
+                  <p class="commentDate">June 11,2023</p>
+                  <p class="commentContent">
+                    Satisfied conveying a dependent contented he gentleman
+                    agreeable do be. Warrant private blushes removed an in
+                    equally totally if. Delivered dejection necessary objection
+                    do Mr prevailed. Mr feeling does chiefly cordial in do.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- 로드맵디테일타이틀 끝 -->
+        </div>
+      </div>
+      <!-- 로드맵포스트컨테이너끝 -->
+    </div>
+  </body>
+</html>

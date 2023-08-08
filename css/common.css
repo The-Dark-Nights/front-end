@@ -12,7 +12,7 @@ a {
 /* 전체 페이지 크기설정 */
 
 .mainContainer {
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   margin-bottom: 100px;
 }
@@ -36,7 +36,10 @@ a {
   background-color: #ff3326;
   border: none;
 }
-
+.whiteBtn{
+  border-radius: 5px;
+  background-color: white;
+}
 /* 헤더바 시작 */
 .header {
   width: 100%;
@@ -64,7 +67,7 @@ a {
 }
 .menuBoxTitle > li {
   margin-right: 5rem;
-  font-size: 13px;
+  font-size: 18px;
   color: #c6c7cc;
 }
 .menuBoxTitle > li > img {
@@ -73,7 +76,8 @@ a {
 }
 .signBox {
   margin-top: 2rem;
-  margin-left: 45%;
+
+  margin-left: 57%;
   display: none;
 }
 .signBox > img {
@@ -93,7 +97,8 @@ a {
 .loginAfter {
   display: block;
   margin-top: 2.5rem;
-  margin-left: 45%;
+
+  margin-left: 57%;
 }
 .loginBox {
   display: flex;
@@ -125,7 +130,7 @@ a {
 }
 .alarmModal {
   position: absolute;
-  right: 16%;
+  right: 11%;
   width: 400px;
   background-color: white;
   border: 1px solid #d9d9d9;

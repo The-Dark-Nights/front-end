@@ -1,9 +1,9 @@
 /* 페이지 보기위한 디스플레이 설정 */
 .signBox {
-  display: none;
+  display: block;
 }
 .loginAfter {
-  display: block;
+  display: none;
 }
 .alarmModal {
   display: none;
@@ -70,7 +70,7 @@
 .postList > li:first-child {
   margin-left: 0;
 }
-.postList > li:nth-child(4n + 0) {
+.postList > li:nth-child(5n + 0) {
   margin-left: 0;
 }
 /* 로드맵카드 */
@@ -79,8 +79,8 @@
   height: 400px;
   box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
   margin-bottom: 10px;
-  margin-left: 15%;
-  margin-top: 60px;
+  margin-left: 3%;
+  margin-top: 80px;
   padding: 10px 20px;
   border-radius: 10px;
 }
