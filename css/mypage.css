@@ -241,3 +241,69 @@
   height: 40px;
   border-radius: 20px;
 }
+
+/* 마이페이지 수정 모달 */
+.myPageModalBack{
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* display: none; */
+}
+.myPageModalContent{
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 0px;
+  border: 1px solid #888;
+  width: 15%;
+  height: 30%;
+  border-radius: 30px;
+  z-index: 4;
+  position: absolute;
+  top: 32%;
+  left: 47%;
+  padding: 15px;
+}
+.myPageModalContent>p{
+  font-weight: bold;
+  margin: 10px;
+}
+.myPageModalContent input{
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid #656d76;
+  width: 100%;
+  height: 30px;
+  font-size: 12px;
+ }
+.pronouns{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+
+}
+.pronouns>img{
+  width: 20px;
+  margin-right: 20px;
+}
+.myPageModalBtnBox{
+text-align: center;
+margin-top: 20px;
+}
+.myPageModalBtnBox>button{
+  margin:0 10px;
+}
+.saveBtn{
+  width: 60px;
+  height:25px;
+}
+.closeBtn{
+  width: 60px;
+  height:25px;
+  border-radius: 10px;
+  
+}

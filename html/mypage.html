@@ -110,7 +110,7 @@
           </div>
           <!-- 마이페이지 컨텐츠 -->
           <div class="myPageContents">
-            <div class="statistics" style="display: none">
+            <div class="statistics" style="display: block">
               <div class="userStatistics">
                 <img src="/img/user.png" alt="" />
                 <div>
@@ -349,7 +349,7 @@
               </div>
             </div>
             <!-- follow리스트페이지 -->
-            <div class="follow" style="display: blcok">
+            <div class="follow" style="display: none">
               <div class="followNav">
                 <div class="filter">
                   <div class="filterBox">
@@ -394,6 +394,25 @@
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <!-- 마이페이지 수정 모달 -->
+        <div class="myPageModal">
+          <div class="myPageModalBack"></div>
+          <div class="myPageModalContent">
+            <p>Name</p>
+            <input type="text" placeholder="Jeon,Tae Hyeon">
+            <p>Pronouns</p>
+            <div class="pronouns">
+              <img src="/img/phone.png" alt=""><input type="text" placeholder="010-22-222">
+            </div>
+            <div class="pronouns">
+              <img src="/img/building.png" alt=""><input type="text" placeholder="서울시 송파구">
+            </div>
+            <div class="myPageModalBtnBox">
+              <button class="purpleBtn saveBtn">save</button>
+              <button class="greyBtn closeBtn">close</button>
             </div>
           </div>
         </div>
