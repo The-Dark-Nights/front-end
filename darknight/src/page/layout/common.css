@@ -1,0 +1,191 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+/* 전체 페이지 크기설정 */
+
+.mainContainer {
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+/* Button */
+.purpleBtn {
+  border-radius: 10px;
+  color: white;
+  background-color: #a554f3;
+  border: none;
+}
+.greyBtn {
+  border-radius: 5px;
+  color: black;
+  background-color: #d9d9d9;
+  border: none;
+}
+.redBtn {
+  border-radius: 5px;
+  color: white;
+  background-color: #ff3326;
+  border: none;
+}
+.whiteBtn{
+  border-radius: 5px;
+  background-color: white;
+}
+/* 헤더바 시작 */
+.header {
+  width: 100%;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+  display: flex;
+}
+.logo > img {
+  width: 100px;
+  margin-top: 1rem;
+}
+.pageName {
+  font-weight: bold;
+  font-size: 20px;
+}
+.menuBox {
+  margin-top: 1rem;
+  margin-left: 5rem;
+}
+.menuBoxTitle {
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.menuBoxTitle > li {
+  margin-right: 5rem;
+  font-size: 18px;
+  color: #c6c7cc;
+}
+.change{
+  color:#a554f3;
+}
+.menuBoxTitle > li > img {
+  width: 10px;
+  margin-right: 10px;
+}
+.signBox {
+  margin-top: 2rem;
+
+  margin-left: 57%;
+  display: none;
+}
+.signBox > img {
+  width: 30px;
+  margin-right: 4rem;
+}
+
+/* header */
+/* 로그인전 */
+.signBtn {
+  width: 140px;
+  height: 40px;
+  position: relative;
+  top: -10px;
+}
+/* 로그인후 */
+.loginAfter {
+  display: block;
+  margin-top: 2.5rem;
+
+  margin-left: 57%;
+}
+.loginBox {
+  display: flex;
+}
+.loginBox > img {
+  width: 30px;
+  height: 30px;
+}
+.alarmBellImg {
+  width: 100px;
+  display: flex;
+  margin-left: 50px;
+}
+.alarmBellImg > img {
+  width: 30px;
+  height: 30px;
+}
+.alarmBellImg > p {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+  right: 11px;
+  top: -8px;
+}
+.alarmModal {
+  position: absolute;
+  right: 11%;
+  width: 400px;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  z-index: 2;
+}
+.alarmModal > .alarmModalTitle {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.alarmModalTitle > img {
+  width: 20px;
+  margin-right: 20px;
+}
+.alarmModalTitle > p {
+  font-size: 20px;
+  margin-left: 20px;
+}
+.alarmList {
+  margin: 20px;
+  line-height: 30px;
+  margin-bottom: 70px;
+}
+.alarmList > div > p {
+  font-size: 18px;
+}
+.alarmList > p {
+  font-size: 12px;
+  float: right;
+}
+.userImg {
+  position: relative;
+  top: -20px;
+}
+.userImg > .userProfileImg {
+  width: 70px;
+  border-radius: 50%;
+  background-color: grey;
+}
+.userImg > .downarrow {
+  width: 20px;
+}
+.userMiniMenu {
+  position: absolute;
+  right: 10%;
+  width: 200px;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  z-index: 2;
+}
+.userMiniMenu > ul > li {
+  margin: 10px;
+}
