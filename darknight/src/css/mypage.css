@@ -1,9 +1,9 @@
 /* 페이지 보기위한 디스플레이 설정 */
 .signBox {
-    display: block;
+    display: none;
   }
   .loginAfter {
-    display: none;
+    display: block;
   }
   .alarmModal {
     display: none;
@@ -12,7 +12,7 @@
     display: none;
   }
 .myPageWrap{
-    width: 95%;
+    width: 110%;
     height: 100%;
     margin-bottom: 0px; 
     display: flex;
@@ -21,10 +21,10 @@
 }
   /* 마이페이지 사이드메뉴 */
 .myPageSideMenu{
-    width: 17%;
-    height: 100vh;
+    width: 22%;
+    height: 120vh;
 
-    box-shadow: 7px 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.2), 5px 0px 2px rgba(0, 0, 0, 0.02);
     text-align: center;
 }
 .myPageSideMenu>img{
@@ -66,7 +66,7 @@
 
 /* 마이페이지 컨텐츠 */
 .myPageContents{
-    width: 80%;
+    width: 70%;
     margin-left: 40px;
    
 }
@@ -188,7 +188,8 @@
     margin-left: 20px;
   }
 .filter>hr{
-  width: 17%;
+  width: 27%;
+
   
 }
 .followList{

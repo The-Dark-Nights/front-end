@@ -1,5 +1,5 @@
-import "./main.css";
-import "./common.css";
+import "../../css/main.css";
+import "../../css/common.css";
 import RoadMapCard from "./component/roadMapCard";
 import PostCard from "./component/postCard";
 
