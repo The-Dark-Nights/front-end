@@ -1,7 +1,7 @@
-import "./main.css";
-import "./common.css";
-import RoadMapCard from "./component/roadMapCard";
-import PostCard from "./component/postCard";
+import "../../css/main.css";
+import "../../css/common.css";
+import PostCard from "../commondcomponent/postCard";
+import RoadMapCard from "../commondcomponent/roadMapCard";
 
 function MainPageIndex() {
   return (

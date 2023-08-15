@@ -1,0 +1,70 @@
+/* 페이지 보기위한 디스플레이 설정 */
+.signBox {
+  display: none;
+}
+.loginAfter {
+  display: block;
+}
+.alarmModal {
+  display: none;
+}
+.userMiniMenu {
+  display: none;
+}
+
+
+.purpleBorderBtn{
+  border-radius: 5px;
+  color: #a554f3;
+  background-color: white;
+  border-color: #a554f3;
+  border-width: 1px;
+}
+
+.sideMenu{
+  width: 500px;
+  height: 841px;
+  border: 1px solid #d9d9d9;
+  
+}
+.sideBtn{
+  width: 350px;
+  height: 40px;
+  margin: 5% auto; 
+  margin-left: 15%;
+}
+.sideBottomBtn{
+  width: 80px;
+  height: 40px;
+  margin-top: 50px;
+  margin-left: 12%;
+}
+.addCategoryBtn{
+  width: 60px;
+  height: 25px;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 10px;
+  position: relative;
+  right: 20px;
+  font-size: 11px;
+}
+#inputBox{
+  width: 240px;
+  height: 30px;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 125px;
+}
+#searchIcon{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 37px;
+  top: 5px;
+}
+#listDiv{
+  width: 500px;
+  height: 600px;
+  overflow: auto;
+}
