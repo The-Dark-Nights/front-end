@@ -34,9 +34,9 @@
   .portBtn{
     width: 37px;
     height: 37px;
-    border-radius: 10px;
+    border-radius: 12px;
     position: relative;
-    top: 5px;
+    top: 6px;
   }
   #bottomBtnDiv{
     /* box-shadow: 10px -10px; */
@@ -59,8 +59,8 @@
   }
   #backgroundDiv{
     background-color: rgb(243, 243, 243);
-    margin-left: 100px;
-    margin-top: 50px;
+    margin-left: -180px;
+    margin-top: -44px;
     width: 1720px;
   }
   #viewDiv{
@@ -104,6 +104,9 @@
     right: 3px;
   }
   /* 모달 창*/
+  #writingModal{
+    display: none;
+  }
   .writingModalBack{
     position: fixed;
     z-index: 1;
