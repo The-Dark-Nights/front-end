@@ -1,0 +1,310 @@
+/* 페이지 보기위한 디스플레이 설정 */
+.signBox {
+    display: none;
+  }
+  .loginAfter {
+    display: block;
+  }
+  /* .alarmModal {
+    display: none;
+  }
+  .userMiniMenu {
+    display: none;
+  } */
+.myPageWrap{
+    width: 110%;
+    height: 100%;
+    margin-bottom: 0px; 
+    display: flex;
+    justify-content: space-between;
+
+}
+  /* 마이페이지 사이드메뉴 */
+.myPageSideMenu{
+    width: 22%;
+    height: 120vh;
+
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.2), 5px 0px 2px rgba(0, 0, 0, 0.02);
+    text-align: center;
+}
+.myPageSideMenu>img{
+    border-radius: 50%;
+    width:100%;
+   margin: 70px 0;
+}
+
+  .myPageFollows{
+    color:  #c6c7cc;
+    font-size: 12px;
+    margin-top: 20px;
+ }
+ .myPageFollows>img{
+     width: 18px;
+     position: relative;
+     top: 4px;
+   
+ }
+ .myPageFollows>span{
+     margin-right: 10px;
+ }
+ .myPageUserInfo{
+    text-align: left;
+    width: 280px;
+    margin: 0 auto;
+ }
+.myPageUserInfo>p{
+  color:  #656d76;
+  font-size: 20px;
+}
+.editBtn{
+    width: 280px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+/* 마이페이지 컨텐츠 */
+.myPageContents{
+    width: 70%;
+    margin-left: 40px;
+   
+}
+.userStatistics{
+    box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.userStatistics>img{
+    width:400px;
+  
+}
+.userStatisticsTable{
+ position: relative;
+
+}
+.userStatisticsTable>thead>tr{
+    border-bottom: 1px solid black;
+}
+/* 포스트리스트 */
+.postLsitBox{
+   
+    margin-bottom: 40px;
+
+}
+.postListNav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    width: 100%;
+  }
+  .postListNav > div > p {
+    font-weight: bold;
+  }
+  .postListNav > div > hr {
+    width: 150px;
+    border: 2px solid black;
+    margin-top: 10px;
+  }
+  .postListNav > div > .seeAllHr {
+    width: 100px;
+  }
+  /* 포스트슬라이드 */
+  .postSlide {
+    margin-top: 40px;
+    overflow: hidden;
+  }
+  .postList {
+    /* width: 2000px; */
+  
+    overflow: hidden;
+    display: flex;
+  }
+  /* 로드맵카드 */
+  .postCard {
+    width: 300px;
+    height: 400px;
+    box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
+    margin-bottom: 10px;
+    margin-right: 5%;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  .postImg > img {
+    width: 200px;
+  }
+  .postContents {
+    margin-top: 10px;
+  }
+  .postContents > h3 {
+    margin-bottom: 20px;
+  }
+  .postContents > p {
+    margin-bottom: 10px;
+  }
+  
+  .postComment {
+    display: flex;
+    margin-top: 15px;
+  }
+  .postComment img {
+    width: 20px;
+    margin-right: 5px;
+  }
+  .postComment > div {
+    display: flex;
+    margin-right: 10px;
+  }
+  .postComment > .userName {
+    width: 100px;
+    overflow: hidden;
+  }
+  .postCommentBox > div {
+    display: flex;
+  }
+  .postCommentBox {
+    margin-left: 80px;
+  }
+  /* 팔로우 리스트 페이지 */
+  .follow{
+    width: 80%;
+  }
+  .filter {
+    color: #c6c7cc;
+  }
+  .filterBox {
+    display: flex;
+    width: 270px;
+    margin-top: 50px;
+  }
+  
+  .filterBox > p {
+    margin-right: 30px;
+    margin-bottom: 10px;
+  }
+  .filterBox > p:first-child {
+    margin-left: 20px;
+  }
+.filter>hr{
+  width: 27%;
+
+  
+}
+.followList{
+  margin-top: 100px;
+}
+.followList>li{
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 20px 0;
+  align-items: center;
+}
+.followList>li>div{
+  display: flex;
+  margin-left: 20px;
+
+}
+  .followList>li>div>img{
+  width: 70px;
+  border-radius: 50%;
+  margin-right: 50px;
+}
+.user{
+  display: flex;
+  align-items: baseline;
+}
+.user>p{
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 50px;
+
+}
+.user>span{
+  color: #c6c7cc;
+  font-size: 15px;
+}
+.userGroup{
+  font-size: 15px;
+  color: #c6c7cc;
+  margin-top: 17px;
+  /* margin-left: 20px; */
+}
+.unfollowBtnBox{
+  margin-right: 100px;
+}
+.unfollowBtnBox>button{
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+/* 마이페이지 수정 모달 */
+.myPageModalBack{
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* display: none; */
+}
+.myPageModalContent{
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 0px;
+  border: 1px solid #888;
+  width: 15%;
+  height: 30%;
+  border-radius: 30px;
+  z-index: 4;
+  position: absolute;
+  top: 32%;
+  left: 47%;
+  padding: 15px;
+}
+.myPageModalContent>p{
+  font-weight: bold;
+  margin: 10px;
+}
+.myPageModalContent input{
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid #656d76;
+  width: 100%;
+  height: 30px;
+  font-size: 12px;
+ }
+.pronouns{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+
+}
+.pronouns>img{
+  width: 20px;
+  margin-right: 20px;
+}
+.myPageModalBtnBox{
+text-align: center;
+margin-top: 20px;
+}
+.myPageModalBtnBox>button{
+  margin:0 10px;
+}
+.saveBtn{
+  width: 60px;
+  height:25px;
+}
+.closeBtn{
+  width: 60px;
+  height:25px;
+  border-radius: 10px;
+  
+}

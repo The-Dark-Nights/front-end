@@ -1,5 +1,6 @@
 function AlarmList(){
 return(
+  // map
     <li className="alarmList">
                 <div>
                   <p>???가 html 카테고리에 글을 올렸습니다</p>

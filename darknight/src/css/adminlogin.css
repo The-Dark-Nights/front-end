@@ -1,0 +1,24 @@
+/* 페이지 보기위한 디스플레이 설정 */
+.signBox {
+    display: none;
+  }
+  .loginAfter {
+    display: block;
+  }
+  .alarmModal {
+    display: none;
+  }
+  .userMiniMenu {
+    display: none;
+  }
+
+
+  /* 관리자페이지로그인 */
+.adminLoginBox{
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+    text-align: center;
+    width: 600px;
+    height: 500px;
+    margin: 200px auto;
+}

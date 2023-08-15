@@ -5,6 +5,7 @@ function AlarmBell(){
   const [click,setClick]=useState(false);
     const bollenClick=()=>{
         setClick(!click)
+        console.log(1)
     }
     return(
         <div className="alarmBell">
@@ -12,8 +13,8 @@ function AlarmBell(){
           <img src="img/bell.png" alt="" />
           <p>12</p>
         </div>
-        {click?
-        <div className="alarmModal">
+   
+        <div className={click?"alarmModal block":"alaralarmModal none"}>
           <div className="alarmModalTitle">
             <p>Alarm</p>
             <img src="/img/setting.png" alt="" />
@@ -24,7 +25,7 @@ function AlarmBell(){
             <AlarmList/>
             </ul>
           </div>
-        </div>:<></>}
+        </div>
       </div>
     )
 }
