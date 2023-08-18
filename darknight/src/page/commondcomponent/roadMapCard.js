@@ -11,7 +11,7 @@ function RoadMapCard() {
       </div>
 
       <div className="roadMapImg">
-        <img src="/img/logo.png" alt="" />
+        <img src="/img/reactflow.png" alt="" />
         <hr />
       </div>
 

@@ -65,6 +65,7 @@ a {
   margin-bottom: 10px;
   font-size: 18px;
 }
+
 /* .menuBoxTitle > li {
   margin-right: 5rem;
   font-size: 18px;
@@ -74,14 +75,16 @@ a {
   margin-right: 5rem;
   font-size: 18px;
   color: #c6c7cc;
+  display: flex;
 }
 .change{
   color:#a554f3;
  
 }
-.menuBoxTitle > li > img {
-  width: 10px;
-  margin-right: 10px;
+.menuBoxTitle>a > li > img {
+  width: 26px;
+  margin-right: 7px;
+ 
 }
 .signBox {
   margin-top: 2rem;
@@ -191,9 +194,13 @@ a {
   border: 1px solid #d9d9d9;
   border-radius: 15px;
   z-index: 2;
+  overflow: hidden;
 }
-.userMiniMenu > ul > li {
+.userMiniMenu > ul >a> li {
   margin: 10px;
+}
+.select{
+background-color: gray;
 }
 /* 온클릭이벤트 */
 .block{

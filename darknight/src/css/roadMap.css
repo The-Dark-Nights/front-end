@@ -57,7 +57,17 @@
     height: 30px;
   }
 /* 로드맵슬라이드 */
-
+.roadMapListWrap{
+  display: flex;
+    flex-wrap: wrap;
+  width: auto;
+}
+.roadMapListWrap > li:first-child {
+  margin-left: 0;
+}
+.roadMapListWrap > li:nth-child(4n + 0) {
+  margin-left: 0;
+}
 .roadMapList {
     display: flex;
     flex-wrap: wrap;
@@ -100,5 +110,5 @@
 }
 .roadMapComment > div {
   display: flex;
-  m
+  
 }

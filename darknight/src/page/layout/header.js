@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "../../css/common.css";
 import LoginAfterIndex from './component/loginAfter/loginAfterIndex';
 import LoginBefore from './component/loginBefore/loginBefore';
-
+import {Link,NavLink} from 'react-router-dom'
 
 function Header({children}) {
   const [over,setOver]=useState(false);
@@ -26,9 +26,9 @@ function Header({children}) {
     <>
       <div className="header">
         {/* <!-- 로고 --> */}
-        <div className="logo">
+        <Link to='/'><div className="logo">
           <img src="/img/logo.png" alt="" />
-        </div>
+        </div></Link>
         <div className="menuBox">
           {/* <!-- 페이지이름 --> */}
           <div className="pageName ">
@@ -37,14 +37,14 @@ function Header({children}) {
           {/* <!-- 메뉴박스 --> */}
 
           <ul className="menuBoxTitle">
-            <li className={over?'change menuBoxLi':'menuBoxLi'} onMouseOver={mouseOver} onMouseLeave={mouseLeave}>
-              <img src="/img/search.png" alt="" />
+          <Link to="/post">  <li className={over?'change menuBoxLi':'menuBoxLi'} onMouseOver={mouseOver} onMouseLeave={mouseLeave}>
+             <img src="/img/post.png" alt="" />
               Posts
-            </li>
-            <li className={over1?'change menuBoxLi':'menuBoxLi'} onMouseOver={mouseOver1} onMouseLeave={mouseLeave1}>
-              <img src="/img/search.png" alt="" />
+            </li></Link>
+          <Link to="/roadMap"><li className={over1?'change menuBoxLi':'menuBoxLi'} onMouseOver={mouseOver1} onMouseLeave={mouseLeave1}>
+              <img src="/img/road.png" alt="" />
               RoadMap
-            </li>
+            </li></Link>
           </ul>
         </div>
         {/* <!-- 로그인전-> --> */}
