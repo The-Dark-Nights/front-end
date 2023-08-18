@@ -1,16 +1,37 @@
 import "../../css/post.css";
 import "../../css/common.css";
 import PostCard from "../commondcomponent/postCard";
+import { useState } from "react";
 function PostPageIndex() {
+  const [over,setOver]=useState(false);
+  const [over1,setOver1]=useState(false);
+
+  
+  const mouseOver=()=>{
+    setOver(true)
+
+  }
+  const mouseLeave=()=>{
+    setOver(false)
+  }
+  const mouseOver1=()=>{
+    setOver1(true)
+
+  }
+  const mouseLeave1=()=>{
+    setOver1(false)
+  }
+
+
   return (
     <>
       <div class="postContainerTitle">
         <div class="filter">
           <div class="filterBox">
-            <p>recent</p>
-            <p>popular</p>
+            <p onMouseOver={mouseOver} onMouseLeave={mouseLeave} className={over?"change":""}>recent</p>
+            <p onMouseOver={mouseOver1} onMouseLeave={mouseLeave1}  className={over1?"change":""}>popular</p>
             <select>
-              <option value="">weekly</option>
+              <option value="" >weekly</option>
               <option value="">monthly</option>
             </select>
           </div>

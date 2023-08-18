@@ -12,9 +12,9 @@ a {
 /* 전체 페이지 크기설정 */
 
 .mainContainer {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 
 /* Button */
