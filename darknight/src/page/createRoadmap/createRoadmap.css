@@ -1,0 +1,121 @@
+.dndflow {
+    flex-direction: column;
+    display: flex;
+    flex-grow: 1;
+    width: 80vw;
+    height: 80vh;
+    margin-top: -70px;
+  }
+  
+  .dndflow aside {
+    border-right: 1px solid #eee;
+    padding: 15px 10px;
+    font-size: 12px;
+    background: #fcfcfc;
+    height: 80vh;
+    overflow-y: scroll;
+  }
+  ax
+  .dndflow aside .description {
+    margin-bottom: 10px;
+  }
+  
+  .dndflow .dndnode {
+    height: 50px;
+    padding: 4px;
+    border: 1px solid #1a192b;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    font-size: 18px;
+  }
+  
+  .dndflow .dndnode.input {
+    border-color: #0041d0;
+  }
+  
+  .dndflow .dndnode.output {
+    border-color: #ff0072;
+  }
+  
+  .dndflow .reactflow-wrapper {
+    flex-grow: 1;
+    height: 100%;
+  }
+  
+  .dndflow .selectall {
+    margin-top: 10px;
+  }
+  .dndnode{
+    height: 100px;
+  }
+  .dndnode img{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    .dndflow {
+      flex-direction: row;
+    }
+  
+    .dndflow aside {
+      width: 20%;
+      max-width: 250px;
+    }
+  }
+  .adsideMenu{
+    overflow-y: scroll;
+    height: 500px;
+  }
+
+.roadmapBtn{
+    background: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 30px;
+}
+.gradient:before {
+    content: '';
+    position: absolute;
+    padding-bottom: calc(100% * 1.41421356237);
+    width: calc(100% * 1.41421356237);
+    background: conic-gradient(
+      from -160deg at 50% 50%,
+      #e92a67 0deg,
+      #a853ba 120deg,
+      #2a8af6 240deg,
+      #e92a67 360deg
+    );
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+  }
+  .react-flow__node img{
+    width: 10px;
+    height: 10px;
+  }
+.react-flow__node::before{
+    content: '';
+    background: conic-gradient(
+        from -160deg at 50% 50%,
+        #e92a67 0deg,
+        #a853ba 120deg,
+        #2a8af6 240deg,
+        rgba(42, 138, 246, 0) 360deg
+      );
+    animation: spinner 4s linear infinite;
+    transform: translate(-50%, -50%) rotate(0deg);
+    z-index: -1;
+}
+@keyframes spinner {
+    100% {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
