@@ -3,6 +3,8 @@ import "../../css/common.css";
 import { useEffect, useState } from "react";
 import FollowLi from "./component/followList/followLi";
 import PostCard from "../commondcomponent/postCard";
+import EditModal from "./component/editModal/editModal";
+
 
 function MyPageIndex() {
   // 컨텐츠 메뉴 바꿈
@@ -29,24 +31,14 @@ function MyPageIndex() {
   const mouseLeave1 = () => {
     setOver1(false);
   };
-  // 모달창 설정
-  const [phone, setPhone] = useState("");
-  const [addr, setAddr] = useState("");
-  const phoneChange = (e) => {
-    setPhone(e.target.value);
-  };
-  const addrChange = (e) => {
-    setAddr(e.target.value);
-  };
-  const [modal, setModal] = useState(false);
-  const [edit, setEdit] = useState(false);
 
+
+  const [edit, setEdit] = useState(false);
+  
   const profileEdit = () => {
     setEdit(!edit);
   };
-  const profileModal = () => {
-    setEdit(!edit)
-  };
+
   return (
     <>
       <div className="myPageWrap">
@@ -225,38 +217,7 @@ function MyPageIndex() {
             </div>
           </div>
         </div>
-        {/* <!-- 마이페이지 수정 모달 --> */}
-        <div className={edit ? "myPageModal" : "none"}>
-          <div
-            className={modal ? "none" : "myPageModalBack"}
-            onClick={profileModal}
-          ></div>
-          <div className={modal ? "none" : "myPageModalContent"}>
-            <p>Name</p>
-            <input type="text" placeholder="Jeon,Tae Hyeon" />
-            <p>Pronouns</p>
-            <div className="pronouns">
-              <img src="/img/phone.png" alt="" />
-              <input
-                type="text"
-                placeholder="010-22-222"
-                onChange={phoneChange}
-              />
-            </div>
-            <div className="pronouns">
-              <img src="/img/building.png" alt="" />
-              <input
-                type="text"
-                placeholder="서울시 송파구"
-                onChange={addrChange}
-              />
-            </div>
-            <div className="myPageModalBtnBox">
-              <button className="purpleBtn saveBtn">save</button>
-              <button className="greyBtn closeBtn">close</button>
-            </div>
-          </div>
-        </div>
+                <EditModal edit={edit} setEdi={setEdit}/>
       </div>
     </>
   );

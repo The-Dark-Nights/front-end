@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+
 function UserMiniMenu(){
     const minuMenuList=[
       {type:'profile',
@@ -21,10 +22,10 @@ function UserMiniMenu(){
       setSelect(type)
     }
     return(
-<div className="userMiniMenu">
+<div className={select?"userMiniMenu none":"userMiniMenu"} >
           <ul>
             {minuMenuList.map((list)=>(
-              <Link to={list.link}><li className={`${select==list.type?'select':''} `}  onMouseOver={overLi}>{list.title}</li><hr></hr></Link>
+              <Link to={list.link}><li className={`${select==list.type?'select':''} `}  onClick={overLi}>{list.title}</li><hr></hr></Link>
             ))}
           </ul>
         </div>

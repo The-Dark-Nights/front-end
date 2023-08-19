@@ -24,7 +24,7 @@
 .userInfo{
     display: flex;
     position: relative;
-    right: -60%;
+    margin-left: 68%;
     margin-top: 30px;
 }
 .imgBox>img{
@@ -56,12 +56,12 @@
 }
 .userName{
     font-size: 27px;
-    font-weight: bold;
+    font-weight: bold;  cursor: pointer;
 }
 .userFollows{
    color:  #c6c7cc;
    font-size: 12px;
-   margin-top: 30px;
+   margin-top: 15px;  cursor: pointer;
 }
 .userFollows>img{
     width: 18px;
@@ -93,6 +93,8 @@
     top: 116px;
     right: 0px;
     z-index: 5;
+    background-color: white;
+    transition: all 1s;
    
 }
 .sideMenuTitle{
@@ -102,7 +104,11 @@
     width: 100px;
     height: 30px;
    margin-bottom: 20px;
+   cursor: pointer;
 }
+.bigfollowBtn>.greenColor{
+    background-color: #1bb51b;
+  }
 .bigfollowBtn>div{
     width: 10px;
     height: 10px;
@@ -121,13 +127,22 @@
 .filterBox {
     display: flex;
     width: 270px;
-    border-bottom: 2px solid black;
+    margin: 0 auto;
     margin-top: 30px;
   }
   
   .filterBox > p {
     margin-right: 30px;
     margin-bottom: 10px;
+    color: #868E96;
+    cursor: pointer;
+  }
+  .filterBox>.clickP{
+    color: black;
+    font-weight: bold;
+
+    border-bottom: 3px solid black;
+    
   }
   .filterBox > p:first-child {
     margin-left: 10px;
@@ -168,7 +183,7 @@ font-size: 13px;
 .miniPostComment>img{
     width: 12px;
     margin-left: 20px;
-    
+    margin-right: 3px;
 }
 .miniPostComment>.heartIcon{
     width: 17px;
@@ -197,6 +212,7 @@ font-size: 13px;
 .roadMapDetailContents>img{
     width: 80%;
     margin-top: 100px;
+    z-index: -10;
 }
 
 .roadMapDetailContents>form>textarea{
@@ -238,7 +254,7 @@ top: 20px;
 .commentUserDetailBox{    
     position: absolute;
  
-    left: 500px;
+    left: 470px;
     z-index: 5;
     width: 106px;
     height: 90px;

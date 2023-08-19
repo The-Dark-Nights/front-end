@@ -60,7 +60,9 @@ function Flow() {
 
       const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
       const type = event.dataTransfer.getData("application/reactflow");
-
+      const name = event.dataTransfer.getData("application/reactflow");
+      const url = event.dataTransfer.getData("application/reactflow/url");
+     
       // check if the dropped element is valid
       if (typeof type === "undefined" || !type) {
         return;
@@ -73,8 +75,10 @@ function Flow() {
       const newNode = {
         id: getId(),
         type,
+        name,
+        url,
         position,
-        data: { label: (<div>{type}<img src="" ></img></div>) },
+        data: { label: (<div>{name}<img src={url} /></div>) },
       };
 
       setNodes((nds) => nds.concat(newNode));
@@ -169,7 +173,7 @@ function Flow() {
                 </button>
                 <DownloadButton />
               </Panel>
-              <Controls showInteractive={false} />
+              <Controls showInteractive={false} showZoom={false} />
               <MiniMap />
               {/* <Background variant="dots" gap={12} size={1} /> */}
               <Background id="1" gap={10} color="#f1f1f1" variant="lines" />
