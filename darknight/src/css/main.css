@@ -63,6 +63,12 @@
   display: flex;
   margin-right: 10px;
 }
+.roadMapImg{
+  text-align: center;
+}
+.roadMapImg>img{
+  width: 290px;
+}
 /* 포스트리스트 */
 
 .postListNav {
@@ -91,6 +97,7 @@
 
   overflow: hidden;
   display: flex;
+  flex-wrap: nowrap;
 }
 /* 로드맵카드 */
 .postCard {

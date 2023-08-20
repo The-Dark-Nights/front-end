@@ -1,8 +1,10 @@
-import "../../css/post.css";
+import "../../css/roadMap.css";
 import "../../css/common.css";
 import PostCard from "../commondcomponent/postCard";
 import { useState } from "react";
-function PostPageIndex() {
+import RoadMapCard from "../commondcomponent/roadMapCard";
+import { useNavigate } from "react-router-dom";
+function RoadMapPageIndex() {
   const [over,setOver]=useState(false);
   const [over1,setOver1]=useState(false);
 
@@ -22,7 +24,8 @@ function PostPageIndex() {
     setOver1(false)
   }
 
-
+  const navigate=useNavigate();
+  const clickWrite=()=>{navigate('/createRoadmap')}
   return (
     <>
       <div class="postContainerTitle">
@@ -37,25 +40,24 @@ function PostPageIndex() {
           </div>
           <hr />
         </div>
-        <h1>Post</h1>
-        <button class="purpleBtn writeBtn">Write</button>
+        <h1>RoadMap</h1>
+        <button class="purpleBtn writeBtn" onClick={clickWrite}>Write</button>
       </div>
       <div class="postListBox">
             {/* <!-- 포스트라이드 --> */}
             <div class="postSlide">
-              <ul class="postListWrap">
+              <ul class=" roadMapListWrap">
                 {/* <!-- 포스트카드 --> */}
-              <PostCard/>
-              <PostCard/>
-              <PostCard/>
-              <PostCard/>
-              <PostCard/>
-              <PostCard/>
-              <PostCard/>
+            <RoadMapCard/>
+            <RoadMapCard/>
+            <RoadMapCard/>
+            <RoadMapCard/>
+            <RoadMapCard/>
+            <RoadMapCard/>
               </ul>
             </div>
           </div>
     </>
   );
 }
-export default PostPageIndex;
+export default RoadMapPageIndex;

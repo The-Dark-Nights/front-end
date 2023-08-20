@@ -6,7 +6,12 @@
     height: 80vh;
     margin-top: -70px;
   }
-  
+  .readFlow{
+    width: 50vw;
+    height: 65vh;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
   .dndflow aside {
     border-right: 1px solid #eee;
     padding: 15px 10px;
@@ -15,7 +20,7 @@
     height: 80vh;
     overflow-y: scroll;
   }
-  ax
+  
   .dndflow aside .description {
     margin-bottom: 10px;
   }

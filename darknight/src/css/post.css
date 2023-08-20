@@ -63,11 +63,16 @@
 .postSlide {
   margin-bottom: 100px;
 }
+.postListWrap{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .postList {
   display: flex;
-  flex-wrap: wrap;
-  /* justify-content: space-around; */
+
 }
 .postList > li:first-child {
   margin-left: 0;
@@ -106,6 +111,7 @@
 }
 .postComment img {
   width: 20px;
+  height: 20px;
   margin-right: 5px;
 }
 .postComment > div {
@@ -115,6 +121,7 @@
 .postComment > .userName {
   width: 100px;
   overflow: hidden;
+  font-size: 13px;
 }
 .postCommentBox > div {
   display: flex;

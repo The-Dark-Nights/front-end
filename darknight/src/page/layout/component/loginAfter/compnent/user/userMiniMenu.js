@@ -1,14 +1,32 @@
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
 function UserMiniMenu(){
+    const minuMenuList=[
+      {type:'profile',
+      title:'My Profile',
+    link:'/mypage'},
+      {type:'drafts',
+      title:'Drafts',
+      link:'/mypage'},
+      {type:'liked',
+      title:'Liked',
+      link:'/mypage'},
+      {type:'logout',
+      title:'Logout',
+      link:'/mypage'},
+    ];
+    const [select,setSelect]=useState('')
+    const overLi=(type)=>{
+      console.log(1)
+      setSelect(type)
+    }
     return(
-<div className="userMiniMenu">
+<div className={select?"userMiniMenu none":"userMiniMenu"} >
           <ul>
-            <li>My Profile</li>
-            <hr />
-            <li>Drafts</li>
-            <hr />
-            <li>Liked</li>
-            <hr />
-            <li>Logout</li>
+            {minuMenuList.map((list)=>(
+              <Link to={list.link}><li className={`${select==list.type?'select':''} `}  onClick={overLi}>{list.title}</li><hr></hr></Link>
+            ))}
           </ul>
         </div>
         )
