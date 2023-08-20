@@ -54,7 +54,7 @@ function Header({children}) {
 
     
       </div>
-      <div className="mainContainer contents">{children}</div>
+      <div className="mainContainer contents crateRoadMapContent">{children}</div>
     </>
   );
 }
