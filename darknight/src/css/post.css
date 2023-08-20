@@ -19,7 +19,7 @@
   flex-wrap: wrap;
   align-content: center;
   align-items: baseline;
-  /* justify-content: center; */
+  justify-content: center;
 }
 .postContainerTitle > h1 {
   margin-left: 28%;
@@ -61,11 +61,18 @@
 
 /* 포스트슬라이드 */
 .postSlide {
+  margin-bottom: 100px;
 }
-.postList {
+.postListWrap{
+
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
+  justify-content: center;
+}
+
+.postList {
+  display: flex;
+
 }
 .postList > li:first-child {
   margin-left: 0;
@@ -104,6 +111,7 @@
 }
 .postComment img {
   width: 20px;
+  height: 20px;
   margin-right: 5px;
 }
 .postComment > div {
@@ -113,6 +121,7 @@
 .postComment > .userName {
   width: 100px;
   overflow: hidden;
+  font-size: 13px;
 }
 .postCommentBox > div {
   display: flex;

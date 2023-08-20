@@ -16,12 +16,12 @@
     height: 100%;
     margin-bottom: 0px; 
     display: flex;
-    justify-content: space-between;
+ 
 
 }
   /* 마이페이지 사이드메뉴 */
 .myPageSideMenu{
-    width: 22%;
+    width: 17%;
     height: 120vh;
 
     box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.2), 5px 0px 2px rgba(0, 0, 0, 0.02);
@@ -57,7 +57,7 @@
   font-size: 20px;
 }
 .editBtn{
-    width: 280px;
+    width: 210px;
     height: 40px;
     font-size: 20px;
     text-align: center;
@@ -67,7 +67,7 @@
 /* 마이페이지 컨텐츠 */
 .myPageContents{
     width: 70%;
-    margin-left: 40px;
+    margin-left: 100px;
    
 }
 .userStatistics{
@@ -78,7 +78,7 @@
     align-items: center;
 }
 .userStatistics>img{
-    width:400px;
+    width:300px;
   
 }
 .userStatisticsTable{
@@ -264,8 +264,8 @@
   height: 30%;
   border-radius: 30px;
   z-index: 4;
-  position: absolute;
-  top: 32%;
+  position: fixed;
+  top: 40%;
   left: 47%;
   padding: 15px;
 }
