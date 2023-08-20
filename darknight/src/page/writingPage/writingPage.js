@@ -1,8 +1,23 @@
 import { useEffect, useState } from "react";
 import "../../css/common.css";
 import "../../css/writingPage.css";
+import Markdown from "./components/markdown";
+
+
 
 function WritingPage() {
+
+        // const realUpload = document.querySelector('.realUpload');
+        // const imgUpload = document.querySelector('.imgUpload');
+
+        // imgUpload.addEventListener('click', () => realUpload.click());
+
+
+
+
+
+
+
 
     const modalOkClick = () => {
         const modal = document.getElementById('writingModal');
@@ -13,16 +28,15 @@ function WritingPage() {
         modal.style.display='block';
 
     };
+    
 
     return(
         <>
             <div id="backgroundDiv">
-                <div id="writingDiv">
-                    <div id="viewDiv">
-                        <textarea class="writingArea" placeholder="입력하세요"></textarea>
-                        <textarea class="previewArea" placeholder="미리보기입니다."></textarea>
-                    </div>
-                    
+                <div>
+                    <div id="writingDiv">
+                        <Markdown/>
+                    </div>    
                     <div id="bottomBtnDiv">
                         <button class="outBtn">
                             <img class="outIcon" src="img/left_arrow.png"/>
@@ -36,9 +50,9 @@ function WritingPage() {
                         <button class="purpleBorderBtn saveBtn bottomRight">Draft</button>
                         <button class="purpleBtn saveBtn bottomRight">publish</button>
                     </div>
-
-
                 </div>
+
+                
                 <div id="writingModal">
                     <div class="writingModalBack"></div>
                     <div class="writingModalContent">
@@ -56,6 +70,7 @@ function WritingPage() {
             </div>
         </>
     )
-}
+};
+
 
 export default WritingPage;

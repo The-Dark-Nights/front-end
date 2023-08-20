@@ -38,14 +38,9 @@
     position: relative;
     top: 6px;
   }
-  #bottomBtnDiv{
-    /* box-shadow: 10px -10px; */
-    background-color: white;
-    width: 800px;
-  }
   .bottomRight{
     position: relative;
-    left: 320px;
+    left: 395px;
     margin: 10px;
   }
   .outBtn{
@@ -87,8 +82,10 @@
     resize: none;
   }
   #bottomBtnDiv{
+    background-color: white;
+    width: 1722px;
     position: relative;
-    bottom: 60px;
+    right: 1px;
     box-shadow: 20px -20px 15px -27px grey;
   }
   .buttonImage{
@@ -103,6 +100,39 @@
     top: 2px;
     right: 3px;
   }
+  .markarea{
+    width: 1720px;
+  }
+  .w-md-editor-bar{
+    display: none;
+  }
+  .imgUploadImg{
+    height: 14px;
+    width: 14px;
+    filter: brightness(0);
+  }
+
+  .imgUploadDiv input[type="file"]{
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+  }
+  .imgUploadBtn{
+    height: 20px;
+    width: 21px;
+    
+  }
+  .imgUploadBtn{
+    background-color: rgba(175, 184, 193, 0.2);
+    color: #0969da;
+  }
+  
+
+  
+
   /* 모달 창*/
   #writingModal{
     display: none;
