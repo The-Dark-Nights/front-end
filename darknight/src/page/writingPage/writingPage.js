@@ -1,23 +1,13 @@
-import { useEffect, useState } from "react";
 import "../../css/common.css";
 import "../../css/writingPage.css";
 import Markdown from "./components/markdown";
+import { useNavigate } from "react-router-dom";
 
 
 
 function WritingPage() {
 
-        // const realUpload = document.querySelector('.realUpload');
-        // const imgUpload = document.querySelector('.imgUpload');
-
-        // imgUpload.addEventListener('click', () => realUpload.click());
-
-
-
-
-
-
-
+        
 
     const modalOkClick = () => {
         const modal = document.getElementById('writingModal');
@@ -28,7 +18,8 @@ function WritingPage() {
         modal.style.display='block';
 
     };
-    
+    const navigate=useNavigate();
+    const clickWrite=()=>{navigate('/post')};
 
     return(
         <>
@@ -38,8 +29,8 @@ function WritingPage() {
                         <Markdown/>
                     </div>    
                     <div id="bottomBtnDiv">
-                        <button class="outBtn">
-                            <img class="outIcon" src="img/left_arrow.png"/>
+                        <button class="outBtn" onClick={clickWrite}>
+                            <img class="outIcon" alt="나가기" src="img/left_arrow.png" />
                             나가기</button>
                         <button id="importBtn" class="purpleBtn portBtn bottomRight">
                             <img class="buttonImage" src="img/import.png" alt="다운"/>
@@ -57,7 +48,7 @@ function WritingPage() {
                     <div class="writingModalBack"></div>
                     <div class="writingModalContent">
                         <div class="iconDiv">
-                            <img src="img/completeIcon.png"/>
+                            <img src="img/completeIcon.png" alt="완료"/>
                         </div>
                         
                         <p class="messageDiv">Export Completed!</p>
