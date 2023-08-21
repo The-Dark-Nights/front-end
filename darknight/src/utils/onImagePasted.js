@@ -1,5 +1,5 @@
 import { SetStateAction } from 'react';
-import { fileUpload } from '../../../../../libs/firebase/storage';
+// import { fileUpload } from '../../../../../libs/firebase/storage';
 import insertToTextArea from './insertTotextArea';
 
 const onImagePasted = async (dataTransfer: DataTransfer, setMarkdown: (value: SetStateAction<string | undefined>) => void) => {
@@ -14,8 +14,9 @@ const onImagePasted = async (dataTransfer: DataTransfer, setMarkdown: (value: Se
 
   await Promise.all(
     files.map(async (file) => {
-      const url = await fileUpload(file);
-      // `https://s3.asia-east-north-2.devigation/images/${file.name}`;
+      const url =
+      //  await fileUpload(file);
+      `![image](https://s3.asia-east-north-2.devigation/images/${file.name})`;
       // 주소 값은 서버 받은 이후 수정 필요
       const insertedMarkdown = insertToTextArea(`![${file.name}](${url})`);
       if (!insertedMarkdown) {

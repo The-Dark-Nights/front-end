@@ -1,18 +1,21 @@
 import MDEditor, {commands, ICommand} from '@uiw/react-md-editor';
 import onImagePasted from '../../../utils/onImagePasted';
 import insertToTextArea from '../../../utils/insertTotextArea';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from 'axios';
 
 
 function Markdown(){
     const [md, setMd] = useState('');
-    const [img, setImg] = useState({});
 
     const onChangeHandler = e =>{
         console.log(e.target.files[0]);
         const image = e.target.files[0];
-        const insertedMarkdown = insertToTextArea(`![${image.name}](${image.name})`);
+            if(!image){
+                return;
+            }
+        const insertedMarkdown = insertToTextArea(`![image](https://s3.asia-east-north-2.devigation/images/${image.name})`);
+        
         // 주소 값은 서버 받은 이후 수정 필요
             if (!insertedMarkdown) {
                 return;
@@ -41,7 +44,7 @@ function Markdown(){
                 <button type='button' class="imgUploadBtn" title='upload image'>
                     <div class="imgUploadDiv" >
                         <label for="realUpload">
-                            <img class="imgUploadImg" src="img/localImage.png"/>
+                            <img class="imgUploadImg" src="img/localImage.png" alt='업'/>
                         </label>
                         <form id ="imageForm" onChange={onChangeHandler}>
                             <input type="file" name="inputImg" id="realUpload" accept="image/*"/>
