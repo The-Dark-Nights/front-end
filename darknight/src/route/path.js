@@ -7,6 +7,7 @@ import PostPageIndex from "../page/postPage/postPageIndex";
 import RoadMapDetailIndex from "../page/roadMapDetail/roadMapDetailIndex";
 
 import RoadMapPageIndex from "../page/roadMapPage/roadMapPageIndex";
+import WritingPage from "../page/writingPage/writingPage";
 
 const routes = () => [
   {
@@ -37,6 +38,10 @@ const routes = () => [
   {
     path: "/roadMapDetail",
     element: <RoadMapDetailIndex/>,
+  },
+  {
+    path: "/writing",
+    element: <WritingPage/>,
   },
 ];
 export default routes;
