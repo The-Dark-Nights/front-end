@@ -46,6 +46,7 @@ a {
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
   display: flex;
+  justify-content: space-around;
 }
 .logo > img {
   width: 100px;
@@ -57,7 +58,8 @@ a {
 }
 .menuBox {
   margin-top: 1rem;
-  margin-left: 5rem;
+
+  margin-left: -25%;
 }
 .menuBoxTitle {
   display: flex;
@@ -89,7 +91,7 @@ a {
 .signBox {
   margin-top: 2rem;
 
-  margin-left: 57%;
+
   display: none;
 }
 .signBox > img {
@@ -110,7 +112,7 @@ a {
   /* display: block; */
   margin-top: 2.5rem;
 
-  margin-left: 57%;
+ 
 }
 .loginBox {
   display: flex;
@@ -123,6 +125,7 @@ a {
   width: 100px;
   display: flex;
   margin-left: 50px;
+  position: relative;
 }
 .alarmBellImg > img {
   width: 30px;
@@ -142,7 +145,8 @@ a {
 }
 .alarmModal {
   position: absolute;
-  right: 11%;
+  right: 77%;
+  top: 96%;
   width: 400px;
   background-color: white;
   border: 1px solid #d9d9d9;

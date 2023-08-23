@@ -217,7 +217,7 @@ function MyPageIndex() {
             </div>
           </div>
         </div>
-                <EditModal edit={edit} setEdi={setEdit}/>
+                <EditModal edit={edit} setEdit={setEdit}/>
       </div>
     </>
   );

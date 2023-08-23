@@ -1,10 +1,13 @@
 
-function EditModal(){
+function EditModal({edit,setEdit}){
+  const clickDisplay = () => {
+    setEdit(!edit);
+  };
     return(
         <>
           <div class="myPageModal">
-          <div class="myPageModalBack"></div>
-          <div class="myPageModalContent">
+          <div class={edit?"myPageModalBack":"none"} onClick={clickDisplay}></div>
+          <div class={edit?"myPageModalContent":'none'}>
             <p>Name</p>
             <input type="text" placeholder="Jeon,Tae Hyeon"/>
             <p>Pronouns</p>

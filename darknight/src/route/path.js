@@ -1,3 +1,4 @@
+
 import CreateRoadmap from "../page/createRoadmap/createRoadmapIndex";
 
 import MainPageIndex from "../page/mainPage/MainPageIndex";
@@ -40,8 +41,13 @@ const routes = () => [
     element: <RoadMapDetailIndex/>,
   },
   {
-    path: "/writing",
+    path: "/writingPage",
     element: <WritingPage/>,
   },
+  // {
+  //   path: "/login",
+  //   element: <Login/>,
+  // },
+
 ];
 export default routes;

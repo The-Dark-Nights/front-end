@@ -1,9 +1,9 @@
 /* 페이지 보기위한 디스플레이 설정 */
 .signBox {
-    display: none;
+    display: block;
   }
   .loginAfter {
-    display: block;
+    display: none;
   }
   /* .alarmModal {
     display: none;
@@ -260,8 +260,8 @@
   margin: 0 auto;
   padding: 0px;
   border: 1px solid #888;
-  width: 15%;
-  height: 30%;
+  width: 18%;
+  height: 33%;
   border-radius: 30px;
   z-index: 4;
   position: fixed;
@@ -293,14 +293,16 @@
 }
 .myPageModalBtnBox{
 text-align: center;
-margin-top: 20px;
+margin-top: 32px;
 }
 .myPageModalBtnBox>button{
   margin:0 10px;
 }
-.saveBtn{
+.myPageModalBtnBox>.saveBtn{
   width: 60px;
-  height:25px;
+  height: 25px;
+  border-radius: 10px;
+  position: relative;
 }
 .closeBtn{
   width: 60px;
