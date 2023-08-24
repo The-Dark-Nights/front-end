@@ -4,7 +4,7 @@ import Comment from "../commondcomponent/commnent";
 import {Link} from 'react-router-dom'
 import ReadReactflowWrap from "../commondcomponent/readReactflow";
 import SideMenu from "../commondcomponent/sidemenu/sidemenu";
-
+import style from './roadMapDetail.module.css'
 
 
 function RoadMapDetailIndex() {
@@ -25,21 +25,21 @@ function RoadMapDetailIndex() {
   return (
     <>
       {/* <!-- 로드맵디테일타이틀 시작 --> */}
-      <div className="roadMapDetailTitle">
+      <div className={style.roadMapDetailTitle}>
         <h1>Custom RoadMap Name</h1>
-        <div className="userInfo">
-          <div className="imgBox">
+        <div className={style.userInfo}>
+          <div className={style.imgBox}>
             <img src="/img/user.png" alt="" />
-            <div className="followBtnBox">
-              <button className="whiteBtn followBtn" onClick={clickBtnColor}>
-                <div className={followBtn ? "greenColor" : ""}></div>
+            <div className={style.followBtnBox}>
+              <button className={style.followBtn} onClick={clickBtnColor}>
+                <div className={followBtn ? `${style.greenColor}` : ""}></div>
                 <p>Follow</p>
               </button>
             </div>
           </div>
-          <div className="userInfoBox">
-            <div className="userName" onClick={clickUser}>Code Juggler</div>
-            <div className="userFollows">
+          <div className={style.userInfoBox}>
+            <div className={style.userName} onClick={clickUser}>Code Juggler</div>
+            <div className={style.userFollows}>
               <img src="/img/users.png" alt="" />
               <Link to="/mypage">
               <span>4followers</span>
@@ -47,7 +47,7 @@ function RoadMapDetailIndex() {
               </Link>
             </div>
           </div>
-          <ul className={user ? "userDetailBox" : "none"}>
+          <ul className={user ? `${style.userDetailBox}` : "none"}>
             <li>1:1대화</li>
             <hr />
             <li>쪽지 보내기</li>
@@ -60,7 +60,7 @@ function RoadMapDetailIndex() {
       </div>
      <SideMenu sideOpen={sideOpen}/>
       {/* <!-- 로드맵 컨텐츠 --> */}
-      <div className="roadMapDetailContents">
+      <div className={style.roadMapDetailContents}>
       <ReadReactflowWrap setSideOpen={setSideOpen} sideOpen={sideOpen}/>
         <form>
           <textarea
@@ -71,13 +71,13 @@ function RoadMapDetailIndex() {
             placeholder="Please write a comment..."
           ></textarea>
           <div>
-            <button className="purpleBtn textareaSubmit">Submit</button>
+            <button className={style.textareaSubmit}>Submit</button>
           </div>
         </form>
         <hr />
       </div>
       {/* <!-- 로드맵리뷰 --> */}
-      <div className="roadMapDetailCommnet">
+      <div className={style.roadMapDetailCommnet}>
         <ul>
           <Comment clickReport={clickReport} />
           <ReportModal report={report} setReport={setReport} />

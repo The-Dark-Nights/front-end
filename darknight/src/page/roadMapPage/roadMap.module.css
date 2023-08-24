@@ -55,13 +55,21 @@
   .writeBtn {
     width: 100px;
     height: 30px;
+    border-radius: 10px;
+    color: white;
+    background-color: #a554f3;
+    border: none;
   }
 /* 로드맵슬라이드 */
+.roadMapSlide {
+  margin-top: 5%;
+ }
 .roadMapListWrap{
   display: flex;
     flex-wrap: wrap;
   width: auto;
-  justify-content: center;
+  justify-content:left;
+  margin-left: 10%;
 }
 .roadMapListWrap > li:first-child {
   margin-left: 0;

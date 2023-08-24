@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react"
 import SideMenuCard from "./sidemenuCard";
-
+import style from '../../roadMapDetail/roadMapDetail.module.css'
 function SideMenu({sideOpen}){
     const [follow,setFollow]=useState(false);
     const clickFollow=()=>{
@@ -28,22 +28,22 @@ function SideMenu({sideOpen}){
     return(
         <>
          {/* <!-- 로드맵 사이드메뉴 --> */}
-      <div className={sideOpen?"roadMapDetailSideMenu":"none"}>
-        <div className="sideMenuTitle">
+      <div className={sideOpen?`${style.roadMapDetailSideMenu}`:"none"}>
+        <div className={style.sideMenuTitle}>
           <div>
-            <button className="whiteBtn bigfollowBtn" onClick={clickFollow}>
-              <div className={follow?"greenColor":""}></div>
+            <button className={style.bigfollowBtn} onClick={clickFollow}>
+              <div className={follow?`${style.greenColor}`:""}></div>
               <p>Follow</p>
             </button>
           </div>
           <h2>HTML</h2>
-          <div className="filterBox">
+          <div className={style.filterBox}>
             {titleList.map((list)=>(
-                <p onClick={()=>ClickLi(list.type)} className={`${select===list.type?"clickP":""}`}>{list.title}</p>
+                <p onClick={()=>ClickLi(list.type)} className={`${select===list.type?`${style.clickP}`:""}`}>{list.title}</p>
             ))}
           </div>
         </div>
-        <ul className="miniPostList">
+        <ul className={style.miniPostList}>
         <SideMenuCard/>
         </ul>
       </div>

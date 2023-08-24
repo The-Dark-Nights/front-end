@@ -1,4 +1,4 @@
-import "../../css/roadMap.css";
+import style from "./roadMap.module.css";
 import "../../css/common.css";
 import PostCard from "../commondcomponent/postCard";
 import { useState } from "react";
@@ -28,11 +28,11 @@ function RoadMapPageIndex() {
   const clickWrite=()=>{navigate('/createRoadmap')}
   return (
     <>
-      <div class="postContainerTitle">
-        <div class="filter">
-          <div class="filterBox">
-            <p onMouseOver={mouseOver} onMouseLeave={mouseLeave} className={over?"change":""}>recent</p>
-            <p onMouseOver={mouseOver1} onMouseLeave={mouseLeave1}  className={over1?"change":""}>popular</p>
+      <div className={style.roadMapContainerTitle}>
+        <div className={style.filter}>
+          <div className={style.filterBox}>
+            <p onMouseOver={mouseOver} onMouseLeave={mouseLeave} classNameName={over?"change":""}>recent</p>
+            <p onMouseOver={mouseOver1} onMouseLeave={mouseLeave1}  classNameName={over1?"change":""}>popular</p>
             <select>
               <option value="" >weekly</option>
               <option value="">monthly</option>
@@ -41,12 +41,12 @@ function RoadMapPageIndex() {
           <hr />
         </div>
         <h1>RoadMap</h1>
-        <button class="purpleBtn writeBtn" onClick={clickWrite}>Write</button>
+        <button className={style.writeBtn} onClick={clickWrite}>Write</button>
       </div>
-      <div class="postListBox">
+      <div className={style.postListBox}>
             {/* <!-- 포스트라이드 --> */}
-            <div class="postSlide">
-              <ul class=" roadMapListWrap">
+            <div className={style.roadMapSlide}>
+              <ul className={style.roadMapListWrap}>
                 {/* <!-- 포스트카드 --> */}
             <RoadMapCard/>
             <RoadMapCard/>

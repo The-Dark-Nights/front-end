@@ -1,4 +1,4 @@
-import "../../css/main.css";
+import style from "./main.module.css";
 import "../../css/common.css";
 import PostCard from "../commondcomponent/postCard";
 import RoadMapCard from "../commondcomponent/roadMapCard";
@@ -8,7 +8,7 @@ function MainPageIndex() {
     <>
       <div className="roadMapListBox">
         {/* <!-- 로드맵네비 --> */}
-        <div className="roadMapListNav">
+        <div className={style.roadMapListNav}>
           <div>
             <p>BestRoadMap</p>
             <hr />
@@ -16,13 +16,13 @@ function MainPageIndex() {
           <Link to="/roadMap">
             <div>
               <p>See All</p>
-              <hr className="seeAllHr" />
+              <hr className={style.seeAllHr} />
             </div>
           </Link>
         </div>
         {/* <!-- 로드맵슬라이드 --> */}
-        <div className="roadMapSlide">
-          <ul className="roadMapList">
+        <div className={style.roadMapSlide}>
+          <ul className={style.roadMapList}>
             {/* <!-- 로드맵카드 --> */}
             <RoadMapCard />
             <RoadMapCard />
@@ -35,7 +35,7 @@ function MainPageIndex() {
       {/* <!-- 포스트리스트 --> */}
       <div class="postListBox">
         {/* <!-- 포스트네비 --> */}
-        <div class="postListNav">
+        <div class={style.postListNav}>
           <div>
             <p>Best Post</p>
             <hr />
@@ -43,13 +43,13 @@ function MainPageIndex() {
           <Link to="/post">
             <div>
               <p>See All</p>
-              <hr class="seeAllHr" />
+              <hr class={style.seeAllHr} />
             </div>
           </Link>
         </div>
         {/* <!-- 포스트라이드 --> */}
-        <div class="postSlide">
-          <ul class="postList">
+        <div class={style.postSlide}>
+          <ul class={style.postList}>
             {/* <!-- 포스트카드 --> */}
             <PostCard />
             <PostCard />

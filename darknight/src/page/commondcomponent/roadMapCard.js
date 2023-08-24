@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
-import "../../css/roadMapDetail.css";
+import "../roadMapDetail/roadMapDetail.module.css"
 import "../../css/common.css";
-
+import style from '../mainPage/main.module.css'
 function RoadMapCard() {
   return (
-    <li className="roadMapCard">
+    <li className={style.roadMapCard}>
       <Link to='/roadMapDetail'>
-      <div className="roadMapTitleBox">
+      <div className={style.roadMapTitleBox}>
         <h3>Custorm Roadmap Name</h3>
-        <div className="userInfo">
+        <div className={style.userInfo}>
           <img src="/img/user.png" alt="" />
           <p>Code Juggler</p>
         </div>
         <hr />
       </div>
 
-      <div className="roadMapImg">
+      <div className={style.roadMapImg}>
         <img src="/img/reactflow.png" alt="" />
         <hr />
       </div>
 
-      <div className="roadMapComment">
+      <div className={style.roadMapComment}>
         <div>
           <img src="/img/comment.png" alt="" />
           <p>11</p>
