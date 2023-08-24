@@ -129,7 +129,14 @@
     background-color: rgba(175, 184, 193, 0.2);
     color: #0969da;
   }
-  
+  .importDiv input[type="file"]{
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+  }
 
   
 

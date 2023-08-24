@@ -4,12 +4,10 @@ import insertToTextArea from '../../../utils/insertTotextArea';
 import { useState } from "react";
 import axios from 'axios';
 
+function Markdown({md,setMd}){
 
-function Markdown(){
-    const [md, setMd] = useState('');
-
-    const onChangeHandler = e =>{
-        console.log(e.target.files[0]);
+    
+    const onChangeHandler = e =>{      
         const image = e.target.files[0];
             if(!image){
                 return;
@@ -21,7 +19,9 @@ function Markdown(){
                 return;
             }
             setMd(insertedMarkdown);
+            e.target.value=null;
 
+                
         // const formData = new FormData();
         // /* append 앞 첫 문자열이 키 */
         // formData.append("image", image);
@@ -80,7 +80,6 @@ function Markdown(){
                                                     commands.italic,
                                                     commands.strikethrough,
                                                     commands.hr,
-                                                    commands.title,
                                                     commands.divider,
                                                     commands.link,
                                                     commands.quote,
@@ -99,7 +98,8 @@ function Markdown(){
                                                         await onImagePasted(event.clipboardData, setMd);
                                                     }}
                                                     onDrop={async (event) => {
-                                                        await onImagePasted(event.dataTransfer, setMd);}}
+                                                        await onImagePasted(event.dataTransfer, setMd);
+                                                    }}
                                     />     
                             </div>
                         </div>
