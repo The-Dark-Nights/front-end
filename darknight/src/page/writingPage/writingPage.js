@@ -1,5 +1,5 @@
-import "../../css/common.css";
-import "../../css/writingPage.css";
+import  "../../css/common.css";
+import style from "./writingPage.module.css";
 import Markdown from "./components/markdown";
 import { useNavigate } from "react-router-dom";
 
@@ -23,38 +23,38 @@ function WritingPage() {
 
     return(
         <>
-            <div id="backgroundDiv">
+            <div id="backgroundDiv" className={style.backgroundDiv}>
                 <div>
-                    <div id="writingDiv">
+                    <div id="writingDiv" className={style.writingDiv}>
                         <Markdown/>
                     </div>    
-                    <div id="bottomBtnDiv">
-                        <button class="outBtn" onClick={clickWrite}>
-                            <img class="outIcon" alt="나가기" src="img/left_arrow.png" />
+                    <div id="bottomBtnDiv" className={style.bottonBtnDiv}>
+                        <button className={style.outBtn} onClick={clickWrite}>
+                            <img className={style.outIcon} alt="나가기" src="img/left_arrow.png" />
                             나가기</button>
-                        <button id="importBtn" class="purpleBtn portBtn bottomRight">
-                            <img class="buttonImage" src="img/import.png" alt="다운"/>
+                        <button id="importBtn" className={style.downBtn}>
+                            <img className={style.buttonImage} src="img/import.png" alt="다운"/>
                         </button>
-                        <button id="exportBtn" class="purpleBtn portBtn bottomRight" onClick={exportOnClick}>
-                            <img class="buttonImage" src="img/export.png" alt="업"/>
+                        <button id="exportBtn" className={style.downBtn} onClick={exportOnClick}>
+                            <img className={style.imgUploadImg} src="img/export.png" alt="업"/>
                         </button>
-                        <button class="purpleBorderBtn saveBtn bottomRight">Draft</button>
-                        <button class="purpleBtn saveBtn bottomRight">publish</button>
+                        <button className={style.purpleBorderBtn}>Draft</button>
+                        <button className={style.down}>publish</button>
                     </div>
                 </div>
 
                 
-                <div id="writingModal">
-                    <div class="writingModalBack"></div>
-                    <div class="writingModalContent">
-                        <div class="iconDiv">
+                <div id="writingModal" className={style.writingModal}>
+                    <div className={style.writingModalBack}></div>
+                    <div className={style.writingModalContent}>
+                        <div className={style.iconDiv}>
                             <img src="img/completeIcon.png" alt="완료"/>
                         </div>
                         
-                        <p class="messageDiv">Export Completed!</p>
+                        <p className={style.messageDiv}>Export Completed!</p>
                         
-                    <div class="writingModalBtnBox">
-                        <button class="purpleBtn okBtn" onClick={modalOkClick}>OK</button>
+                    <div className={style.writingModalBtnBox}>
+                        <button className="purpleBtn okBtn" onClick={modalOkClick}>OK</button>
                     </div>
                     </div>
                 </div>

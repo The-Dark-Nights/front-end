@@ -15,7 +15,7 @@ import ReactFlow, {
 } from "reactflow";
 import "reactflow/dist/style.css";
 
-import "../createRoadmap/createRoadmap.css";
+import style from "../createRoadmap/createRoadmap.module.css";
 
 const initialEdges = [{ id: "e1-2", source: "1", target: "2" }];
 
@@ -54,9 +54,9 @@ function ReadReactFlow({setSideOpen,sideOpen}) {
 
   return (
     <>
-      <div className="dndflow readFlow">
+      <div className={style.dndflow}>
         <ReactFlowProvider>
-          <div className="reactflow-wrapper" ref={reactFlowWrapper}>
+          <div className={style.reactflowWrapper} ref={reactFlowWrapper}>
             <ReactFlow
               nodes={nodes}
               edges={edges}

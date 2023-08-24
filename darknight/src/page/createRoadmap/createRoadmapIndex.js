@@ -14,8 +14,8 @@ import ReactFlow, {
   getConnectedEdges,
 } from "reactflow";
 import "reactflow/dist/style.css";
-import axios from 'axios'
-import "./createRoadmap.css";
+
+import style from "./createRoadmap.module.css";
 import DownloadButton from "./component/downloadBtn";
 import Sidebar from "./component/sidebar";
 import { saveApi } from "../../apis/saveApi";
@@ -24,15 +24,17 @@ const flowKey = "example-flow";
 const getNodeId = () => `randomnode_${+new Date()}`;
 
 const initialNodes = [
-  {
-    id: "1",
-    data: { label: "Node 1" },
-    position: { x: 100, y: 100 },
-    draggable: "false",
-  },
-  { id: "2", data: { label: "Node 2" }, position: { x: 100, y: 200 } },
+  // {
+  //   id: "1",
+  //   data: { label: "Node 1" },
+  //   position: { x: 100, y: 100 },
+  //   draggable: "false",
+  // },
+  // { id: "2", data: { label: "Node 2" }, position: { x: 100, y: 200 } },
 ];
-const initialEdges = [{ id: "e1-2", source: "1", target: "2" }];
+const initialEdges = [
+  // { id: "e1-2", source: "1", target: "2" }
+];
 
 let id = 0;
 const getId = () => `dndnode_${id++}`;
@@ -78,7 +80,7 @@ function Flow() {
         name,
         url,
         position,
-        data: { label: (<div>{name}<img src={url} /></div>) },
+        data: { label: (<div>{name}<img src={url} style={{width:"12px",height:"12px",marginLeft:"3px",position:"relative",top:"2px"}}/></div>) },
       };
 
       setNodes((nds) => nds.concat(newNode));
@@ -152,9 +154,9 @@ function Flow() {
 
   return (
     <>
-      <div className="dndflow">
+      <div className={style.dndflow}>
         <ReactFlowProvider>
-          <div className="reactflow-wrapper" ref={reactFlowWrapper}>
+          <div className={style.reactflowWrapper} ref={reactFlowWrapper}>
             <ReactFlow
               nodes={nodes}
               edges={edges}
@@ -168,7 +170,7 @@ function Flow() {
               fitView
             >
               <Panel position="top-right">
-                <button onClick={onSave} className="roadmapBtn">
+                <button onClick={onSave} className={style.roadmapBtn}>
                   save
                 </button>
                 <DownloadButton />

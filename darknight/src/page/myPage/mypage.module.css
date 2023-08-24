@@ -62,6 +62,10 @@
     font-size: 20px;
     text-align: center;
     margin: 50px auto;
+    border-radius: 5px;
+    color: black;
+    background-color: #d9d9d9;
+    border: none;
 }
 
 /* 마이페이지 컨텐츠 */
@@ -242,6 +246,12 @@
   height: 40px;
   border-radius: 20px;
 }
+.greyBtn {
+  border-radius: 5px;
+  color: black;
+  background-color: #d9d9d9;
+  border: none;
+}
 
 /* 마이페이지 수정 모달 */
 .myPageModalBack{
@@ -303,10 +313,17 @@ margin-top: 32px;
   height: 25px;
   border-radius: 10px;
   position: relative;
+  border-radius: 10px;
+  color: white;
+  background-color: #a554f3;
+  border: none;
 }
 .closeBtn{
   width: 60px;
   height:25px;
   border-radius: 10px;
-  
+  border-radius: 5px;
+  color: black;
+  background-color: #d9d9d9;
+  border: none;
 }

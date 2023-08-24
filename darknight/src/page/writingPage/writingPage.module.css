@@ -18,12 +18,34 @@
     border: none;
     resize: none;
   } */
+  .downBtn{
+    border-radius: 10px;
+    color: white;
+    background-color: #a554f3;
+    border: none;
+    width: 37px;
+    height: 37px;
+    border-radius: 12px;
+    position: relative;
+    top: 6px;
+    position: relative;
+    left: 395px;
+    margin: 10px;
+  }
+ 
   .purpleBorderBtn{
     border-radius: 5px;
     color: #a554f3;
     background-color: white;
     border-color: #a554f3;
     border-width: 1px;
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    position: relative;
+    position: relative;
+    left: 395px;
+    margin: 10px;
   }
   .saveBtn{
     width: 100px;
@@ -52,17 +74,18 @@
     left: 10px;
     background-color: white;
   }
-  #backgroundDiv{
+  .backgroundDiv{
     background-color: rgb(243, 243, 243);
     margin-left: -90px;
-    margin-top: -44px;
+    margin-top: 30px;
+    margin-bottom: 50px;
     width: 1720px;
   }
   #viewDiv{
     display: flex;
   }
   
-  #writingDiv{
+  .writingDiv{
     width: 1720px;
     height: 690px;
   }
@@ -81,7 +104,7 @@
     border: none;
     resize: none;
   }
-  #bottomBtnDiv{
+  .bottomBtnDiv{
     background-color: white;
     width: 1722px;
     position: relative;
@@ -107,9 +130,9 @@
     display: none;
   }
   .imgUploadImg{
-    height: 14px;
-    width: 14px;
-    filter: brightness(0);
+    width: 23px;
+    height: 23px;
+    filter: brightness(100);
   }
 
   .imgUploadDiv input[type="file"]{
@@ -134,7 +157,7 @@
   
 
   /* 모달 창*/
-  #writingModal{
+  .writingModal{
     display: none;
   }
   .writingModalBack{
@@ -194,4 +217,8 @@
   .okBtn{
     width: 60px;
     height:25px;
+    border-radius: 10px;
+    color: white;
+    background-color: #a554f3;
+    border: none;
   }

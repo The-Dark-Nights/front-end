@@ -1,4 +1,4 @@
-import "../../css/post.css";
+import style from "./post.module.css";
 import "../../css/common.css";
 import PostCard from "../commondcomponent/postCard";
 import { useState } from "react";
@@ -28,9 +28,9 @@ function PostPageIndex() {
 
   return (
     <>
-      <div class="postContainerTitle">
-        <div class="filter">
-          <div class="filterBox">
+      <div className={style.postContainerTitle}>
+        <div className={style.filter}>
+          <div className={style.filterBox}>
             <p onMouseOver={mouseOver} onMouseLeave={mouseLeave} className={over?"change":""}>recent</p>
             <p onMouseOver={mouseOver1} onMouseLeave={mouseLeave1}  className={over1?"change":""}>popular</p>
             <select>
@@ -41,12 +41,12 @@ function PostPageIndex() {
           <hr />
         </div>
         <h1>Post</h1>
-        <button class="purpleBtn writeBtn" onClick={clickWrite}>Write</button>
+        <button className={style.writeBtn} onClick={clickWrite}>Write</button>
       </div>
-      <div class="postListBox">
+      <div className="postListBox">
             {/* <!-- 포스트라이드 --> */}
-            <div class="postSlide">
-              <ul class="postListWrap">
+            <div className={style.postSlide}>
+              <ul className={style.postListWrap}>
                 {/* <!-- 포스트카드 --> */}
               <PostCard/>
               <PostCard/>
