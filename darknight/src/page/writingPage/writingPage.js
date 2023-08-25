@@ -17,19 +17,6 @@ function WritingPage() {
     
 
     
-    const importOnClick = () => {
-        const importBtn = document.getElementById('importMarkdown');
-        importBtn.click();
-    };
-    // const exportOnClick = () => {
-    //     const exportBtn = document.getElementById('test');
-        // exportBtn.click();
-        // console.log('작동', exportBtn.innerHTML);
-        // console.log('작동', exportBtn.innerText);
-        // const content = exportBtn.innerHTML;
-        // exportBtn.innerHTML = content;
-        
-    // };
     
     const importFile = e => {
         
@@ -61,17 +48,14 @@ function WritingPage() {
                     <div className={style.bottomBtnDiv}>
                         <button className={style.outBtn} onClick={clickWrite}>
                             <img className={style.outIcon} alt="나가기" src="img/left_arrow.png" />
-                            나가기</button>
-                        <button className={style.importBtn} title="가져오기" onClick={importOnClick}>
-                            <div className={style.importDiv}>
-                                <label>
-                                    <img className={style.buttonImage} src="img/import.png" alt="다운"/>
-                                </label>
-                                <form>
-                                    <input type="file" name="importMarkdown" id="importMarkdown" onChange={importFile} accept=".md"/>
-                                </form>
-                            </div>
+                            나가기
                         </button>
+                        <label className={style.importLabel} title="가져오기" for="importMarkdown">
+                            <img className={style.buttonImage} src="img/import.png" alt="다운"/>
+                        </label>
+                        <form>
+                            <input type="file" name="importMarkdown" id="importMarkdown" onChange={importFile} accept=".md"/>
+                        </form>
                         <button className={style.draftBtn}>Draft</button>
                         <button className={style.publishBtn}>publish</button>
                     </div>
