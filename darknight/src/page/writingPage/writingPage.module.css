@@ -92,19 +92,15 @@
 
 
   /*마크다운 구역*/
-  .imgUploadBtn{
-    background-color: rgba(175, 184, 193, 0.2);
+  .imgUploadBtn:hover{
     color: #0969da;
-    height: 20px;
-    width: 21px;
   }
-  .imgUploadDiv input[type="file"]{
+  .imgUploadBtn input[type="file"]{
     display: none;
   }
   .imgUploadImg{
     width: 14px;
     height: 14px;
-    filter: brightness(0);
   }
   .markarea{
     width: 1720px;
