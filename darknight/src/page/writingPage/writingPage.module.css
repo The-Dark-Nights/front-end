@@ -32,7 +32,7 @@
     top: 2px;
     right: 3px;
   }
-  .importBtn{
+  .importLabel{
     color: white;
     background-color: #a554f3;
     border: none;
@@ -40,18 +40,22 @@
     height: 37px;
     border-radius: 12px;
     position: relative;
-    top: 5px;
+    top: 2px;
     left: 395px;
     margin: 10px;
   }
+  .bottomBtnDiv{
+    display: flex;
+  }
 
-  .importDiv input[type="file"]{
+  .bottomBtnDiv input[type="file"]{
     display: none;
   }
   .buttonImage{
     width:  23px;
     height: 23px;
     filter: brightness(100);
+    margin: 7px
   }
   .draftBtn{
     border-radius: 5px;
