@@ -1,4 +1,4 @@
-import "../../css/postDetail.css";
+import style from "./postDetail.module.css";
 import "../../css/common.css";
 import ReportModal from "../commondcomponent/reportModal/reportModal";
 import { useState } from "react";
@@ -21,21 +21,21 @@ function PostDetailIndex(){
     return(
         <>
             {/* <!-- 포스트디테일 타이틀 --> */}
-        <div className="postDetailTitle">
+        <div className={style.postDetailTitle}>
         <h1>Custom RoadMap Name</h1>
-        <div className="userInfo">
-          <div className="imgBox">
+        <div className={style.userInfo}>
+          <div className={style.imgBox}>
             <img src="/img/user.png" alt="" />
-            <div className="followBtnBox">
-              <button className="whiteBtn followBtn" onClick={clickBtnColor}>
-                <div className={followBtn?"greenColor":""}></div>
+            <div className={style.followBtnBox}>
+              <button className={style.followBtn }onClick={clickBtnColor}>
+                <div className={followBtn?`${style.greenColor}`:""}></div>
                 <p>Follow</p>
               </button>
             </div>
           </div>
-          <div className="userInfoBox">
-            <div className="userName" onClick={clickUser}>Code Juggler</div>
-            <div className="userFollows">
+          <div className={style.userInfoBox}>
+            <div className={style.userName} onClick={clickUser}>Code Juggler</div>
+            <div className={style.userFollows}>
               <Link to="/mypage">
               <img src="/img/users.png" alt="" />
               <span>4followers</span>
@@ -43,7 +43,7 @@ function PostDetailIndex(){
               </Link>
             </div>
           </div>
-          <ul className={user?"userDetailBox":"none"}>
+          <ul className={user?`${style.userDetailBox}`:"none"}>
             <li>1:1대화</li>
             <hr />
             <li>쪽지 보내기</li>
@@ -53,7 +53,7 @@ function PostDetailIndex(){
         </div>
       </div>
     {/* //   <!-- 포스트디테일 컨텐츠 --> */}
-      <div className="postDetailContents">
+      <div className={style.postDetailContents}>
         <img src="/img/logo.png" alt="" />
         <p>
           JavaScript는 웹 페이지의 보조적인 기능을 수행하기 위해
@@ -83,12 +83,12 @@ function PostDetailIndex(){
           ></textarea>
 
           <div>
-            <button className="purpleBtn textareaSubmit">Submit</button>
+            <button className={style.textareaSubmit}>Submit</button>
           </div>
         </form>
         <hr />
       </div>
-      <div class="postDetailCommnet">
+      <div class={style.postDetailCommnet}>
             <ul>
            
       <Comment clickReport={clickReport}/>

@@ -1,4 +1,4 @@
-import "../../css/mypage.css";
+import style from "./mypage.module.css";
 import "../../css/common.css";
 import { useEffect, useState } from "react";
 import FollowLi from "./component/followList/followLi";
@@ -41,33 +41,33 @@ function MyPageIndex() {
 
   return (
     <>
-      <div className="myPageWrap">
+      <div className={style.myPageWrap}>
         {/* <!--마이페이지 사이드메뉴  --> */}
-        <div className="myPageSideMenu">
+        <div className={style.myPageSideMenu}>
           <img src="/img/user.png" alt="" />
-          <div className="myPageUserInfo">
+          <div className={style.myPageUserInfo}>
             <h1>Jeon,Tae Hyeon</h1>
             <p>Code Magician</p>
-            <div className="myPageFollows" onClick={onClickFollow}>
+            <div className={style.myPageFollows} onClick={onClickFollow}>
               <img src="/img/users.png" alt="" />
               <span>4followers</span>
               <span>4followings</span>
             </div>
           </div>
           <div>
-            <button className="greyBtn editBtn" onClick={profileEdit}>
+            <button className={style.editBtn} onClick={profileEdit}>
               Edit Profile
             </button>
           </div>
         </div>
         {/* <!-- 마이페이지 컨텐츠 --> */}
-        <div className="myPageContents">
-          <div className={block ? "statistics none" : "statistics block"}>
-            <div className="userStatistics">
+        <div className={style.myPageContents}>
+          <div className={block ? "none" : `${style.statistics}`}>
+            <div className={style.userStatistics}>
               <img src="/img/user.png" alt="" />
               <div>
                 <table
-                  className="userStatisticsTable"
+                  className={style.userStatisticsTable}
                   style={{ minWidth: "480px" }}
                 >
                   <colgroup>
@@ -154,21 +154,21 @@ function MyPageIndex() {
                 </table>
               </div>
             </div>
-            <div className="postListBox">
+            <div className={style.postListBox}>
               {/* <!-- 포스트네비 --> */}
-              <div className="postListNav">
+              <div className={style.postListNav}>
                 <div>
                   <p>Best Post</p>
                   <hr />
                 </div>
                 <div>
                   <p>See All</p>
-                  <hr className="seeAllHr" />
+                  <hr className={style.seeAllHr} />
                 </div>
               </div>
               {/* <!-- 포스트라이드 --> */}
-              <div className="postSlide">
-                <ul className="postList">
+              <div className={style.postSlide}>
+                <ul className={style.postList}>
                   {/* <!-- 포스트카드 --> */}
                   <PostCard />
                   <PostCard />
@@ -179,10 +179,10 @@ function MyPageIndex() {
             </div>
           </div>
           {/* <!-- follow리스트페이지 --> */}
-          <div className={block ? "follow block" : "follow none"}>
-            <div className="followNav">
-              <div className="filter">
-                <div className="filterBox">
+          <div className={block ? `${style.follow}` : "none"}>
+            <div className={style.followNav}>
+              <div className={style.filter}>
+                <div className={style.filterBox}>
                   <p
                     onMouseOver={mouseOver}
                     onMouseLeave={mouseLeave}
@@ -205,11 +205,11 @@ function MyPageIndex() {
               {/* <!-- 리스트부분 --> */}
               <div>
                 {follow ? (
-                  <ul className="followList ">
+                  <ul className={style.followList}>
                     <FollowLi follow="follow" />
                   </ul>
                 ) : (
-                  <ul className="followList ">
+                  <ul className={style.followList}>
                     <FollowLi follow="unfollow" />
                   </ul>
                 )}
@@ -217,7 +217,7 @@ function MyPageIndex() {
             </div>
           </div>
         </div>
-                <EditModal edit={edit} setEdi={setEdit}/>
+                <EditModal edit={edit} setEdit={setEdit}/>
       </div>
     </>
   );

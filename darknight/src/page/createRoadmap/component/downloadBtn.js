@@ -1,7 +1,7 @@
 import React from 'react';
 import { Panel, useReactFlow, getRectOfNodes, getTransformForBounds } from 'reactflow';
 import { toPng } from 'html-to-image';
-
+import style from '../createRoadmap.module.css'
 function downloadImage(dataUrl) {
   const a = document.createElement('a');
 
@@ -36,7 +36,7 @@ function DownloadButton() {
 
   return (
 
-      <button className="download-btn roadmapBtn" onClick={onClick}>
+      <button className={style.roadmapBtn} onClick={onClick}>
         Download
       </button>
  

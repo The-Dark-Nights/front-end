@@ -1,5 +1,5 @@
 import "../../css/common.css";
-import "../../css/writingPage.css";
+import style from "./writingPage.module.css";
 import Markdown from "./components/markdown";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -16,14 +16,7 @@ function WritingPage() {
 
     
 
-    const modalOkClick = () => {
-        const modal = document.getElementById('writingModal');
-        modal.style.display='none';
-    };
-    const modalOpen= ()=> {
-        const modal = document.getElementById('writingModal');
-        modal.style.display='block';
-    };
+    
     const importOnClick = () => {
         const importBtn = document.getElementById('importMarkdown');
         importBtn.click();
@@ -60,46 +53,30 @@ function WritingPage() {
 
     return(
         <>
-            <div id="backgroundDiv">
+            <div className={style.backgroundDiv}>
                 <div>
-                    <div id="writingDiv">
+                    <div className={style.writingDiv}>
                         <Markdown md={md} setMd={setMd}/>               
                     </div>    
-                    <div id="bottomBtnDiv">
-                        <button class="outBtn" onClick={clickWrite}>
-                            <img class="outIcon" alt="나가기" src="img/left_arrow.png" />
+                    <div className={style.bottomBtnDiv}>
+                        <button className={style.outBtn} onClick={clickWrite}>
+                            <img className={style.outIcon} alt="나가기" src="img/left_arrow.png" />
                             나가기</button>
-                        <button id="importBtn" class="purpleBtn portBtn bottomRight" title="가져오기" onClick={importOnClick}>
-                            <div class="importDiv">
+                        <button className={style.importBtn} title="가져오기" onClick={importOnClick}>
+                            <div className={style.importDiv}>
                                 <label>
-                                    <img class="buttonImage" src="img/import.png" alt="다운"/>
+                                    <img className={style.buttonImage} src="img/import.png" alt="다운"/>
                                 </label>
-                                <form id="importForm">
+                                <form>
                                     <input type="file" name="importMarkdown" id="importMarkdown" onChange={importFile} accept=".md"/>
                                 </form>
                             </div>
                         </button>
-                        {/* <button id="exportBtn" class="purpleBtn portBtn bottomRight" onClick={exportOnClick} title="내보내기">
-                            <img class="buttonImage" src="img/export.png" alt="업"/>
-                        </button> */}
-                        <button class="purpleBorderBtn saveBtn bottomRight">Draft</button>
-                        <button class="purpleBtn saveBtn bottomRight">publish</button>
+                        <button className={style.draftBtn}>Draft</button>
+                        <button className={style.publishBtn}>publish</button>
                     </div>
                 </div>
-                <div id="writingModal">
-                    <div class="writingModalBack"></div>
-                    <div class="writingModalContent">
-                        <div class="iconDiv">
-                            <img src="img/completeIcon.png" alt="완료"/>
-                        </div>
-                        
-                        <p class="messageDiv">Export Completed!</p>
-                        
-                    <div class="writingModalBtnBox">
-                        <button class="purpleBtn okBtn" onClick={modalOkClick}>OK</button>
-                    </div>
-                    </div>
-                </div>
+
             </div>
         </>
     )

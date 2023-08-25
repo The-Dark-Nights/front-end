@@ -12,8 +12,6 @@ function AlarmBell(){
         <div className="alarmBellImg" onClick={bollenClick}>
           <img src="img/bell.png" alt="" />
           <p>12</p>
-        </div>
-   
         <div className={click?"alarmModal block":"alaralarmModal none"}>
           <div className="alarmModalTitle">
             <p>Alarm</p>
@@ -26,6 +24,8 @@ function AlarmBell(){
             </ul>
           </div>
         </div>
+        </div>
+   
       </div>
     )
 }

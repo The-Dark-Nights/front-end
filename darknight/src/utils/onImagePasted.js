@@ -14,6 +14,7 @@ const onImagePasted = async (dataTransfer: DataTransfer, setMarkdown: (value: Se
 
   await Promise.all(
     files.map(async (file) => {
+
       const url =
       // await fileUpload(file);
       `https://s3.asia-east-north-2.devigation/images/${file.name}`;

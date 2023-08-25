@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
+import style from '../mainPage/main.module.css'
+
 function PostCard() {
   return (
-    <li class="postCard">
+    <li class={style.postCard}>
       <Link to="/postDetail">
-        <div class="postImg">
+        <div class={style.postImg}>
           <img src="/img/logo.png" alt="" />
           <hr />
         </div>
-        <div class="postContents">
+        <div class={style.postContents}>
           <h3>제목</h3>
           <p>
             /* 홈 페이지 타이틀 변경하기 */ #post-2 .entry-title visibility:
@@ -17,12 +19,12 @@ function PostCard() {
           </p>
           <hr />
         </div>
-        <div class="postComment">
+        <div class={style.postComment}>
           <div>
             <img src="/img/user.png" alt="" />
           </div>
-          <div class="userName">by pm</div>
-          <div class="postCommentBox">
+          <div class={style.userName}>by pm</div>
+          <div class={style.postCommentBox}>
             <div>
               <img src="/img/comment.png" alt="" />
               <p>11</p>

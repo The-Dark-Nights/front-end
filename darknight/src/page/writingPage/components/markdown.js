@@ -3,8 +3,11 @@ import onImagePasted from '../../../utils/onImagePasted';
 import insertToTextArea from '../../../utils/insertTotextArea';
 import { useState } from "react";
 import axios from 'axios';
+import style from '../writingPage.module.css'
+
 
 function Markdown({md,setMd}){
+
 
     
     const onChangeHandler = e =>{      
@@ -41,12 +44,12 @@ function Markdown({md,setMd}){
         keyCommand: 'localImage',
         buttonProps: null,
         icon: (
-                <button type='button' class="imgUploadBtn" title='upload image'>
-                    <div class="imgUploadDiv" >
+                <button type='button' className={style.imgUploadBtn} title='upload image'>
+                    <div className={style.imgUploadDiv} >
                         <label for="realUpload">
-                            <img class="imgUploadImg" src="img/localImage.png" alt='업'/>
+                            <img className={style.imgUploadImg} src="img/localImage.png" alt='업'/>
                         </label>
-                        <form id ="imageForm" onChange={onChangeHandler}>
+                        <form onChange={onChangeHandler}>
                             <input type="file" name="inputImg" id="realUpload" accept="image/*"/>
                         </form>
                     </div>
@@ -57,7 +60,7 @@ function Markdown({md,setMd}){
     
 
     return (
-        <div className="markarea">
+        <div className={style.markarea}>
                             <div data-color-mode="light"> 
                                 <MDEditor
                                             height={695}

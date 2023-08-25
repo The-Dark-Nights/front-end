@@ -1,3 +1,5 @@
+import style from '../../../myPage/mypage.module.css'
+
 function FollowLi({follow}){
     return(
         <>
@@ -5,17 +7,17 @@ function FollowLi({follow}){
                     <div>
                       <img src="/img/user.png" alt="" />
                       <div>
-                        <div className="user">
+                        <div className={style.user}>
                           <p>name</p>
                           <span>nickname</span>
                         </div>
-                        <div className="userGroup">
+                        <div className={style.userGroup}>
                           <span>greeting</span>
                         </div>
                       </div>
                     </div>
-                    <div className="unfollowBtnBox">
-                      <button className="greyBtn">{follow}</button>
+                    <div className={style.unfollowBtnBox}>
+                      <button className={style.greyBtn}>{follow}</button>
                     </div>
                   </li>
         </>

@@ -55,19 +55,23 @@
 .writeBtn {
   width: 100px;
   height: 30px;
+  border-radius: 10px;
+  color: white;
+  background-color: #a554f3;
+  border: none;
 }
 
 /* 포스트리스트 */
 
 /* 포스트슬라이드 */
 .postSlide {
-  margin-bottom: 100px;
+ margin-top: 5%;
 }
 .postListWrap{
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
 }
 
 .postList {
@@ -76,9 +80,11 @@
 }
 .postList > li:first-child {
   margin-left: 0;
+  margin-bottom: 20px;
 }
 .postList > li:nth-child(5n + 0) {
   margin-left: 0;
+  margin-bottom: 20px;
 }
 /* 로드맵카드 */
 .postCard {

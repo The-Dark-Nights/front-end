@@ -33,7 +33,8 @@
 .followBtn{
     width: 50px;
     height: 20px;
-   
+    border-radius: 5px;
+    background-color: white;
 }
 .followBtn>div{
     width: 5px;
@@ -58,6 +59,9 @@
     font-size: 27px;
     font-weight: bold;  cursor: pointer;
 }
+.followBtn>.greenColor{
+    background-color: #1bb51b;
+  }
 .userFollows{
    color:  #c6c7cc;
    font-size: 12px;
@@ -67,8 +71,9 @@
     width: 18px;
     position: relative;
     top: 4px;
+    margin-right: 2px;
 }
-.userFollows>span{
+.userFollows >a>span{
     margin-right: 10px;
 }
 .userDetailBox{
@@ -105,6 +110,8 @@
     height: 30px;
    margin-bottom: 20px;
    cursor: pointer;
+   border-radius: 5px;
+  background-color: white;
 }
 .bigfollowBtn>.greenColor{
     background-color: #1bb51b;
@@ -236,6 +243,10 @@ margin-bottom: 50px;
 position: relative;
 right: -400px;
 top: 20px;
+border-radius: 10px;
+color: white;
+background-color: #a554f3;
+border: none
 }
 /* 로드맵코멘트 */
 .roadMapDetailCommnet>ul>li{
