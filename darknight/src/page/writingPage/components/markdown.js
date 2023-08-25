@@ -5,11 +5,12 @@ import { useState } from "react";
 import axios from 'axios';
 import style from '../writingPage.module.css'
 
-function Markdown(){
-    const [md, setMd] = useState('');
 
-    const onChangeHandler = e =>{
-        console.log(e.target.files[0]);
+function Markdown({md,setMd}){
+
+
+    
+    const onChangeHandler = e =>{      
         const image = e.target.files[0];
             if(!image){
                 return;
@@ -21,7 +22,9 @@ function Markdown(){
                 return;
             }
             setMd(insertedMarkdown);
+            e.target.value=null;
 
+                
         // const formData = new FormData();
         // /* append 앞 첫 문자열이 키 */
         // formData.append("image", image);
@@ -46,7 +49,7 @@ function Markdown(){
                         <label for="realUpload">
                             <img className={style.imgUploadImg} src="img/localImage.png" alt='업'/>
                         </label>
-                        <form id ="imageForm" onChange={onChangeHandler}>
+                        <form onChange={onChangeHandler}>
                             <input type="file" name="inputImg" id="realUpload" accept="image/*"/>
                         </form>
                     </div>
@@ -57,7 +60,7 @@ function Markdown(){
     
 
     return (
-        <div classNameName="markarea">
+        <div className={style.markarea}>
                             <div data-color-mode="light"> 
                                 <MDEditor
                                             height={695}
@@ -80,7 +83,6 @@ function Markdown(){
                                                     commands.italic,
                                                     commands.strikethrough,
                                                     commands.hr,
-                                                    commands.title,
                                                     commands.divider,
                                                     commands.link,
                                                     commands.quote,
@@ -99,7 +101,8 @@ function Markdown(){
                                                         await onImagePasted(event.clipboardData, setMd);
                                                     }}
                                                     onDrop={async (event) => {
-                                                        await onImagePasted(event.dataTransfer, setMd);}}
+                                                        await onImagePasted(event.dataTransfer, setMd);
+                                                    }}
                                     />     
                             </div>
                         </div>

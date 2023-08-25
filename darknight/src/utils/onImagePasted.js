@@ -14,11 +14,12 @@ const onImagePasted = async (dataTransfer: DataTransfer, setMarkdown: (value: Se
 
   await Promise.all(
     files.map(async (file) => {
-      const url = 
+
+      const url =
       // await fileUpload(file);
       `https://s3.asia-east-north-2.devigation/images/${file.name}`;
       // 주소 값은 서버 받은 이후 수정 필요
-      const insertedMarkdown = insertToTextArea(`![${file.name}](${url})`);
+      const insertedMarkdown = insertToTextArea(`![image](${url})`);
       if (!insertedMarkdown) {
         return;
       }

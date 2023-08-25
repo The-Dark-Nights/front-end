@@ -214,3 +214,7 @@ background-color: gray;
 .none{
   display: none;
 }
+/* 마크다운 리사이즈 */
+.w-md-editor-bar{
+  display: none;
+}
