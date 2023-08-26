@@ -68,86 +68,86 @@ function MyPageIndex() {
               <div>
                 <table
                   className={style.userStatisticsTable}
-                  style={{ minWidth: "480px" }}
+                 
                 >
                   <colgroup>
-                    <col style={{ width: "60%" }} />
-                    <col style={{ width: "20%" }} />
-                    <col style={{ width: "20%" }} />
+                    <col  className={style.col1} />
+                    <col  className={style.col2}/>
+                    <col  className={style.col2}/>
                   </colgroup>
-                  <thead className="css-1z08gdi">
-                    <tr className="css-1ojb0xa">
-                      <th className="css-1ev8h34">레벨</th>
-                      <th colspan="2" className="css-1ev8h34">
+                  <thead>
+                    <tr>
+                      <th>레벨</th>
+                      <th>
                         문제
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="css-1d9xc1d">
-                    <tr className="css-1ojb0xa">
-                      <td className="bronze css-1cnxww9">
+                  <tbody>
+                    <tr>
+                      <td>
                         <b>Bronze</b>
                       </td>
-                      <td className="css-1qm6zmr">
+                      <td>
                         <b>1,831</b>
                       </td>
-                      <td className="css-1qm6zmr">
-                        <span className="css-stcnmb">14.2%</span>
+                      <td >
+                        <span>14.2%</span>
                       </td>
                     </tr>
-                    <tr className="css-1ojb0xa">
-                      <td className="silver css-1cnxww9">
+                    <tr>
+                      <td>
                         <b>Silver</b>
                       </td>
-                      <td className="css-1qm6zmr">
+                      <td>
                         <b>2,156</b>
                       </td>
-                      <td className="css-1qm6zmr">
-                        <span className="css-stcnmb">16.7%</span>
+                      <td>
+                        <span>16.7%</span>
                       </td>
                     </tr>
-                    <tr className="css-1ojb0xa">
-                      <td className="gold css-1cnxww9">
+                    <tr>
+                      <td>
                         <b>Gold</b>
                       </td>
-                      <td className="css-1qm6zmr">
+                      <td>
                         <b>2,601</b>
                       </td>
-                      <td className="css-1qm6zmr">
-                        <span className="css-stcnmb">20.2%</span>
+                      <td>
+                        <span>20.2%</span>
                       </td>
                     </tr>
-                    <tr className="css-1ojb0xa">
-                      <td className="platinum css-1cnxww9">
+                    <tr>
+                      <td>
                         <b>Platinum</b>
                       </td>
-                      <td className="css-1qm6zmr">
+                      <td>
                         <b>2,907</b>
                       </td>
-                      <td className="css-1qm6zmr">
-                        <span className="css-stcnmb">22.6%</span>
+                      <td>
+                        <span>22.6%</span>
                       </td>
                     </tr>
-                    <tr className="css-1ojb0xa">
-                      <td className="diamond css-1cnxww9">
+                    <tr>
+                      <td>
                         <b>Diamond</b>
                       </td>
-                      <td className="css-1qm6zmr">
+                      <td>
                         <b>2,058</b>
                       </td>
-                      <td className="css-1qm6zmr">
-                        <span className="css-stcnmb">16.0%</span>
+                      <td>
+                        <span>16.0%</span>
                       </td>
                     </tr>
-                    <tr className="css-1ojb0xa">
-                      <td className="ruby css-1cnxww9">
+                    <tr>
+                      <td >
                         <b>Ruby</b>
                       </td>
-                      <td className="css-1qm6zmr">
+                      <td >
                         <b>368</b>
                       </td>
-                      <td className="css-1qm6zmr">
-                        <span className="css-stcnmb">2.9%</span>
+                      <td >
+                        <span>2.9%</span>
                       </td>
                     </tr>
                   </tbody>

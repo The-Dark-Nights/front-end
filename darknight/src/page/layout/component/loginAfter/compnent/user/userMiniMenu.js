@@ -18,7 +18,7 @@ function UserMiniMenu(){
     ];
     const [select,setSelect]=useState('')
     const overLi=(type)=>{
-      console.log(1)
+ 
       setSelect(type)
     }
     return(
