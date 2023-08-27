@@ -18,7 +18,8 @@
 #### 2) 기술 게시글
 유저는 자신이 습득하거나, 흥미가 있는 기술에 대하여 posting을 할 수 있습니다.
 유저가 작성한 글을 통해 토론하고, 더욱 성장할 수 있는 경험을 제공합니다.
-![image](https://github.com/The-Dark-Nights/front-end/assets/134986842/ecac9feb-da3f-4816-a2dd-5068d8b9864c)
+![md](https://github.com/The-Dark-Nights/front-end/assets/96166174/d62db665-e4e3-4637-889e-5e78aa1d2ed7)
+
 
 
 #### 3) Roadmap 공유 기능
