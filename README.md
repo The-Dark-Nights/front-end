@@ -13,7 +13,8 @@
 #### 1) Roadmap 작성 기능
 유저는 스스로 Roadmap을 작성하여 자신의 기술 습득 계획을 세울 수 있습니다.
 이렇게 만들어진 Roadmap으로 다른 사람들과 소통할 수 있고, Roadmap에 대하여 토론할 수 있습니다.
-<img width="967" alt="image" src="https://github.com/The-Dark-Nights/front-end/assets/96166174/2eab3140-b0d0-4afa-9ecf-f7043ee4dbcf">
+![drag drop](https://github.com/The-Dark-Nights/front-end/assets/96166174/229cd22f-bfd4-4684-9ffb-8c0daecab9b2)
+
 #### 2) 기술 게시글
 유저는 자신이 습득하거나, 흥미가 있는 기술에 대하여 posting을 할 수 있습니다.
 유저가 작성한 글을 통해 토론하고, 더욱 성장할 수 있는 경험을 제공합니다.
@@ -23,6 +24,9 @@
 #### 3) Roadmap 공유 기능
 꼭 자신이 Roadmap을 만들지 않아도 됩니다. 잘 만들어진 Roadmap을 가져와 자신의 학습에 사용할 수 있습니다.
 또한 가져온 Roadmap을 자신의 입맛에 따라 수정할 수 있습니다.
+
+***
+
 
 
 
@@ -62,7 +66,7 @@
 ![React](https://img.shields.io/static/v1?style=for-the-badge&message=React&color=6DB33F&logo=React&logoColor=FFFFFF&label=)
 ![](https://img.shields.io/static/v1?style=for-the-badge&message=Reactflow&color=6DB33F&logo=Reactflow&logoColor=FFFFFF&label=)
 
-
+ㅍ
 
 
 
