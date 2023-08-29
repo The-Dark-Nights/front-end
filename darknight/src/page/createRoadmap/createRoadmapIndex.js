@@ -175,7 +175,7 @@ function Flow() {
                 </button>
                 <DownloadButton />
               </Panel>
-              <Controls showInteractive={false} showZoom={false} />
+              <Controls showZoom={false} />
               <MiniMap />
               {/* <Background variant="dots" gap={12} size={1} /> */}
               <Background id="1" gap={10} color="#f1f1f1" variant="lines" />
