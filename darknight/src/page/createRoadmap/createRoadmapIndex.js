@@ -92,7 +92,7 @@ function Flow() {
     
     if (reactFlowInstance) {
       const flow = reactFlowInstance.toObject();
-      console.log(JSON.stringify(flow))
+      console.log(JSON.stringify(flow))                                                   
       localStorage.setItem(flowKey, JSON.stringify(flow));
         saveApi(flow);
     }
@@ -104,7 +104,7 @@ function Flow() {
 
       if (flow) {
         const { x = 0, y = 0, zoom = 1 } = flow.viewport;
-        setNodes(flow.nodes || []);
+        setNodes(flow.nodes || []);       
         setEdges(flow.edges || []);
         setViewport({ x, y, zoom });
       }
@@ -168,6 +168,7 @@ function Flow() {
               onDragOver={onDragOver}
               onNodesDelete={onNodesDelete}
               fitView
+              className="download-image"
             >
               <Panel position="top-right">
                 <button onClick={onSave} className={style.roadmapBtn}>
@@ -175,7 +176,7 @@ function Flow() {
                 </button>
                 <DownloadButton />
               </Panel>
-              <Controls showInteractive={false} showZoom={false} />
+              <Controls showZoom={false} />
               <MiniMap />
               {/* <Background variant="dots" gap={12} size={1} /> */}
               <Background id="1" gap={10} color="#f1f1f1" variant="lines" />

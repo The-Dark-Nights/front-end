@@ -80,6 +80,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+   
 }
 .userStatistics>img{
     width:300px;
@@ -87,10 +88,16 @@
 }
 .userStatisticsTable{
  position: relative;
-
+ min-width: 480px;
 }
 .userStatisticsTable>thead>tr{
     border-bottom: 1px solid black;
+}
+.col1{
+  width: 60%;
+}
+.col2{
+  width: 20%;
 }
 /* 포스트리스트 */
 .postLsitBox{
