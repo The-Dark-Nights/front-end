@@ -70,7 +70,7 @@ function ReadReactFlow({setSideOpen,sideOpen}) {
               onNodeClick={clickNode}
               fitView
             >
-              <Controls showInteractive={true} />
+              <Controls showInteractive={true} onInteractiveChange={(interactiveStatus) => interactiveStatus=true} />
               {/* <Background variant="dots" gap={12} size={1} /> */}
               <Background id="1" gap={10} color="#f1f1f1" variant="lines" />
               <Background

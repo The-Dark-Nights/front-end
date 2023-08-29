@@ -67,7 +67,7 @@
 .roadMapListWrap{
   display: flex;
     flex-wrap: wrap;
-  width: auto;
+  width: 100%;
   justify-content:left;
   margin-left: 10%;
 }
