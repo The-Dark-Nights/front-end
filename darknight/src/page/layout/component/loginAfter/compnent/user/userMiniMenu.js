@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import styled from "styled-components";
 
-function UserMiniMenu(){
+function UserMiniMenu({click,setClick}){
     const minuMenuList=[
       {type:'profile',
       title:'My Profile',
@@ -16,19 +17,37 @@ function UserMiniMenu(){
       title:'Logout',
       link:'/mypage'},
     ];
-    const [select,setSelect]=useState('')
+    const [select,setSelect]=useState(false)
     const overLi=(type)=>{
  
-      setSelect(type)
+      setClick(!click)
     }
     return(
-<div className={select?"userMiniMenu none":"userMiniMenu"} >
+<UserMiniMenuWrap clickSelect={select} >
           <ul>
             {minuMenuList.map((list)=>(
-              <Link to={list.link}><li className={`${select==list.type?'select':''} `}  onClick={overLi}>{list.title}</li><hr></hr></Link>
+              <Link to={list.link}><hr/><li clickSelect={select} click={setClick} onClick={overLi}>{list.title}</li></Link>
             ))}
           </ul>
-        </div>
+        </UserMiniMenuWrap>
         )
 }
 export default UserMiniMenu;
+
+let UserMiniMenuWrap=styled.div`
+position: absolute;
+right: 10%;
+width: 200px;
+background-color: white;
+border: 1px solid #d9d9d9;
+border-radius: 15px;
+z-index: 2;
+display:${props=>props.clickSelect?"block":"none"}
+overflow: hidden;
+
+& >ul >a >li{
+  margin: 10px;
+
+}
+
+`
