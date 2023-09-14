@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 function LoginBefore(){
   const navigate=useNavigate();
   const clickNavigate=()=>{
@@ -10,10 +11,29 @@ function LoginBefore(){
     navigate(loginURL)
   }
     return(
-        <div className="signBox">
+        <SignBox>
         <img src="/img/search.png" alt="" />
-        <button className="purpleBtn signBtn" onClick={loginBtn}>SignIn</button>
-      </div>
+        <SignBtn onClick={loginBtn}>SignIn</SignBtn>
+      </SignBox>
     )
 }
 export default LoginBefore;
+
+let SignBox=styled.div`
+margin-top: 2rem;
+display: none;
+&>img{
+  width: 30px;
+  margin-right: 4rem;
+}
+`
+let SignBtn=styled.button`
+width: 140px;
+  height: 40px;
+  position: relative;
+  top: -10px;
+  border-radius: 10px;
+  color: white;
+  background-color: #a554f3;
+  border: none;
+`

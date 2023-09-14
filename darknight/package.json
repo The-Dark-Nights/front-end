@@ -18,6 +18,7 @@
     "react-scripts": "5.0.1",
     "reactflow": "^11.8.2",
     "redux": "^4.2.1",
+    "styled-components": "^6.0.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
