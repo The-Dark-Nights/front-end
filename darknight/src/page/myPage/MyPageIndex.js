@@ -1,9 +1,12 @@
 import style from "./mypage.module.css";
-import "../../css/common.css";
+// import "../../css/common.css";
 import { useEffect, useState } from "react";
 import FollowLi from "./component/followList/followLi";
 import PostCard from "../commondcomponent/postCard";
 import EditModal from "./component/editModal/editModal";
+import styled from "styled-components";
+import MyPageSide from "./component/mypageSide";
+import MyPageChart from "./component/mypageChart";
 
 
 function MyPageIndex() {
@@ -41,185 +44,172 @@ function MyPageIndex() {
 
   return (
     <>
-      <div className={style.myPageWrap}>
+      <MypageWrap >
         {/* <!--마이페이지 사이드메뉴  --> */}
-        <div className={style.myPageSideMenu}>
-          <img src="/img/user.png" alt="" />
-          <div className={style.myPageUserInfo}>
-            <h1>Jeon,Tae Hyeon</h1>
-            <p>Code Magician</p>
-            <div className={style.myPageFollows} onClick={onClickFollow}>
-              <img src="/img/users.png" alt="" />
-              <span>4followers</span>
-              <span>4followings</span>
-            </div>
-          </div>
-          <div>
-            <button className={style.editBtn} onClick={profileEdit}>
-              Edit Profile
-            </button>
-          </div>
-        </div>
+       <MyPageSide profileEdit={profileEdit} onClickFollow={onClickFollow}/>
         {/* <!-- 마이페이지 컨텐츠 --> */}
-        <div className={style.myPageContents}>
-          <div className={block ? "none" : `${style.statistics}`}>
-            <div className={style.userStatistics}>
-              <img src="/img/user.png" alt="" />
-              <div>
-                <table
-                  className={style.userStatisticsTable}
-                 
-                >
-                  <colgroup>
-                    <col  className={style.col1} />
-                    <col  className={style.col2}/>
-                    <col  className={style.col2}/>
-                  </colgroup>
-                  <thead>
-                    <tr>
-                      <th>레벨</th>
-                      <th>
-                        문제
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <b>Bronze</b>
-                      </td>
-                      <td>
-                        <b>1,831</b>
-                      </td>
-                      <td >
-                        <span>14.2%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Silver</b>
-                      </td>
-                      <td>
-                        <b>2,156</b>
-                      </td>
-                      <td>
-                        <span>16.7%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Gold</b>
-                      </td>
-                      <td>
-                        <b>2,601</b>
-                      </td>
-                      <td>
-                        <span>20.2%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Platinum</b>
-                      </td>
-                      <td>
-                        <b>2,907</b>
-                      </td>
-                      <td>
-                        <span>22.6%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Diamond</b>
-                      </td>
-                      <td>
-                        <b>2,058</b>
-                      </td>
-                      <td>
-                        <span>16.0%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td >
-                        <b>Ruby</b>
-                      </td>
-                      <td >
-                        <b>368</b>
-                      </td>
-                      <td >
-                        <span>2.9%</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div className={style.postListBox}>
+        <MyPageContents>
+          <div className={block ? "none" : ``}>
+           <MyPageChart/>
+            <PostListBox>
               {/* <!-- 포스트네비 --> */}
-              <div className={style.postListNav}>
+              <PostListNav>
                 <div>
                   <p>Best Post</p>
                   <hr />
                 </div>
                 <div>
                   <p>See All</p>
-                  <hr className={style.seeAllHr} />
+                  <SeeAllHr />
                 </div>
-              </div>
+              </PostListNav>
               {/* <!-- 포스트라이드 --> */}
-              <div className={style.postSlide}>
-                <ul className={style.postList}>
+              <PostSlide>
+                <PostLIst>
                   {/* <!-- 포스트카드 --> */}
                   <PostCard />
                   <PostCard />
                   <PostCard />
                   <PostCard />
-                </ul>
-              </div>
-            </div>
+                </PostLIst>
+              </PostSlide>
+            </PostListBox>
           </div>
           {/* <!-- follow리스트페이지 --> */}
-          <div className={block ? `${style.follow}` : "none"}>
-            <div className={style.followNav}>
-              <div className={style.filter}>
-                <div className={style.filterBox}>
-                  <p
+          <Follow block={block}>
+            <FollowNav>
+              <Filter>
+                <FilterBox >
+                  <Change1 over={over}
                     onMouseOver={mouseOver}
                     onMouseLeave={mouseLeave}
                     onClick={clickFollow}
-                    className={over ? "change" : ""}
+                   
                   >
                     Follower
-                  </p>
-                  <p
+                  </Change1>
+                  <Change2 over1={over1}
                     onMouseOver={mouseOver1}
                     onMouseLeave={mouseLeave1}
                     onClick={clickFollow}
-                    className={over1 ? "change" : ""}
+                    
                   >
                     Following
-                  </p>
-                </div>
-                <hr />
-              </div>
+                  </Change2>
+                </FilterBox>
+                
+              </Filter>
               {/* <!-- 리스트부분 --> */}
               <div>
                 {follow ? (
-                  <ul className={style.followList}>
+                  <FollowList>
                     <FollowLi follow="follow" />
-                  </ul>
+                  </FollowList>
                 ) : (
-                  <ul className={style.followList}>
+                  <FollowList>
                     <FollowLi follow="unfollow" />
-                  </ul>
+                  </FollowList>
                 )}
               </div>
-            </div>
-          </div>
-        </div>
+            </FollowNav>
+          </Follow>
+        </MyPageContents>
                 <EditModal edit={edit} setEdit={setEdit}/>
-      </div>
+      </MypageWrap>
     </>
   );
 }
 export default MyPageIndex;
+let MypageWrap=styled.div`
+width: 110%;
+height: 100%;
+margin-bottom: 0px; 
+display: flex;
+`
+let MyPageContents=styled.div`
+width: 70%;
+margin-left: 100px;
+
+`
+
+let PostListBox=styled.div`
+margin-bottom: 40px;
+`
+let PostListNav=styled.div`
+display: flex;
+justify-content: space-between;
+margin-top: 10%;
+width: 100%;
+&> div> p{
+  font-weight: bold;
+}
+& >div>hr{
+  width: 150px;
+  border: 2px solid black;
+  margin-top: 10px;
+}
+`
+let SeeAllHr=styled.hr`
+width: 100px;
+`
+let PostSlide=styled.div`
+margin-top: 40px;
+overflow: hidden;
+`
+let PostLIst=styled.ul`
+overflow: hidden;
+display: flex;
+`
+
+let Follow=styled.div`
+width:${props=>props.block?"80%":""};
+display:${props=>props.block?"block":"none"};
+`
+ let FollowNav=styled.div`` 
+let Filter=styled.div`
+color: #c6c7cc;
+&>hr{
+  width: 27%;
+}
+`
+let FilterBox=styled.div`
+
+  display: flex;
+    width: 270px;
+    margin-top: 50px;
+ &>p{
+  margin-right: 30px;
+    margin-bottom: 10px;
+    
+ }  
+ & >p:first-child{
+  margin-left: 20px;
+ } 
+    `
+let Change1=styled.p`
+color:${props=>props.over1||props.over?'#a554f3':'#c6c7cc'};
+`
+let Change2=styled.p`
+color:${props=>props.over1||props.over?'#a554f3':'#c6c7cc'};`
+
+let FollowList=styled.ul`
+margin-top: 100px;
+&>li{
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 20px 0;
+  align-items: center;
+}
+& >li>div{
+  display: flex;
+  margin-left: 20px;
+}
+& >li>div>img{
+  width: 70px;
+  border-radius: 50%;
+  margin-right: 50px;
+}
+`
