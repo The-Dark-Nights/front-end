@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import style from '../../mypage.module.css'
+// import style from '../../mypage.module.css'
 function EditModal({edit,setEdit}){
   const clickDisplay = () => {
     setEdit(!edit);
   };
     return(
         <>
-          <div className={style.myPageModal}>
+          <div>
           <MyPageModal edit={edit} onClick={clickDisplay}></MyPageModal>
           <MyPageModalContent edit={edit}>
             <p>Name</p>

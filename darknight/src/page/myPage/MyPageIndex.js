@@ -1,4 +1,4 @@
-import style from "./mypage.module.css";
+// import style from "./mypage.module.css";
 // import "../../css/common.css";
 import { useEffect, useState } from "react";
 import FollowLi from "./component/followList/followLi";
