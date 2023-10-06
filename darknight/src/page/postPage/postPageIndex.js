@@ -1,5 +1,5 @@
-import style from "./post.module.css";
-import "../../css/common.css";
+// import style from "./post.module.css";
+// import "../../css/common.css";
 import PostCard from "../commondcomponent/postCard";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -46,8 +46,8 @@ function PostPageIndex() {
       </PostContainerTitle>
       <div className="postListBox">
             {/* <!-- 포스트라이드 --> */}
-            <div className={style.postSlide}>
-              <ul className={style.postListWrap}>
+            <PostSlide>
+              <PostListWrap>
                 {/* <!-- 포스트카드 --> */}
               <PostCard/>
               <PostCard/>
@@ -56,8 +56,8 @@ function PostPageIndex() {
               <PostCard/>
               <PostCard/>
               <PostCard/>
-              </ul>
-            </div>
+              </PostListWrap>
+            </PostSlide>
           </div>
     </>
   );
@@ -70,7 +70,7 @@ let PostContainerTitle=styled.div`
   flex-wrap: wrap;
   align-content: center;
   align-items: baseline;
-  justify-content: center;
+  /* justify-content: center; */
   &>h1{
     margin-left: 28%;
   }
@@ -116,4 +116,12 @@ width: 100px;
   color: white;
   background-color: #a554f3;
   border: none;
+`
+let PostSlide=styled.div`
+ margin-top: 5%;
+`
+let PostListWrap=styled.ul`
+ display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
 `
