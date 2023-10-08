@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CreateRoadmap from "./page/createRoadmap/createRoadmapIndex";
 import Header from "./page/layout/header";
 import MainPageIndex from "./page/mainPage/MainPageIndex";
@@ -8,10 +9,35 @@ import RoadMapDetailIndex from "./page/roadMapDetail/roadMapDetailIndex";
 import RoadMapPageIndex from "./page/roadMapPage/roadMapPageIndex";
 import WritingPage from "./page/writingPage/writingPage";
 
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { getCurrentUser } from "./utils/loginUtils";
+import { ACCESS_TOKEN, REFRESH_TOKEN } from "./constants";
+
+
 
 function App() {
+
+  const [authenticated, setAuthenticated] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const loadCurrentlyLoggedInUser = () => {
+    getCurrentUser()
+    .then(response => {
+    setCurrentUser(response);
+    setAuthenticated(true);   
+    }).catch(error => {
+    console.log(error);
+    });
+  }
+  const handleLogout = () => {
+    localStorage.removeItem(ACCESS_TOKEN);
+    localStorage.removeItem(REFRESH_TOKEN);
+    setAuthenticated(false);
+    setCurrentUser(null);
+    alert("로그아웃 했습니다.");
+  }
+
+
   return (
     <BrowserRouter>
       <Header>
