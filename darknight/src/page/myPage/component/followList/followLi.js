@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import style from '../../../myPage/mypage.module.css'
+// import style from '../../../myPage/mypage.module.css'
 
 function FollowLi({follow}){
     return(

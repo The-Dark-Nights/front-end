@@ -1,11 +1,11 @@
 import { useState } from "react";
 import ReportModal from "../commondcomponent/reportModal/reportModal";
 import Comment from "../commondcomponent/commnent";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import ReadReactflowWrap from "../commondcomponent/readReactflow";
 import SideMenu from "../commondcomponent/sidemenu/sidemenu";
-import style from './roadMapDetail.module.css'
-
+import style from "./roadMapDetail.module.css";
+import styled from "styled-components";
 
 function RoadMapDetailIndex() {
   const [report, setReport] = useState(false);
@@ -20,34 +20,36 @@ function RoadMapDetailIndex() {
   const clickBtnColor = () => {
     setFollowBtn(!followBtn);
   };
-  const [sideOpen,setSideOpen]=useState(false);
- 
+  const [sideOpen, setSideOpen] = useState(false);
+
   return (
     <>
       {/* <!-- 로드맵디테일타이틀 시작 --> */}
-      <div className={style.roadMapDetailTitle}>
+      <RoadMapDetailTitle>
         <h1>Custom RoadMap Name</h1>
-        <div className={style.userInfo}>
-          <div className={style.imgBox}>
+        <UserInfo>
+          <ImgBox>
             <img src="/img/user.png" alt="" />
-            <div className={style.followBtnBox}>
-              <button className={style.followBtn} onClick={clickBtnColor}>
-                <div className={followBtn ? `${style.greenColor}` : ""}></div>
+            <div>
+              <FollowBtn followBtn={followBtn} onClick={clickBtnColor}>
+                <div className='greenColor'></div>
                 <p>Follow</p>
-              </button>
+              </FollowBtn>
             </div>
-          </div>
-          <div className={style.userInfoBox}>
-            <div className={style.userName} onClick={clickUser}>Code Juggler</div>
-            <div className={style.userFollows}>
+          </ImgBox>
+          <UserInfoBox>
+            <UserName onClick={clickUser}>
+              Code Juggler
+            </UserName>
+            <UserFollows>
               <img src="/img/users.png" alt="" />
               <Link to="/mypage">
-              <span>4followers</span>
-              <span>4followings</span>
+                <span>4followers</span>
+                <span>4followings</span>
               </Link>
-            </div>
-          </div>
-          <ul className={user ? `${style.userDetailBox}` : "none"}>
+            </UserFollows>
+          </UserInfoBox>
+          <UserDetailBox user={user}>
             <li>1:1대화</li>
             <hr />
             <li>쪽지 보내기</li>
@@ -55,13 +57,13 @@ function RoadMapDetailIndex() {
             <li>
               <Link to="/mypage">회원정보</Link>
             </li>
-          </ul>
-        </div>
-      </div>
-     <SideMenu sideOpen={sideOpen}/>
+          </UserDetailBox>
+        </UserInfo>
+      </RoadMapDetailTitle>
+      <SideMenu sideOpen={sideOpen} />
       {/* <!-- 로드맵 컨텐츠 --> */}
-      <div className={style.roadMapDetailContents}>
-      <ReadReactflowWrap setSideOpen={setSideOpen} sideOpen={sideOpen}/>
+      <RoadMapDetailContents>
+        <ReadReactflowWrap setSideOpen={setSideOpen} sideOpen={sideOpen} />
         <form>
           <textarea
             name=""
@@ -71,19 +73,150 @@ function RoadMapDetailIndex() {
             placeholder="Please write a comment..."
           ></textarea>
           <div>
-            <button className={style.textareaSubmit}>Submit</button>
+            <TextareaSubmit>Submit</TextareaSubmit>
           </div>
         </form>
         <hr />
-      </div>
+      </RoadMapDetailContents>
       {/* <!-- 로드맵리뷰 --> */}
-      <div className={style.roadMapDetailCommnet}>
+      <RoadMapDetailComment>
         <ul>
           <Comment clickReport={clickReport} />
           <ReportModal report={report} setReport={setReport} />
         </ul>
-      </div>
+      </RoadMapDetailComment>
     </>
   );
 }
 export default RoadMapDetailIndex;
+
+let RoadMapDetailTitle = styled.div`
+  text-align: center;
+  margin-top: 100px;
+  & > h1 {
+    font-size: 58px;
+  }
+`;
+let UserInfo = styled.div`
+  display: flex;
+  position: relative;
+  margin-left: 68%;
+  margin-top: 30px;
+`;
+let ImgBox = styled.div`
+  & > img {
+    width: 50px;
+  }
+`;
+
+let FollowBtn = styled.button`
+  width: 50px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: white;
+  & > div {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: grey;
+    margin-left: 5px;
+    position: relative;
+    top: 7px;
+  }
+  & > p {
+    font-size: 10px;
+    margin-left: 5px;
+    position: relative;
+    top: -2px;
+  }
+  & > .greenColor {
+    background-color:${props=>props.followBtn?'#1bb51b':""} ;
+  }
+`;
+let UserInfoBox = styled.div`
+  margin-top: 8px;
+  margin-left: 40px;
+`;
+let UserName = styled.div`
+  font-size: 27px;
+  font-weight: bold;
+  cursor: pointer;
+`;
+let UserFollows = styled.div`
+  color: #c6c7cc;
+  font-size: 12px;
+  margin-top: 15px;
+  cursor: pointer;
+  & > img {
+    width: 18px;
+    position: relative;
+    top: 4px;
+    margin-right: 2px;
+  }
+  & > a > span {
+    margin-right: 10px;
+  }
+`;
+let UserDetailBox = styled.ul`
+display: ${props=>props.user?'block':'none'};
+  position: absolute;
+  right: 73%;
+  width: 106px;
+  height: 90px;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  z-index: 2;
+  top: 37%;
+  line-height: 27px;
+  font-size: 13px;
+`;
+let RoadMapDetailContents = styled.div`
+  text-align: center;
+  & > img {
+    width: 80%;
+    margin-top: 100px;
+    z-index: -10;
+  }
+  & > form > textarea {
+    width: 800px;
+    margin-top: 50px;
+    border: none;
+    background-color: #e8dfe7;
+    resize: none;
+    padding: 20px;
+    font-size: 15px;
+  }
+  & > form > textarea::placeholder {
+    font-size: 15px;
+  }
+
+`;
+let TextareaSubmit=styled.button`
+ width:100px ;
+    height: 30px;
+    font-size: 15px;
+margin-bottom: 50px;
+position: relative;
+right: -400px;
+top: 20px;
+border-radius: 10px;
+color: white;
+background-color: #a554f3;
+border: none;
+`
+let RoadMapDetailComment = styled.div`
+&>ul>li{
+  display: flex;
+    margin: 50px 0;
+    padding: 0 50px;
+    box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
+}
+&>ul>li>img{
+  width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+`
