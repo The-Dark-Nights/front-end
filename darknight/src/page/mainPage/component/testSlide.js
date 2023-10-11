@@ -109,8 +109,10 @@ let SlideClone = styled.div`
   /* border-top: 1px solid #bbb;
   border-bottom: 1px solid #bbb; */
   padding: 40px 0;
+
   animation: 10s linear infinite infiniteAnimation2;
   /* animation: 20s linear infinite normal none running infiniteAnimation1; */
+
   animation-play-state: ${(props) => (props.animate ? "paused" : "")};
   &::before {
     content: "";
@@ -124,14 +126,18 @@ let SlideClone = styled.div`
     /* background-color: #bbb; */
     z-index: 1;
   }
+
   @keyframes infiniteAnimation2 {
+
     0% {
       transform: translateX(0%);
     }
     100% {
       transform: translateX(-100%);
     }
+
   }
+
 
 
 `;
