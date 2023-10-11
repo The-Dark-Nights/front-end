@@ -1,6 +1,7 @@
 import MainRadMap from "./component/mainroadmap";
 import MainPost from "./component/mainpost";
 
+
 function MainPageIndex() {
   return (
     <>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import RoadMapCard from "../../commondcomponent/roadMapCard";
 import { Link } from "react-router-dom";
+
 import { useRef, useState } from "react";
 import next from "../../../asset/img/next.png";
 import prev from "../../../asset/img/prev.png";
@@ -14,10 +15,12 @@ function MainRadMap() {
       <div className="roadMapListBox">
         {/* <!-- 로드맵네비 --> */}
         <RoadMapListNav>
+
           <div>
-            <p>BestRoadMap</p>
-            <hr />
+            <p>See All</p>
+            <SeeAllHr />
           </div>
+
           <Link to="/roadMap">
             <div>
               <p>See All</p>
@@ -62,6 +65,7 @@ function MainRadMap() {
     );
   };
 
+
 export default MainRadMap;
 let RoadMapListNav = styled.div`
   display: flex;
@@ -82,6 +86,7 @@ let SeeAllHr = styled.hr`
   margin-top: 10px;
 `;
 
+
 let RoadMapWrap = styled.div`
   margin-top: 40px;
   width: 100%;
@@ -101,3 +106,4 @@ background-color: transparent;
 border: none;
 margin: 0 10px;
 `
+
