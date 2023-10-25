@@ -4,12 +4,19 @@ import { Link } from "react-router-dom";
 import ItemsCarousel from 'react-items-carousel'
 import next from "../../../asset/img/next.png";
 import prev from "../../../asset/img/prev.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { postCardRead } from "../../../reducer/postCardSlice";
 function MainPost(){
   const [activeItemIndex, setActiveItemIndex] = useState(0); 
   const TRUE = true;
   const [gutter, setGutter] = useState(10);
   const [numOfCards, setNumOfCards] = useState(4);
+  const postCard=useSelector((state)=>state.postCard)
+  const dispatch=useDispatch();
+  useEffect(()=>{
+    dispatch(postCardRead())
+  })
     return(
        
       <div class="postListBox">
@@ -51,11 +58,11 @@ function MainPost(){
           }
         >
           {/* <!-- 포스트카드 --> */}
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
+          {/* {postCard.map((list)=>( */}
+               <PostCard  />
+          {/* ))} */}
+        
+       
         </ItemsCarousel>
       </PostSlide>
     </div>
