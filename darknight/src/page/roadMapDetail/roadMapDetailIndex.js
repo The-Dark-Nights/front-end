@@ -21,7 +21,7 @@ function RoadMapDetailIndex() {
     setFollowBtn(!followBtn);
   };
   const [sideOpen, setSideOpen] = useState(false);
-
+  
   return (
     <>
       {/* <!-- 로드맵디테일타이틀 시작 --> */}
