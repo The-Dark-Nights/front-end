@@ -6,10 +6,10 @@ function RoadMapCard() {
     <RoadMapCardWrap>
       <Link to="/roadMapDetail">
         <RoadMapTitleBox>
-          <h3>Custorm Roadmap Name</h3>
+          <h3>1</h3>
           <UserInfo>
             <img src="/img/user.png" alt="" />
-            <p>Code Juggler</p>
+            <p>1</p>
           </UserInfo>
           <hr />
         </RoadMapTitleBox>
@@ -22,11 +22,11 @@ function RoadMapCard() {
         <RoadMapComment>
           <div>
             <img src="/img/comment.png" alt="" />
-            <p>11</p>
+            <p>1</p>
           </div>
           <div>
             <img src="/img/heart.png" alt="" />
-            <p>3</p>
+            <p>1</p>
           </div>
         </RoadMapComment>
       </Link>

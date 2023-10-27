@@ -19,6 +19,8 @@ import style from "./createRoadmap.module.css";
 import DownloadButton from "./component/downloadBtn";
 import Sidebar from "./component/sidebar";
 import { saveApi } from "../../apis/saveApi";
+import { getRoadMapResotre, postRoadMapSave } from "../../apis/api";
+import axios, { Axios } from "axios";
 
 const flowKey = "example-flow";
 const getNodeId = () => `randomnode_${+new Date()}`;
@@ -56,6 +58,7 @@ function Flow() {
     event.dataTransfer.dropEffect = "move";
   }, []);
 
+  //노드 drop후 노드 생성
   const onDrop = useCallback(
     (event) => {
       event.preventDefault();
@@ -64,7 +67,7 @@ function Flow() {
       const type = event.dataTransfer.getData("application/reactflow");
       const name = event.dataTransfer.getData("application/reactflow");
       const url = event.dataTransfer.getData("application/reactflow/url");
-     
+      console.log(typeof name);
       // check if the dropped element is valid
       if (typeof type === "undefined" || !type) {
         return;
@@ -80,7 +83,24 @@ function Flow() {
         name,
         url,
         position,
-        data: { label: (<div>{name}<img src={url} style={{width:"12px",height:"12px",marginLeft:"3px",position:"relative",top:"2px"}}/></div>) },
+        data: {
+          label: (
+            <div>
+              {name}
+              <img
+                src={url}
+                style={{
+                  width: "12px",
+                  height: "12px",
+                  marginLeft: "3px",
+                  position: "relative",
+                  top: "2px",
+                }}
+              />
+            </div>
+          ),
+        },
+        // data: {label: name} ,
       };
 
       setNodes((nds) => nds.concat(newNode));
@@ -88,30 +108,61 @@ function Flow() {
     [reactFlowInstance]
   );
 
-   const onSave = useCallback(() => {
-    
+  //전체 저장
+  const onSave = useCallback(() => {
     if (reactFlowInstance) {
       const flow = reactFlowInstance.toObject();
-      console.log(JSON.stringify(flow))                                                   
-      localStorage.setItem(flowKey, JSON.stringify(flow));
-        saveApi(flow);
+      // console.log(JSON.stringify(flow));
+      postRoadMapSave(JSON.stringify(flow)).then((res) => {
+        alert("저장완료");
+      });
+      // localStorage.setItem(flowKey, JSON.stringify(flow));
+      // saveApi(flow);
     }
   }, [reactFlowInstance]);
 
+  //직전 저장 가져오기
   const onRestore = useCallback(() => {
     const restoreFlow = async () => {
-      const flow = JSON.parse(localStorage.getItem(flowKey));
+      await getRoadMapResotre().then((res) => {
+        const flow = JSON.parse(res.data.flow);
 
-      if (flow) {
-        const { x = 0, y = 0, zoom = 1 } = flow.viewport;
-        setNodes(flow.nodes || []);       
-        setEdges(flow.edges || []);
-        setViewport({ x, y, zoom });
-      }
+        if (flow) {
+          const { x = 0, y = 0, zoom = 1 } = flow.viewport;
+          let nodesArr = flow.nodes || [];
+          for (let i = 0; i < nodesArr.length; i++) {
+            nodesArr[i].data = {
+              label: (
+                <div>
+                  {nodesArr[i].name}
+                  <img
+                    src={nodesArr[i].url}
+                    style={{
+                      width: "12px",
+                      height: "12px",
+                      marginLeft: "3px",
+                      position: "relative",
+                      top: "2px",
+                    }}
+                  />
+                </div>
+              ),
+            };
+          }
+          console.log("바뀐후", nodesArr || []);
+          setNodes(nodesArr);
+          setEdges(restoreFlow.edges || []);
+          setViewport({ x, y, zoom });
+        }
+      });
     };
 
     restoreFlow();
   }, [setNodes, setViewport]);
+
+  const test = useCallback(() => {
+    axios.get("http://192.168.0.59:9999/test").then((res) => console.log(res));
+  });
 
   const onAdd = useCallback(() => {
     const newNode = {
@@ -125,6 +176,7 @@ function Flow() {
     setNodes((nds) => nds.concat(newNode));
   }, [setNodes]);
 
+  //노드 삭제
   const onNodesDelete = useCallback(
     (deleted) => {
       setEdges(
@@ -173,6 +225,9 @@ function Flow() {
               <Panel position="top-right">
                 <button onClick={onSave} className={style.roadmapBtn}>
                   save
+                </button>
+                <button onClick={onRestore} className={style.roadmapBtn}>
+                  restore
                 </button>
                 <DownloadButton />
               </Panel>
