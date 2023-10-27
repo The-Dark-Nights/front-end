@@ -1,5 +1,5 @@
 # Devigation - Front End
-
+## 진행중인 프로젝트라 submaster 브랜치에 코디있습니다
 ## 🚀Intro: 서비스 소개
 <br/>
 <strong>개발자를 위한 Roadmap Service Devigation</strong>이란 새로운 기술을 배우고 싶은 개발자들에게 방향을 제시해줄 수 있는 시스템입니다.<br/>
