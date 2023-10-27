@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { GITHUB_AUTH_URL } from "../../../../constants";
 function LoginBefore(){
   const navigate=useNavigate();
   const clickNavigate=()=>{
     navigate('/')
   }
   const loginBtn=()=>{
-    const id='8f9463904ba34fb11ab4'
-    const loginURL = `https://github.com/login/oauth/authorize?client_id=${id}&scope=repo:status read:repo_hook user:email&redirect_uri=http://localhost:3000/callback`;
+    const loginURL = GITHUB_AUTH_URL;
     navigate(loginURL)
   }
     return(
@@ -21,7 +21,7 @@ export default LoginBefore;
 
 let SignBox=styled.div`
 margin-top: 2rem;
-display: none;
+// display: none;
 &>img{
   width: 30px;
   margin-right: 4rem;

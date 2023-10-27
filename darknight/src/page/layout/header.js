@@ -39,7 +39,7 @@ function Header({children}) {
 
           <MenuBoxTitle>
           <Link to="/post">  <MenuBoxLi over={over} onMouseOver={mouseOver} onMouseLeave={mouseLeave}>
-             <img src="/img/post.png" alt="" />
+            <img src="/img/post.png" alt="" />
               Posts
             </MenuBoxLi></Link>
           <Link to="/roadMap"><MenuBoxLi over1={over1} onMouseOver={mouseOver1} onMouseLeave={mouseLeave1}>
@@ -49,9 +49,9 @@ function Header({children}) {
           </MenuBoxTitle>
         </MenuBox>
         {/* <!-- 로그인전-> --> */}
-       <LoginBefore/>
+        <LoginBefore/>
         {/* <!-- 로그인후 --> */}
-        <LoginAfterIndex/> 
+        {/* <LoginAfterIndex/>  */}
 
     
       </HeadWrap>
