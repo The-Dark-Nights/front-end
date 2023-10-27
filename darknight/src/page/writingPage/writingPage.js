@@ -2,7 +2,9 @@ import "../../css/common.css";
 import style from "./writingPage.module.css";
 import Markdown from "./components/markdown";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import axios from "axios";
+import { API_BASE_URL } from "../../constants";
 
 
 
@@ -13,6 +15,7 @@ function WritingPage() {
     const navigate=useNavigate();
     const clickWrite=()=>{navigate('/post')};
     const [md, setMd] = useState('');
+    const postTitleRef = useRef(null);
 
     
 
@@ -30,7 +33,28 @@ function WritingPage() {
             }
         );
         }
-    };   
+    };
+    const savePost = e => {
+        const postBody = md;
+        const postTitle = postTitleRef.current.value;
+        console.log(postBody);
+        console.log(postTitle);
+        axios.post(API_BASE_URL + "/v1/post/create",
+            {
+                "title" : postTitle,
+                "memberId" : 1,
+                "categoryId" : 1,
+                "content" : postBody,
+                "published" : true,
+
+            }
+            // ,{
+            //     headers: {
+            //         Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+            //     }
+            // }
+            )
+    }   
     
     
     
@@ -40,7 +64,11 @@ function WritingPage() {
 
     return(
         <>
+            <div>
+                <input type="text" placeholder="제목을 입력해주세요." ref={postTitleRef}></input>
+            </div>
             <div className={style.backgroundDiv}>
+                
                 <div>
                     <div className={style.writingDiv}>
                         <Markdown md={md} setMd={setMd}/>               
@@ -57,7 +85,7 @@ function WritingPage() {
                             <input type="file" name="importMarkdown" id="importMarkdown" onChange={importFile} accept=".md"/>
                         </form>
                         <button className={style.draftBtn}>Draft</button>
-                        <button className={style.publishBtn}>publish</button>
+                        <button className={style.publishBtn} onClick={savePost}>publish</button>
                     </div>
                 </div>
 
