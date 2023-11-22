@@ -22,7 +22,8 @@ function OAuth2RedirectHandler() {
         if (token) {
             localStorage.setItem(ACCESS_TOKEN, token);
             localStorage.setItem(REFRESH_TOKEN, null); 
-            navigate(-1);     
+            // navigate('-1');     
+            navigate('/');
         }
         // 로그인 안됐을 때
         else{
