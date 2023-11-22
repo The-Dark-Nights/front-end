@@ -7,6 +7,7 @@ function OAuth2RedirectHandler() {
     const location = useLocation();
     const navigate = useNavigate();
 
+
     const getUrlParameter = (name) => {
         name = name.replace(/[\\[]/, '\\[').replace(/[\]]/, '\\]');
         const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
