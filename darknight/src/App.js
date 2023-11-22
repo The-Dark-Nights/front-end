@@ -51,7 +51,7 @@ function App() {
           <Route path="/postDetail" element={<PostDetailIndex/>}/>
           <Route path="/roadMapDetail" element={<RoadMapDetailIndex/>}/>
           <Route path="/writingPage" element={<WritingPage/>}/>
-          <Route path="/ouath2/redirect" element={<OAuth2RedirectHandler/>}/>
+          <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler/>}/>
           {/* <Route path="/login" element={<Login/>}/> */}
         </Routes>
       </Header>
