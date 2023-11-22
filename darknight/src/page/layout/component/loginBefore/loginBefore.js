@@ -13,7 +13,7 @@ function LoginBefore(){
     return(
         <SignBox>
         <img src="/img/search.png" alt="" />
-        <SignBtn onClick={loginBtn}>SignIn</SignBtn>
+        <SignBtn href={GITHUB_AUTH_URL}>SignIn</SignBtn>
       </SignBox>
     )
 }
@@ -27,11 +27,15 @@ margin-top: 2rem;
   margin-right: 4rem;
 }
 `
-let SignBtn=styled.button`
+let SignBtn=styled.a`
 width: 140px;
   height: 40px;
+  display: block;
+  padding: 8px 0;
+  padding-left: 48px;
   position: relative;
-  top: -10px;
+  top: -30px;
+  left: 50px;
   border-radius: 10px;
   color: white;
   background-color: #a554f3;
