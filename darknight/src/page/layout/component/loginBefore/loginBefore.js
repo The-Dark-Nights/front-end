@@ -32,7 +32,7 @@ width: 140px;
   height: 40px;
   display: block;
   padding: 8px 0;
-  padding-left: 48px;
+  padding-left: 47px;
   position: relative;
   top: -30px;
   left: 50px;

@@ -33,3 +33,5 @@ function OAuth2RedirectHandler() {
         },
         []);
 }
+
+export default OAuth2RedirectHandler;
