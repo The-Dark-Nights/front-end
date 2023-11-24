@@ -52,6 +52,20 @@ function WritingPage() {
         );
         }
     };
+
+    const exportFile = useCallback( () => {
+        const file = new Blob([md], {type: 'text/md'});
+        let fileName = "file.md";
+        
+        const element = document.createElement('a');
+
+        element.href = URL.createObjectURL(file);
+        element.download = fileName;
+        document.body.appendChild(element);
+        element.click();
+    }
+    ,[md]) 
+
     const savePost = e => {
         const postBody = md;
         const postTitle = postTitleRef.current.value;
@@ -60,18 +74,19 @@ function WritingPage() {
         axios.post(API_BASE_URL + "/v1/post/create",
             {
                 "title" : postTitle,
-                "memberId" : 1,
                 "categoryId" : 1,
                 "content" : postBody,
                 "published" : true,
 
             }
-            // ,{
-            //     headers: {
-            //         Authorization: `Bearer ${localStorage.getItem("accessToken")}`
-            //     }
-            // }
+            ,{
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+                },
+            }
             )
+        alert("글이 저장되었습니다.")
+        navigate("/post")
     }   
     
     
@@ -97,10 +112,12 @@ function WritingPage() {
                             나가기
                         </button>
                         <button className={style.exportBtn} onClick={exportFile}>
-                            <img className={style.exportImg} src="img/export.png"></img>
+
+                            <img className={style.exportImg} src="img/export.png" alt="export"></img>
                         </button>
                         <label className={style.importLabel} title="가져오기" for="importMarkdown">
-                            <img className={style.importImage} src="img/import.png" alt="임포트"/>
+                            <img className={style.importImage} src="img/import.png" alt="import"/>
+
                         </label>
                         <form>
                             <input type="file" name="importMarkdown" id="importMarkdown" onChange={importFile} accept=".md"/>
