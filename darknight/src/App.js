@@ -8,6 +8,7 @@ import PostPageIndex from "./page/postPage/postPageIndex";
 import RoadMapDetailIndex from "./page/roadMapDetail/roadMapDetailIndex";
 import RoadMapPageIndex from "./page/roadMapPage/roadMapPageIndex";
 import WritingPage from "./page/writingPage/writingPage";
+import OAuth2RedirectHandler from './oauth2/OAuth2RedirectHandler';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { getCurrentUser } from "./utils/loginUtils";
@@ -50,6 +51,7 @@ function App() {
           <Route path="/postDetail" element={<PostDetailIndex/>}/>
           <Route path="/roadMapDetail" element={<RoadMapDetailIndex/>}/>
           <Route path="/writingPage" element={<WritingPage/>}/>
+          <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler/>}/>
           {/* <Route path="/login" element={<Login/>}/> */}
         </Routes>
       </Header>
