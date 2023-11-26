@@ -1,7 +1,7 @@
 // import style from "./post.module.css";
 // import "../../css/common.css";
 import PostCard from "../commondcomponent/postCard";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
@@ -27,6 +27,8 @@ function PostPageIndex() {
   const navigate=useNavigate();
   const clickWrite=()=>{navigate('/writingPage')};
 
+  const posts = [{},{},{},{},{},{},{},{}];
+
   return (
     <>
       <PostContainerTitle>
@@ -49,13 +51,18 @@ function PostPageIndex() {
             <PostSlide>
               <PostListWrap>
                 {/* <!-- 포스트카드 --> */}
+                {posts.map((post)=> (
+                  <PostCard key={post.postId}>
+
+                  </PostCard>
+                ))}
+              {/* <PostCard/>
               <PostCard/>
               <PostCard/>
               <PostCard/>
               <PostCard/>
               <PostCard/>
-              <PostCard/>
-              <PostCard/>
+              <PostCard/> */}
               </PostListWrap>
             </PostSlide>
           </div>
@@ -124,4 +131,7 @@ let PostListWrap=styled.ul`
  display: flex;
   flex-wrap: wrap;
   justify-content: left;
+  &>li{
+    list-style : none;
+  }
 `
