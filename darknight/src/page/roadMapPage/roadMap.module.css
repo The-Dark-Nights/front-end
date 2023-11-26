@@ -77,6 +77,11 @@
 .roadMapListWrap > li:nth-child(4n + 0) {
   margin-left: 0;
 }
+.roadMapListWrap > li {
+  
+  list-style : none;
+  
+}
 .roadMapList {
     display: flex;
     flex-wrap: wrap;
