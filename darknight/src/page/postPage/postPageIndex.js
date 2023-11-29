@@ -64,7 +64,7 @@ function PostPageIndex() {
               <PostListWrap>
                 {/* <!-- 포스트카드 --> */}
                 {posts.map((post)=> (
-                  <PostCard key={post.id} title={post.title} content={post.content}/>
+                  <PostCard key={post.id} title={post.title} content={post.content} postId={post.id}/>
                 ))}
               </PostListWrap>
             </PostSlide>

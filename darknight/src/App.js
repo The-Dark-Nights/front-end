@@ -45,7 +45,7 @@ function App() {
           <Route path="/post" element={<PostPageIndex />} />
           <Route path="/createRoadmap" element={<CreateRoadmap />} />
           <Route path="/roadMap" element={<RoadMapPageIndex />} />
-          <Route path="/postDetail" element={<PostDetailIndex />} />
+          <Route path="/postDetail/:postId" element={<PostDetailIndex />} />
           <Route path="/roadMapDetail/:id" element={<RoadMapDetailIndex />} />
           <Route path="/writingPage" element={<WritingPage />} />
           <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler />} />

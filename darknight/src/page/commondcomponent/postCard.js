@@ -1,17 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import styled from "styled-components";
 
-function PostCard({title, content}) {
+function PostCard({title, content, postId}) {
+
+  
 
   let reg = /[`~!@#$%^&*()_|+\-=?;:'"<>\{\}\[\]\\\/ ]/gim;
   let regexPostcontent = "";
   if(content){
   regexPostcontent = content.replace(reg,"");
   }
+  
+  let postDetailUrl = `/postDetail/${postId}`;
+
   return (
     <PostCardWrap>
-      <Link to="/postDetail">
+      <Link to={postDetailUrl}>
         <PostImg>
           <img src="/img/logo.png" alt="" />
           <hr />
