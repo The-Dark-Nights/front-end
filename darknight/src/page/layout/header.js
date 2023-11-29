@@ -5,9 +5,12 @@ import LoginAfterIndex from './component/loginAfter/loginAfterIndex';
 import LoginBefore from './component/loginBefore/loginBefore';
 import {Link,NavLink} from 'react-router-dom'
 import styled from 'styled-components'
-function Header({children}) {
+function Header({children, 
+  authenticated,
+   currentUser}) {
   const [over,setOver]=useState(false);
   const [over1,setOver1]=useState(false);
+  // let authenticated = true;
   const mouseOver=()=>{
     setOver(true)
 
@@ -22,7 +25,6 @@ function Header({children}) {
   const mouseLeave1=()=>{
     setOver1(false)
   }
-
   return (
     <>
       <HeadWrap>
@@ -47,11 +49,12 @@ function Header({children}) {
               RoadMap
             </MenuBoxLi></Link>
           </MenuBoxTitle>
+          
         </MenuBox>
         {/* <!-- 로그인전-> --> */}
-        <LoginBefore/>
+        {!authenticated ? <LoginBefore/> : <LoginAfterIndex/>}
         {/* <!-- 로그인후 --> */}
-        {/* <LoginAfterIndex/>  */}
+         
 
     
       </HeadWrap>

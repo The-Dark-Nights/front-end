@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CreateRoadmap from "./page/createRoadmap/createRoadmapIndex";
 import Header from "./page/layout/header";
 import MainPageIndex from "./page/mainPage/MainPageIndex";
@@ -36,9 +36,15 @@ function App() {
     alert("로그아웃 했습니다.");
   };
 
+  useEffect(() => {
+    if(localStorage.getItem(ACCESS_TOKEN)){
+    loadCurrentlyLoggedInUser();
+    }
+},[])
+
   return (
     <BrowserRouter>
-      <Header>
+      <Header authenticated={authenticated} currentUser={currentUser}>
         <Routes>
           <Route index element={<MainPageIndex />} />
           <Route path="/mypage" element={<MyPageIndex />} />
@@ -46,7 +52,7 @@ function App() {
           <Route path="/createRoadmap" element={<CreateRoadmap />} />
           <Route path="/roadMap" element={<RoadMapPageIndex />} />
           <Route path="/postDetail/:postId" element={<PostDetailIndex />} />
-          <Route path="/roadMapDetail/:id" element={<RoadMapDetailIndex />} />
+          <Route path="/roadMapDetail/:roadMapId" element={<RoadMapDetailIndex />} />
           <Route path="/writingPage" element={<WritingPage />} />
           <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler />} />
           {/* <Route path="/login" element={<Login/>}/> */}
