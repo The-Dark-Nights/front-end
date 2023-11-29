@@ -1,12 +1,13 @@
 import axios from "axios";
+import { API_BASE_URL } from "../constants";
 
-const baseUrl = "http://192.168.0.19:9999";
+const baseUrl = API_BASE_URL;
 
 //로드맵저장후 직전 저장 불러오기버튼api
 export async function getRoadMapResotre(title) {
   const flow = await axios.get(
-    baseUrl + "/roadmap",
-    { title: title },
+    baseUrl + "/v1/roadmap",
+    // { title: title },
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -29,7 +30,7 @@ export async function getRoadMapResotre(title) {
 export async function postRoadMapSave(flow, title) {
   console.log(flow);
   const save = await axios.post(
-    baseUrl + "/roadmap",
+    baseUrl + "/v1/roadmap",
     { roadmap: flow, title: title },
     {
       headers: {
@@ -49,7 +50,7 @@ export async function postRoadMapSave(flow, title) {
 
 //로드맵 리스트 불러오는 api
 export async function getRoadMapCard() {
-  const getRoadMapList = await axios.get(baseUrl + "/roadmap", {
+  const getRoadMapList = await axios.get(baseUrl + "/v1/roadmap", {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
     },
@@ -58,7 +59,7 @@ export async function getRoadMapCard() {
 }
 //디테일 로드맵카드 불러오는 api
 export async function getDetailRoadMapCard(index) {
-  const getDetailCard = await axios.get(baseUrl + `/roadmap/${index}`, {
+  const getDetailCard = await axios.get(baseUrl + `/v1/roadmap/${index}`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
     },
