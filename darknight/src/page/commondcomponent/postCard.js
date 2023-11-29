@@ -5,8 +5,10 @@ import styled from "styled-components";
 function PostCard({title, content}) {
 
   let reg = /[`~!@#$%^&*()_|+\-=?;:'"<>\{\}\[\]\\\/ ]/gim;
-  let regexPostcontent = content.replace(reg,"");
-
+  let regexPostcontent = "";
+  if(content){
+  regexPostcontent = content.replace(reg,"");
+  }
   return (
     <PostCardWrap>
       <Link to="/postDetail">
@@ -19,6 +21,7 @@ function PostCard({title, content}) {
           <h3>{title}</h3>
           <p>
             {regexPostcontent}
+            
             {/* 홈 페이지 타이틀 변경하기  #post-2 .entry-title visibility:
             hidden; line-height: 0; #post-2 .entry-title:before visibility:
             visible; content: '사이트를 방문해주셔서 감사합니다!'; line-height:

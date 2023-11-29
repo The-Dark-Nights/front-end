@@ -109,60 +109,68 @@ function Flow() {
   );
 
   //전체 저장
-  const onSave = useCallback(() => {
-    if (reactFlowInstance) {
-      const flow = reactFlowInstance.toObject();
-      // console.log(JSON.stringify(flow));
-      postRoadMapSave(JSON.stringify(flow)).then((res) => {
-        alert("저장완료");
-      });
-      // localStorage.setItem(flowKey, JSON.stringify(flow));
-      // saveApi(flow);
-    }
-  }, [reactFlowInstance]);
+  const onSave = useCallback(
+    (newTitle) => {
+      console.log(newTitle);
+      if (reactFlowInstance) {
+        const flow = reactFlowInstance.toObject();
+        // console.log(JSON.stringify(flow));
+        postRoadMapSave(JSON.stringify(flow), newTitle).then((res) => {
+          console.log(res);
+          alert("저장완료");
+        });
+        // localStorage.setItem(flowKey, JSON.stringify(flow));
+        // saveApi(flow);
+      }
+    },
+    [reactFlowInstance]
+  );
 
   //직전 저장 가져오기
-  const onRestore = useCallback(() => {
-    const restoreFlow = async () => {
-      await getRoadMapResotre().then((res) => {
-        const flow = JSON.parse(res.data.flow);
+  const onRestore = useCallback(
+    (newTitle) => {
+      const restoreFlow = async () => {
+        await getRoadMapResotre(newTitle).then((res) => {
+          const flow = JSON.parse(res.data.flow);
 
-        if (flow) {
-          const { x = 0, y = 0, zoom = 1 } = flow.viewport;
-          let nodesArr = flow.nodes || [];
-          for (let i = 0; i < nodesArr.length; i++) {
-            nodesArr[i].data = {
-              label: (
-                <div>
-                  {nodesArr[i].name}
-                  <img
-                    src={nodesArr[i].url}
-                    style={{
-                      width: "12px",
-                      height: "12px",
-                      marginLeft: "3px",
-                      position: "relative",
-                      top: "2px",
-                    }}
-                  />
-                </div>
-              ),
-            };
+          if (flow) {
+            const { x = 0, y = 0, zoom = 1 } = flow.viewport;
+            let nodesArr = flow.nodes || [];
+            for (let i = 0; i < nodesArr.length; i++) {
+              nodesArr[i].data = {
+                label: (
+                  <div>
+                    {nodesArr[i].name}
+                    <img
+                      src={nodesArr[i].url}
+                      style={{
+                        width: "12px",
+                        height: "12px",
+                        marginLeft: "3px",
+                        position: "relative",
+                        top: "2px",
+                      }}
+                    />
+                  </div>
+                ),
+              };
+            }
+            console.log("바뀐후", nodesArr || []);
+            setNodes(nodesArr);
+            setEdges(restoreFlow.edges || []);
+            setViewport({ x, y, zoom });
           }
-          console.log("바뀐후", nodesArr || []);
-          setNodes(nodesArr);
-          setEdges(restoreFlow.edges || []);
-          setViewport({ x, y, zoom });
-        }
-      });
-    };
+        });
+      };
 
-    restoreFlow();
-  }, [setNodes, setViewport]);
+      restoreFlow();
+    },
+    [setNodes, setViewport]
+  );
 
-  const test = useCallback(() => {
-    axios.get("http://192.168.0.59:9999/test").then((res) => console.log(res));
-  });
+  // const test = useCallback(() => {
+  //   axios.get("http://192.168.0.59:9999/test").then((res) => console.log(res));
+  // });
 
   const onAdd = useCallback(() => {
     const newNode = {
@@ -204,11 +212,26 @@ function Flow() {
     [nodes, edges]
   );
 
+  const [newTitle, setNewTitle] = useState("");
+  const titleChange = (e) => {
+    setNewTitle(e.target.value);
+    console.log(e.target.value);
+  };
   return (
     <>
       <div className={style.dndflow}>
+        <div>
+          <p>제목 : </p>
+          <input type="text" onChange={titleChange} value={newTitle} />
+          <p>이미지 파일</p>
+          <input type="file" />
+        </div>
         <ReactFlowProvider>
-          <div className={style.reactflowWrapper} ref={reactFlowWrapper}>
+          <div
+            className={style.reactflowWrapper}
+            ref={reactFlowWrapper}
+            id="react-flow__viewport"
+          >
             <ReactFlow
               nodes={nodes}
               edges={edges}
@@ -220,13 +243,23 @@ function Flow() {
               onDragOver={onDragOver}
               onNodesDelete={onNodesDelete}
               fitView
-              className="download-image"
+              className="download-image react-flow__viewport"
             >
               <Panel position="top-right">
-                <button onClick={onSave} className={style.roadmapBtn}>
+                <button
+                  onClick={() => {
+                    onSave(newTitle);
+                  }}
+                  className={style.roadmapBtn}
+                >
                   save
                 </button>
-                <button onClick={onRestore} className={style.roadmapBtn}>
+                <button
+                  onClick={() => {
+                    onRestore(newTitle);
+                  }}
+                  className={style.roadmapBtn}
+                >
                   restore
                 </button>
                 <DownloadButton />

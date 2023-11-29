@@ -9,6 +9,7 @@ import ItemsCarousel from "react-items-carousel";
 import { useDispatch, useSelector } from "react-redux";
 import { useEdges } from "reactflow";
 import { roadMapCardRead } from "../../../reducer/roadMapCardSlice";
+import { getRoadMapCard } from "../../../apis/api";
 function MainRadMap() {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const TRUE = true;
@@ -16,9 +17,16 @@ function MainRadMap() {
   const [numOfCards, setNumOfCards] = useState(3);
   const roadMapCard = useSelector((state) => state.roadMapCard);
   const dispatch = useDispatch();
+  const [roadMapList, setRoadMapList] = useState([]);
+
   useEffect(() => {
-    dispatch(roadMapCardRead());
-  });
+    let roadMap = async () => {
+      const result = await getRoadMapCard().then((res) => res);
+      // console.log(result.data);
+      setRoadMapList(result.data);
+    };
+    roadMap();
+  }, []);
   return (
     <div className="roadMapListBox">
       {/* <!-- 로드맵네비 --> */}
@@ -59,10 +67,9 @@ function MainRadMap() {
               </MoveBtn>
             }
           >
-            {/* <!-- 로드맵카드 --> */}
-            {/* {roadMapCard.map((list)=>( */}
-            <RoadMapCard />
-            {/* ))} */}
+            {roadMapList.map((v, index) => (
+              <RoadMapCard v={v} index={index} />
+            ))}
           </ItemsCarousel>
         </RoadMapSlide>
       </RoadMapWrap>

@@ -1,35 +1,40 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 
 import styled from "styled-components";
-function RoadMapCard() {
+function RoadMapCard({ v, index }) {
+  useEffect(() => {
+    console.log(v);
+  });
+  let { params } = useParams();
   return (
     <RoadMapCardWrap>
-      <Link to="/roadMapDetail">
-        <RoadMapTitleBox>
-          <h3>1</h3>
-          <UserInfo>
-            <img src="/img/user.png" alt="" />
-            <p>1</p>
-          </UserInfo>
-          <hr />
-        </RoadMapTitleBox>
+      {/* <Link to=`/roadMapDetail/{params}`> */}
+      <RoadMapTitleBox>
+        <h3>{v.title}</h3>
+        <UserInfo>
+          <img src={v.findMemberDTO.profileImage} alt="" />
+          <p>{v.findMemberDTO.name}</p>
+        </UserInfo>
+        <hr />
+      </RoadMapTitleBox>
 
-        <RoadMapImg>
-          <img src="/img/reactflow.png" alt="" />
-          <hr />
-        </RoadMapImg>
+      <RoadMapImg>
+        <img src="/img/reactflow.png" alt="" />
+        <hr />
+      </RoadMapImg>
 
-        <RoadMapComment>
-          <div>
-            <img src="/img/comment.png" alt="" />
-            <p>1</p>
-          </div>
-          <div>
-            <img src="/img/heart.png" alt="" />
-            <p>1</p>
-          </div>
-        </RoadMapComment>
-      </Link>
+      <RoadMapComment>
+        <div>
+          <img src="/img/comment.png" alt="" />
+          <p>1</p>
+        </div>
+        <div>
+          <img src="/img/heart.png" alt="" />
+          <p>1</p>
+        </div>
+      </RoadMapComment>
+      {/* </Link> */}
     </RoadMapCardWrap>
   );
 }
