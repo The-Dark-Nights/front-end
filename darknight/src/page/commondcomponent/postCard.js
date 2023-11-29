@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 
-function PostCard() {
+function PostCard({title, content}) {
+
+  let reg = /[`~!@#$%^&*()_|+\-=?;:'"<>\{\}\[\]\\\/ ]/gim;
+  let regexPostcontent = "";
+  if(content){
+  regexPostcontent = content.replace(reg,"");
+  }
   return (
     <PostCardWrap>
       <Link to="/postDetail">
@@ -11,12 +17,15 @@ function PostCard() {
           <hr />
         </PostImg>
         <PostContents>
-          <h3>제목</h3>
+          
+          <h3>{title}</h3>
           <p>
-            /* 홈 페이지 타이틀 변경하기 */ #post-2 .entry-title visibility:
+            {regexPostcontent}
+            
+            {/* 홈 페이지 타이틀 변경하기  #post-2 .entry-title visibility:
             hidden; line-height: 0; #post-2 .entry-title:before visibility:
             visible; content: '사이트를 방문해주셔서 감사합니다!'; line-height:
-            1.2em;
+            1.2em;*/}
           </p>
           <hr />
         </PostContents>

@@ -1,13 +1,16 @@
 // import style from "./post.module.css";
 // import "../../css/common.css";
 import PostCard from "../commondcomponent/postCard";
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { API_BASE_URL } from "../../constants";
+import axios from "axios";
 
 function PostPageIndex() {
   const [over,setOver]=useState(false);
   const [over1,setOver1]=useState(false);
+  const [posts, setPosts]=useState([]);
 
   
   const mouseOver=()=>{
@@ -27,7 +30,16 @@ function PostPageIndex() {
   const navigate=useNavigate();
   const clickWrite=()=>{navigate('/writingPage')};
 
-  const posts = [{},{},{},{},{},{},{},{}];
+  useEffect(() => {
+    axios.get(API_BASE_URL+"/v1/post/all",{
+      headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+      }
+  })
+    .then((res) => 
+    setPosts(res.data.reverse()))
+  }
+  ,[])
 
   return (
     <>
@@ -52,17 +64,8 @@ function PostPageIndex() {
               <PostListWrap>
                 {/* <!-- 포스트카드 --> */}
                 {posts.map((post)=> (
-                  <PostCard key={post.postId}>
-
-                  </PostCard>
+                  <PostCard key={post.id} title={post.title} content={post.content}/>
                 ))}
-              {/* <PostCard/>
-              <PostCard/>
-              <PostCard/>
-              <PostCard/>
-              <PostCard/>
-              <PostCard/>
-              <PostCard/> */}
               </PostListWrap>
             </PostSlide>
           </div>
@@ -72,7 +75,7 @@ function PostPageIndex() {
 export default PostPageIndex;
 
 let PostContainerTitle=styled.div`
- margin-top: 40px;
+  margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
   align-content: center;

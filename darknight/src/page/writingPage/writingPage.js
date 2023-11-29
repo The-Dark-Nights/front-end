@@ -16,42 +16,37 @@ function WritingPage() {
 
   const postTitleRef = useRef(null);
 
-  // const exportFile = useCallback( () => {
-  //     const file = new Blob([md], {type: 'text/md'});
-  //     let fileName = "file.md";
+    
+    
+    
+    const exportFile = useCallback( () => {
+        const file = new Blob([md], {type: 'text/md'});
+        let fileName = "file.md";
+        
+        const element = document.createElement('a');
 
-  //     const element = document.createElement('a');
-
-  //     element.href = URL.createObjectURL(file);
-  //     element.download = fileName;
-  //     document.body.appendChild(element);
-  //     element.click();
-  // }
-  // ,[md])
-
-  const importFile = (e) => {
-    if (e.target.files) {
-      const file = e.target.files[0];
-      new Promise((resolve, reject) => {
-        resolve(file.text());
-      }).then((res) => {
-        setMd(res);
-        e.target.value = null;
-      });
+        element.href = URL.createObjectURL(file);
+        element.download = fileName;
+        document.body.appendChild(element);
+        element.click();
     }
-  };
+    ,[md]) 
+    
+    
+    const importFile = e => {
+        
+        if(e.target.files){
+        const file = e.target.files[0];
+        new Promise((resolve, reject) =>{
+            resolve(file.text())
+        }).then(res => { 
+            setMd(res)
+            e.target.value = null;
+            }
+        );
+        }
+    };
 
-  const exportFile = useCallback(() => {
-    const file = new Blob([md], { type: "text/md" });
-    let fileName = "file.md";
-
-    const element = document.createElement("a");
-
-    element.href = URL.createObjectURL(file);
-    element.download = fileName;
-    document.body.appendChild(element);
-    element.click();
-  }, [md]);
 
   const savePost = (e) => {
     const postBody = md;
