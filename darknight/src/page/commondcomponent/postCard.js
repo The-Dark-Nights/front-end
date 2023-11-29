@@ -1,10 +1,13 @@
+import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../../constants";
+import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
 import styled from "styled-components";
 
-function PostCard({title, content, postId}) {
+function PostCard({title, content, postId, userId}) {
 
-  
+  const [userInfo, setUserInfo] = useState(null);
 
   let reg = /[`~!@#$%^&*()_|+\-=?;:'"<>\{\}\[\]\\\/ ]/gim;
   let regexPostcontent = "";
@@ -13,6 +16,16 @@ function PostCard({title, content, postId}) {
   }
   
   let postDetailUrl = `/postDetail/${postId}`;
+
+  useEffect(()=>{
+    axios.get(API_BASE_URL+`/v1/member/${userId}`,{
+      headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+      }
+  })
+  .then(res=>
+    setUserInfo(res.data))
+  },[])
 
   return (
     <PostCardWrap>
@@ -36,7 +49,7 @@ function PostCard({title, content, postId}) {
         </PostContents>
         <PostComment>
           <div>
-            <img src="/img/user.png" alt="" />
+            <img src={userInfo?.profileImage} alt="" />
           </div>
           <UserName>by pm</UserName>
           <PostCommentBox>

@@ -37,7 +37,8 @@ function PostPageIndex() {
       }
   })
     .then((res) => 
-    setPosts(res.data.reverse()))
+    setPosts(res.data.reverse())
+    )
   }
   ,[])
 
@@ -64,7 +65,7 @@ function PostPageIndex() {
               <PostListWrap>
                 {/* <!-- 포스트카드 --> */}
                 {posts.map((post)=> (
-                  <PostCard key={post.id} title={post.title} content={post.content} postId={post.id}/>
+                  <PostCard key={post.id} title={post.title} content={post.content} postId={post.id} userId={post.id}/>
                 ))}
               </PostListWrap>
             </PostSlide>
