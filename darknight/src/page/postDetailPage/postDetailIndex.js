@@ -9,8 +9,10 @@ import styled from "styled-components";
 function PostDetailIndex(){
   const [report,setReport]=useState(false);
   const [postData, setPostData] = useState(null);
+  const [userInfo, setUserInfo] = useState(null);
 
   let { postId } = useParams();
+
 
   const clickReport=()=>{
     setReport(!report)
@@ -30,7 +32,17 @@ function PostDetailIndex(){
         Authorization: `Bearer ${localStorage.getItem("accessToken")}`
     }})
     .then(res => setPostData(res.data))
-    }
+    .then(axios.get(API_BASE_URL+`/v1/member/${postData.memberId}`,{
+      headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+      }
+  }).then(res=>
+    {setUserInfo(res.data);
+    console.log(userInfo)}))
+    
+  
+    
+  }
     ,[])
 
     
@@ -41,7 +53,7 @@ function PostDetailIndex(){
         <h1>{postData?.title}</h1>
         <UserInfo>
           <ImgBox>
-            <img src="/img/user.png" alt="" />
+            <img src={userInfo?.profileImage} alt="" />
             <div >
               <FollowBtn followBtn={followBtn} onClick={clickBtnColor}>
                 <div className='greenColor'></div>
@@ -50,7 +62,7 @@ function PostDetailIndex(){
             </div>
           </ImgBox>
           <UserInfoBox>
-            <UserName onClick={clickUser}>Code Juggler</UserName>
+            <UserName onClick={clickUser}>{userInfo?.name}</UserName>
             <UserFollows>
               <Link to="/mypage">
               <img src="/img/users.png" alt="" />
