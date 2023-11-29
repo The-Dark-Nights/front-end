@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback, useEffect } from "react";
 import ReactFlow, {
   ReactFlowProvider,
   MiniMap,
@@ -22,7 +22,8 @@ const initialEdges = [{ id: "e1-2", source: "1", target: "2" }];
 let id = 0;
 
 
-function ReadReactFlow({setSideOpen,sideOpen}) {
+function ReadReactFlow({setSideOpen,sideOpen, roadMapDetail}) {
+  
   const clickNode = useCallback(() => {
  
     setSideOpen(!sideOpen);
@@ -51,6 +52,41 @@ function ReadReactFlow({setSideOpen,sideOpen}) {
     (params) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]
   );
+  useEffect(() =>{
+    if(roadMapDetail){
+  const flow = JSON.parse(roadMapDetail.roadmap);
+
+          if (flow) {
+            const { x = 0, y = 0, zoom = 1 } = flow.viewport;
+            let nodesArr = flow.nodes || [];
+            let edgesArr = flow.edges || [];
+            for (let i = 0; i < nodesArr.length; i++) {
+              nodesArr[i].data = {
+                label: (
+                  <div>
+                    {nodesArr[i].name}
+                    <img
+                      src={nodesArr[i].url}
+                      style={{
+                        width: "12px",
+                        height: "12px",
+                        marginLeft: "3px",
+                        position: "relative",
+                        top: "2px",
+                      }}
+                    />
+                  </div>
+                ),
+              };
+            }
+            console.log("바뀐후", nodesArr || []);
+            setNodes(nodesArr);
+            setEdges(edgesArr);
+            setViewport({ x, y, zoom });
+          }
+        }
+  },[roadMapDetail])
+
 
   return (
     <>
@@ -88,10 +124,11 @@ function ReadReactFlow({setSideOpen,sideOpen}) {
   );
 }
 
-export default function ReadReactflowWrap({ setSideOpen, sideOpen }) {
+export default function ReadReactflowWrap({ setSideOpen, sideOpen , roadMapDetail}) {
+  
   return (
     <ReactFlowProvider>
-      <ReadReactFlow setSideOpen={setSideOpen} sideOpen={sideOpen}/>
+      <ReadReactFlow setSideOpen={setSideOpen} sideOpen={sideOpen} roadMapDetail = {roadMapDetail}/>
     </ReactFlowProvider>
   );
 }

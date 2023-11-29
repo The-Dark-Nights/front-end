@@ -2,14 +2,15 @@ import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import styled from "styled-components";
-function RoadMapCard({ v, index }) {
+function RoadMapCard({ v, index}) {
   useEffect(() => {
     console.log(v);
   });
-  let { params } = useParams();
+  
+
   return (
     <RoadMapCardWrap>
-      {/* <Link to=`/roadMapDetail/{params}`> */}
+      <Link to={`/roadMapDetail/${v.id}`}>
       <RoadMapTitleBox>
         <h3>{v.title}</h3>
         <UserInfo>
@@ -34,7 +35,7 @@ function RoadMapCard({ v, index }) {
           <p>1</p>
         </div>
       </RoadMapComment>
-      {/* </Link> */}
+      </Link>
     </RoadMapCardWrap>
   );
 }
