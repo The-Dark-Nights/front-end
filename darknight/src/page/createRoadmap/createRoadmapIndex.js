@@ -243,8 +243,9 @@ function Flow() {
               onDragOver={onDragOver}
               onNodesDelete={onNodesDelete}
               fitView
-              className="download-image react-flow__viewport"
+              className="download-image"
             >
+              {/* react-flow__viewport */}
               <Panel position="top-right">
                 <button
                   onClick={() => {

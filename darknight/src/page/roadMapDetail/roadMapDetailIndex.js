@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReportModal from "../commondcomponent/reportModal/reportModal";
 import Comment from "../commondcomponent/commnent";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ReadReactflowWrap from "../commondcomponent/readReactflow";
 import SideMenu from "../commondcomponent/sidemenu/sidemenu";
 import style from "./roadMapDetail.module.css";
 import styled from "styled-components";
+import axios from "axios";
+import { API_BASE_URL } from "../../constants";
 
 function RoadMapDetailIndex() {
   const [report, setReport] = useState(false);
+  const [roadmapDetail, setRoadmapDetail] = useState(null);
+  
+
+  const {roadMapId} = useParams();
+
   const clickReport = () => {
     setReport(!report);
   };
@@ -21,15 +28,36 @@ function RoadMapDetailIndex() {
     setFollowBtn(!followBtn);
   };
   const [sideOpen, setSideOpen] = useState(false);
+  
+
+  useEffect(()=>{
+    
+    axios.get( API_BASE_URL + `/v1/roadmap/${roadMapId}`,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }
+
+    ).then(res => 
+      {setRoadmapDetail(res.data)}
+      )
+      
+    
+    
+    
+
+
+  },[])
 
   return (
     <>
       {/* <!-- 로드맵디테일타이틀 시작 --> */}
       <RoadMapDetailTitle>
-        <h1>Custom RoadMap Name</h1>
+        <h1>{roadmapDetail?.title}</h1>
         <UserInfo>
           <ImgBox>
-            <img src="/img/user.png" alt="" />
+            <img src={roadmapDetail?.findMemberDTO?.profileImage} alt="" />
             <div>
               <FollowBtn followBtn={followBtn} onClick={clickBtnColor}>
                 <div className='greenColor'></div>
@@ -39,7 +67,7 @@ function RoadMapDetailIndex() {
           </ImgBox>
           <UserInfoBox>
             <UserName onClick={clickUser}>
-              Code Juggler
+              {roadmapDetail?.findMemberDTO?.name}
             </UserName>
             <UserFollows>
               <img src="/img/users.png" alt="" />
@@ -63,7 +91,7 @@ function RoadMapDetailIndex() {
       <SideMenu sideOpen={sideOpen} />
       {/* <!-- 로드맵 컨텐츠 --> */}
       <RoadMapDetailContents>
-        <ReadReactflowWrap setSideOpen={setSideOpen} sideOpen={sideOpen} />
+        <ReadReactflowWrap setSideOpen={setSideOpen} sideOpen={sideOpen} roadMapDetail={roadmapDetail} />
         <form>
           <textarea
             name=""
