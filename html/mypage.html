@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/mypage.css" />
+  </head>
+  <body>
+    <div>
+      <div class="container">
+        <!-- 헤더시작 -->
+
+        <div class="header">
+          <!-- 로고 -->
+          <div class="logo"><img src="/img/logo.png" alt="" /></div>
+          <div class="menuBox">
+            <!-- 페이지이름 -->
+            <div class="pageName"><p>Post</p></div>
+            <!-- 메뉴박스 -->
+
+            <ul class="menuBoxTitle">
+              <li><img src="/img/search.png" alt="" />Posts</li>
+              <li><img src="/img/search.png" alt="" />RoadMap</li>
+            </ul>
+          </div>
+          <!-- 로그인전-> -->
+          <div class="signBox">
+            <img src="/img/search.png" alt="" />
+            <button class="purpleBtn signBtn">SignIn</button>
+          </div>
+          <!-- 로그인후 -->
+          <div class="loginAfter">
+            <div class="loginBox">
+              <img src="/img/search.png" alt="" />
+              <div class="alarmBell">
+                <div class="alarmBellImg">
+                  <img src="/img/bell.png" alt="" />
+                  <p>12</p>
+                </div>
+                <div class="alarmModal">
+                  <div class="alarmModalTitle">
+                    <p>Alarm</p>
+                    <img src="/img/setting.png" alt="" />
+                  </div>
+                  <hr />
+                  <div>
+                    <ul>
+                      <li class="alarmList">
+                        <div>
+                          <p>???가 html 카테고리에 글을 올렸습니다</p>
+                        </div>
+                        <p>1일전</p>
+                      </li>
+                      <li class="alarmList">
+                        <div>
+                          <p>???가 html 카테고리에 글을 올렸습니다</p>
+                        </div>
+                        <p>1일전</p>
+                      </li>
+                      <li class="alarmList">
+                        <div>
+                          <p>???가 html 카테고리에 글을 올렸습니다</p>
+                        </div>
+                        <p>1일전</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="userImg">
+                <img src="/img/user.png" alt="" class="userProfileImg" />
+                <img src="/img/downarrow.png" alt="" class="downarrow" />
+                <div class="userMiniMenu">
+                  <ul>
+                    <li>My Profile</li>
+                    <hr />
+                    <li>Drafts</li>
+                    <hr />
+                    <li>Liked</li>
+                    <hr />
+                    <li>Logout</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 헤더끝 -->
+        <!-- 마이페이지컨테이너시작 -->
+        <div class="mainContainer contents myPageWrap">
+          <!--마이페이지 사이드메뉴  -->
+          <div class="myPageSideMenu">
+            <img src="/img/user.png" alt="" />
+            <div class="myPageUserInfo">
+              <h1>Jeon,Tae Hyeon</h1>
+              <p>Code Magician</p>
+              <div class="myPageFollows">
+                <img src="/img/users.png" alt="" />
+                <span>4followers</span>
+                <span>4followings</span>
+              </div>
+            </div>
+            <div>
+              <button class="greyBtn editBtn">Edit Profile</button>
+            </div>
+          </div>
+          <!-- 마이페이지 컨텐츠 -->
+          <div class="myPageContents">
+            <div class="statistics" style="display: block">
+              <div class="userStatistics">
+                <img src="/img/user.png" alt="" />
+                <div>
+                  <table class="userStatisticsTable" style="min-width: 480px">
+                    <colgroup>
+                      <col style="width: 60%" />
+                      <col style="width: 20%" />
+                      <col style="width: 20%" />
+                    </colgroup>
+                    <thead class="css-1z08gdi">
+                      <tr class="css-1ojb0xa">
+                        <th class="css-1ev8h34">레벨</th>
+                        <th colspan="2" class="css-1ev8h34">문제</th>
+                      </tr>
+                    </thead>
+                    <tbody class="css-1d9xc1d">
+                      <tr class="css-1ojb0xa">
+                        <td class="bronze css-1cnxww9"><b>Bronze</b></td>
+                        <td class="css-1qm6zmr"><b>1,831</b></td>
+                        <td class="css-1qm6zmr">
+                          <span class="css-stcnmb">14.2%</span>
+                        </td>
+                      </tr>
+                      <tr class="css-1ojb0xa">
+                        <td class="silver css-1cnxww9"><b>Silver</b></td>
+                        <td class="css-1qm6zmr"><b>2,156</b></td>
+                        <td class="css-1qm6zmr">
+                          <span class="css-stcnmb">16.7%</span>
+                        </td>
+                      </tr>
+                      <tr class="css-1ojb0xa">
+                        <td class="gold css-1cnxww9"><b>Gold</b></td>
+                        <td class="css-1qm6zmr"><b>2,601</b></td>
+                        <td class="css-1qm6zmr">
+                          <span class="css-stcnmb">20.2%</span>
+                        </td>
+                      </tr>
+                      <tr class="css-1ojb0xa">
+                        <td class="platinum css-1cnxww9"><b>Platinum</b></td>
+                        <td class="css-1qm6zmr"><b>2,907</b></td>
+                        <td class="css-1qm6zmr">
+                          <span class="css-stcnmb">22.6%</span>
+                        </td>
+                      </tr>
+                      <tr class="css-1ojb0xa">
+                        <td class="diamond css-1cnxww9"><b>Diamond</b></td>
+                        <td class="css-1qm6zmr"><b>2,058</b></td>
+                        <td class="css-1qm6zmr">
+                          <span class="css-stcnmb">16.0%</span>
+                        </td>
+                      </tr>
+                      <tr class="css-1ojb0xa">
+                        <td class="ruby css-1cnxww9"><b>Ruby</b></td>
+                        <td class="css-1qm6zmr"><b>368</b></td>
+                        <td class="css-1qm6zmr">
+                          <span class="css-stcnmb">2.9%</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="postListBox">
+                <!-- 포스트네비 -->
+                <div class="postListNav">
+                  <div>
+                    <p>Best Post</p>
+                    <hr />
+                  </div>
+                  <div>
+                    <p>See All</p>
+                    <hr class="seeAllHr" />
+                  </div>
+                </div>
+                <!-- 포스트라이드 -->
+                <div class="postSlide">
+                  <ul class="postList">
+                    <!-- 포스트카드 -->
+                    <li class="postCard">
+                      <div class="postImg">
+                        <img src="/img/logo.png" alt="" />
+                        <hr />
+                      </div>
+                      <div class="postContents">
+                        <h3>제목</h3>
+                        <p>
+                          /* 홈 페이지 타이틀 변경하기 */ #post-2 .entry-title {
+                          visibility: hidden; line-height: 0; } #post-2
+                          .entry-title:before { visibility: visible; content:
+                          '사이트를 방문해주셔서 감사합니다!'; line-height:
+                          1.2em; }
+                        </p>
+                        <hr />
+                      </div>
+                      <div class="postComment">
+                        <div><img src="/img/user.png" alt="" /></div>
+                        <div class="userName">by pm</div>
+                        <div class="postCommentBox">
+                          <div>
+                            <img src="/img/comment.png" alt="" />
+                            <p>11</p>
+                          </div>
+                          <div>
+                            <img src="/img/heart.png" alt="" />
+                            <p>3</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="postCard">
+                      <div class="postImg">
+                        <img src="/img/logo.png" alt="" />
+                        <hr />
+                      </div>
+                      <div class="postContents">
+                        <h3>제목</h3>
+                        <p>
+                          /* 홈 페이지 타이틀 변경하기 */ #post-2 .entry-title {
+                          visibility: hidden; line-height: 0; } #post-2
+                          .entry-title:before { visibility: visible; content:
+                          '사이트를 방문해주셔서 감사합니다!'; line-height:
+                          1.2em; }
+                        </p>
+                        <hr />
+                      </div>
+                      <div class="postComment">
+                        <div><img src="/img/user.png" alt="" /></div>
+                        <div class="userName">by pm</div>
+                        <div class="postCommentBox">
+                          <div>
+                            <img src="/img/comment.png" alt="" />
+                            <p>11</p>
+                          </div>
+                          <div>
+                            <img src="/img/heart.png" alt="" />
+                            <p>3</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="postCard">
+                      <div class="postImg">
+                        <img src="/img/logo.png" alt="" />
+                        <hr />
+                      </div>
+                      <div class="postContents">
+                        <h3>제목</h3>
+                        <p>
+                          /* 홈 페이지 타이틀 변경하기 */ #post-2 .entry-title {
+                          visibility: hidden; line-height: 0; } #post-2
+                          .entry-title:before { visibility: visible; content:
+                          '사이트를 방문해주셔서 감사합니다!'; line-height:
+                          1.2em; }
+                        </p>
+                        <hr />
+                      </div>
+                      <div class="postComment">
+                        <div><img src="/img/user.png" alt="" /></div>
+                        <div class="userName">by pm</div>
+                        <div class="postCommentBox">
+                          <div>
+                            <img src="/img/comment.png" alt="" />
+                            <p>11</p>
+                          </div>
+                          <div>
+                            <img src="/img/heart.png" alt="" />
+                            <p>3</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="postCard">
+                      <div class="postImg">
+                        <img src="/img/logo.png" alt="" />
+                        <hr />
+                      </div>
+                      <div class="postContents">
+                        <h3>제목</h3>
+                        <p>
+                          /* 홈 페이지 타이틀 변경하기 */ #post-2 .entry-title {
+                          visibility: hidden; line-height: 0; } #post-2
+                          .entry-title:before { visibility: visible; content:
+                          '사이트를 방문해주셔서 감사합니다!'; line-height:
+                          1.2em; }
+                        </p>
+                        <hr />
+                      </div>
+                      <div class="postComment">
+                        <div><img src="/img/user.png" alt="" /></div>
+                        <div class="userName">by pm</div>
+                        <div class="postCommentBox">
+                          <div>
+                            <img src="/img/comment.png" alt="" />
+                            <p>11</p>
+                          </div>
+                          <div>
+                            <img src="/img/heart.png" alt="" />
+                            <p>3</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="postCard">
+                      <div class="postImg">
+                        <img src="/img/logo.png" alt="" />
+                        <hr />
+                      </div>
+                      <div class="postContents">
+                        <h3>제목</h3>
+                        <p>
+                          /* 홈 페이지 타이틀 변경하기 */ #post-2 .entry-title {
+                          visibility: hidden; line-height: 0; } #post-2
+                          .entry-title:before { visibility: visible; content:
+                          '사이트를 방문해주셔서 감사합니다!'; line-height:
+                          1.2em; }
+                        </p>
+                        <hr />
+                      </div>
+                      <div class="postComment">
+                        <div><img src="/img/user.png" alt="" /></div>
+                        <div class="userName">by pm</div>
+                        <div class="postCommentBox">
+                          <div>
+                            <img src="/img/comment.png" alt="" />
+                            <p>11</p>
+                          </div>
+                          <div>
+                            <img src="/img/heart.png" alt="" />
+                            <p>3</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- follow리스트페이지 -->
+            <div class="follow" style="display: none">
+              <div class="followNav">
+                <div class="filter">
+                  <div class="filterBox">
+                    <p>Follower</p>
+                    <p>Following</p>
+                  </div>
+                  <hr />
+                </div>
+                <!-- 리스트부분 -->
+                <div>
+                  <ul class="followList">
+                    <li>
+                      <div>
+                        <img src="/img/user.png" alt="" />
+                        <div>
+                          <div class="user">
+                            <p>name</p>
+                            <span>nickname</span>
+                          </div>
+                          <div class="userGroup"><span>greeting</span></div>
+                        </div>
+                      </div>
+                      <div class="unfollowBtnBox">
+                        <button class="greyBtn">Unfollow</button>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <img src="/img/user.png" alt="" />
+                        <div>
+                          <div class="user">
+                            <p>name</p>
+                            <span>nickname</span>
+                          </div>
+                          <div class="userGroup"><span>greeting</span></div>
+                        </div>
+                      </div>
+                      <div class="unfollowBtnBox">
+                        <button class="greyBtn">Unfollow</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 마이페이지 수정 모달 -->
+        <div class="myPageModal">
+          <div class="myPageModalBack"></div>
+          <div class="myPageModalContent">
+            <p>Name</p>
+            <input type="text" placeholder="Jeon,Tae Hyeon">
+            <p>Pronouns</p>
+            <div class="pronouns">
+              <img src="/img/phone.png" alt=""><input type="text" placeholder="010-22-222">
+            </div>
+            <div class="pronouns">
+              <img src="/img/building.png" alt=""><input type="text" placeholder="서울시 송파구">
+            </div>
+            <div class="myPageModalBtnBox">
+              <button class="purpleBtn saveBtn">save</button>
+              <button class="greyBtn closeBtn">close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 마이페이지컨테이너끝 -->
+  </body>
+</html>

@@ -1,0 +1,137 @@
+/* 페이지 보기위한 디스플레이 설정 */
+/* .signBox {
+  display: none;
+}
+.loginAfter {
+  display: block;
+}
+.alarmModal {
+  display: none;
+}
+.userMiniMenu {
+  display: none;
+} */
+
+/* 포스트 컨테이너 타이틀 */
+.postContainerTitle {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: baseline;
+  justify-content: center;
+}
+.postContainerTitle > h1 {
+  margin-left: 28%;
+}
+.postContainerTitle > button {
+  margin-left: 37%;
+}
+.filter {
+  color: #c6c7cc;
+}
+
+.filterBox {
+  display: flex;
+  width: 270px;
+}
+
+.filterBox > p {
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+.filterBox > p:first-child {
+  margin-left: 10px;
+}
+.filterBox > select {
+  color: #c6c7cc;
+  width: 70px;
+  height: 25px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+  padding-left: 3px;
+}
+.writeBtn {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  color: white;
+  background-color: #a554f3;
+  border: none;
+}
+
+/* 포스트리스트 */
+
+/* 포스트슬라이드 */
+.postSlide {
+ margin-top: 5%;
+}
+.postListWrap{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.postList {
+  display: flex;
+
+}
+.postList > li:first-child {
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+.postList > li:nth-child(5n + 0) {
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+/* 로드맵카드 */
+.postCard {
+  width: 300px;
+  height: 400px;
+  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.02);
+  margin-bottom: 10px;
+  margin-left: 3%;
+  margin-top: 80px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.postImg > img {
+  width: 200px;
+}
+.postContents {
+  margin-top: 10px;
+}
+.postContents > h3 {
+  margin-bottom: 20px;
+}
+.postContents > p {
+  margin-bottom: 10px;
+}
+
+.postComment {
+  display: flex;
+  margin-top: 15px;
+}
+.postComment img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.postComment > div {
+  display: flex;
+  margin-right: 10px;
+}
+.postComment > .userName {
+  width: 100px;
+  overflow: hidden;
+  font-size: 13px;
+}
+.postCommentBox > div {
+  display: flex;
+}
+.postCommentBox {
+  margin-left: 80px;
+}

@@ -12,9 +12,9 @@ a {
 /* 전체 페이지 크기설정 */
 
 .mainContainer {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 
 /* Button */
@@ -46,6 +46,7 @@ a {
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
   display: flex;
+  justify-content: space-around;
 }
 .logo > img {
   width: 100px;
@@ -57,7 +58,7 @@ a {
 }
 .menuBox {
   margin-top: 1rem;
-  margin-left: 5rem;
+  margin-left: -25%;
 }
 .menuBoxTitle {
   display: flex;
@@ -65,19 +66,31 @@ a {
   margin-bottom: 10px;
   font-size: 18px;
 }
-.menuBoxTitle > li {
+
+/* .menuBoxTitle > li {
   margin-right: 5rem;
   font-size: 18px;
   color: #c6c7cc;
+} */
+.menuBoxLi {
+  margin-right: 5rem;
+  font-size: 18px;
+  color: #c6c7cc;
+  display: flex;
 }
-.menuBoxTitle > li > img {
-  width: 10px;
-  margin-right: 10px;
+.change{
+  color:#a554f3;
+ 
+}
+.menuBoxTitle>a > li > img {
+  width: 26px;
+  margin-right: 7px;
+ 
 }
 .signBox {
   margin-top: 2rem;
 
-  margin-left: 57%;
+
   display: none;
 }
 .signBox > img {
@@ -95,10 +108,10 @@ a {
 }
 /* 로그인후 */
 .loginAfter {
-  display: block;
+  /* display: block; */
   margin-top: 2.5rem;
 
-  margin-left: 57%;
+ 
 }
 .loginBox {
   display: flex;
@@ -111,6 +124,7 @@ a {
   width: 100px;
   display: flex;
   margin-left: 50px;
+  position: relative;
 }
 .alarmBellImg > img {
   width: 30px;
@@ -130,20 +144,22 @@ a {
 }
 .alarmModal {
   position: absolute;
-  right: 11%;
+  right: 77%;
+  top: 96%;
   width: 400px;
   background-color: white;
   border: 1px solid #d9d9d9;
   border-radius: 15px;
-  z-index: 2;
+  z-index: 20;
 }
 .alarmModal > .alarmModalTitle {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
+
 }
 .alarmModalTitle > img {
-  width: 20px;
+  width: 25px;
   margin-right: 20px;
 }
 .alarmModalTitle > p {
@@ -153,7 +169,7 @@ a {
 .alarmList {
   margin: 20px;
   line-height: 30px;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
 }
 .alarmList > div > p {
   font-size: 18px;
@@ -182,7 +198,22 @@ a {
   border: 1px solid #d9d9d9;
   border-radius: 15px;
   z-index: 2;
+  overflow: hidden;
 }
-.userMiniMenu > ul > li {
+.userMiniMenu > ul >a> li {
   margin: 10px;
+}
+.select{
+background-color: gray;
+}
+/* 온클릭이벤트 */
+.block{
+  display: block;
+}
+.none{
+  display: none;
+}
+/* 마크다운 에디터 */
+.w-md-editor-bar{
+  display: none;
 }

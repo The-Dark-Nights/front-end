@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/post.css" />
   </head>
   <body>
+  <div>
     <div class="container">
       <!-- 헤더시작 -->
 
@@ -16,7 +17,7 @@
         <div class="logo"><img src="/img/logo.png" alt="" /></div>
         <div class="menuBox">
           <!-- 페이지이름 -->
-          <div class="pageName"><p>home</p></div>
+          <div class="pageName"><p>Post</p></div>
           <!-- 메뉴박스 -->
 
           <ul class="menuBoxTitle">
@@ -86,152 +87,95 @@
             </div>
           </div>
         </div>
-        </div>
-        <!-- 헤더끝 -->
-        <!-- 메인컨테이너시작 -->
-        <div class="mainContainer contents">
-          <!-- 로드맵리스트 -->
-          <div class="roadMapListBox">
-            <!-- 로드맵네비 -->
-            <div class="roadMapListNav">
-              <div>
-                <p>BestRoadMap</p>
-                <hr />
-              </div>
-              <div>
-                <p>See All</p>
-                <hr class="seeAllHr" />
-              </div>
-            </div>
-            <!-- 로드맵슬라이드 -->
-            <div class="roadMapSlide">
-              <ul class="roadMapList">
-                <!-- 로드맵카드 -->
-                <li class="roadMapCard">
-                  <div class="roadMapTitleBox">
-                    <h3>Custorm Roadmap Name</h3>
-                    <div class="userInfo">
-                      <img src="/img/user.png" alt="" />
-                      <p>Code Juggler</p>
-                    </div>
-                    <hr />
-                  </div>
+      </div>
+ 
 
-                  <div class="roadMapImg">
-                    <img src="/img/logo.png" alt="" />
-                    <hr />
-                  </div>
-
-                  <div class="roadMapComment">
-                    <div>
-                      <img src="/img/comment.png" alt="" />
-                      <p>11</p>
-                    </div>
-                    <div>
-                      <img src="/img/heart.png" alt="" />
-                      <p>3</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="roadMapCard">
-                  <div class="roadMapTitleBox">
-                    <h3>Custorm Roadmap Name</h3>
-                    <div class="userInfo">
-                      <img src="/img/user.png" alt="" />
-                      <p>Code Juggler</p>
-                    </div>
-                    <hr />
-                  </div>
-
-                  <div class="roadMapImg">
-                    <img src="/img/logo.png" alt="" />
-                    <hr />
-                  </div>
-
-                  <div class="roadMapComment">
-                    <div>
-                      <img src="/img/comment.png" alt="" />
-                      <p>11</p>
-                    </div>
-                    <div>
-                      <img src="/img/heart.png" alt="" />
-                      <p>3</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="roadMapCard">
-                  <div class="roadMapTitleBox">
-                    <h3>Custorm Roadmap Name</h3>
-                    <div class="userInfo">
-                      <img src="/img/user.png" alt="" />
-                      <p>Code Juggler</p>
-                    </div>
-                    <hr />
-                  </div>
-
-                  <div class="roadMapImg">
-                    <img src="/img/logo.png" alt="" />
-                    <hr />
-                  </div>
-
-                  <div class="roadMapComment">
-                    <div>
-                      <img src="/img/comment.png" alt="" />
-                      <p>11</p>
-                    </div>
-                    <div>
-                      <img src="/img/heart.png" alt="" />
-                      <p>3</p>
-                    </div>
-                  </div>
-                </li>
-                <li class="roadMapCard">
-                  <div class="roadMapTitleBox">
-                    <h3>Custorm Roadmap Name</h3>
-                    <div class="userInfo">
-                      <img src="/img/user.png" alt="" />
-                      <p>Code Juggler</p>
-                    </div>
-                    <hr />
-                  </div>
-
-                  <div class="roadMapImg">
-                    <img src="/img/logo.png" alt="" />
-                    <hr />
-                  </div>
-
-                  <div class="roadMapComment">
-                    <div>
-                      <img src="/img/comment.png" alt="" />
-                      <p>11</p>
-                    </div>
-                    <div>
-                      <img src="/img/heart.png" alt="" />
-                      <p>3</p>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+    <!-- 헤더끝 -->
+    <!-- 포스트컨테이너시작 -->
+    <div class="mainContainer contents">
+      <!-- 포스트컨테이너 타이틀 -->
+      <div class="postContainerTitle">
+        <div class="filter">
+          <div class="filterBox">
+            <p>recent</p>
+            <p>popular</p>
+            <select>
+              <option value="">weekly</option>
+              <option value="">monthly</option>
+            </select>
           </div>
-          <!-- 포스트리스트 -->
-          <div class="postListBox">
-            <!-- 포스트네비 -->
-            <div class="postListNav">
-              <div>
-                <p>Best Post</p>
-                <hr />
-              </div>
-              <div>
-                <p>See All</p>
-                <hr class="seeAllHr" />
-              </div>
-            </div>
+          <hr />
+        </div>
+        <h1>Post</h1>
+        <button class="purpleBtn writeBtn">Write</button>
+      </div>
+        <!-- 포스트리스트 -->
+        <div class="postListBox">
+            
             <!-- 포스트라이드 -->
             <div class="postSlide">
               <ul class="postList">
                 <!-- 포스트카드 -->
-               
+                <li class="postCard">
+                  <div class="postImg">
+                    <img src="/img/logo.png" alt="" />
+                    <hr />
+                  </div>
+                  <div class="postContents">
+                    <h3>제목</h3>
+                    <p>
+                      /* 홈 페이지 타이틀 변경하기 */ #post-2 .entry-title {
+                      visibility: hidden; line-height: 0; } #post-2
+                      .entry-title:before { visibility: visible; content:
+                      '사이트를 방문해주셔서 감사합니다!'; line-height: 1.2em; }
+                    </p>
+                    <hr />
+                  </div>
+                  <div class="postComment">
+                    <div><img src="/img/user.png" alt="" /></div>
+                    <div class="userName">by pm</div>
+                    <div class="postCommentBox">
+                      <div>
+                        <img src="/img/comment.png" alt="" />
+                        <p>11</p>
+                      </div>
+                      <div>
+                        <img src="/img/heart.png" alt="" />
+                        <p>3</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="postCard">
+                  <div class="postImg">
+                    <img src="/img/logo.png" alt="" />
+                    <hr />
+                  </div>
+                  <div class="postContents">
+                    <h3>제목</h3>
+                    <p>
+                      /* 홈 페이지 타이틀 변경하기 */ #post-2 .entry-title {
+                      visibility: hidden; line-height: 0; } #post-2
+                      .entry-title:before { visibility: visible; content:
+                      '사이트를 방문해주셔서 감사합니다!'; line-height: 1.2em; }
+                    </p>
+                    <hr />
+                  </div>
+                  <div class="postComment">
+                    <div><img src="/img/user.png" alt="" /></div>
+                    <div class="userName">by pm</div>
+                    <div class="postCommentBox">
+                      <div>
+                        <img src="/img/comment.png" alt="" />
+                        <p>11</p>
+                      </div>
+                      <div>
+                        <img src="/img/heart.png" alt="" />
+                        <p>3</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
                 <li class="postCard">
                   <div class="postImg">
                     <img src="/img/logo.png" alt="" />
@@ -325,9 +269,9 @@
               </ul>
             </div>
           </div>
-        </div>
-        <!-- 메인컨테이너끝 -->
-      </div>
     </div>
+           
+<!-- 포스트컨테이너끝 -->
+</div>
   </body>
 </html>
